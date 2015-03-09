@@ -1,0 +1,74 @@
+#contenedor{
+	margin:0 auto;
+	width : 1250px;
+	text-align: center;
+	/*border: 1px solid red;*/
+}
+							/* PAGINA PRINCIPAL 3 CAJAS */
+#caja1L{
+	width: 33%;
+	float: left;
+	overflow: hidden;
+}
+#caja2R{
+	width: 33%;
+	float: left;
+	overflow: hidden;
+}
+#caja3C{
+	/*width: 300px;
+	height: 300px; */
+	width: 33%;
+	float: left;
+	overflow: hidden;
+}
+                           	/* PAGINA PRINCIPAL 2 CAJAS */
+#caja1B{
+	width: 45%;
+	float: left;
+	overflow: hidden;
+}
+#caja2B{
+	width: 45%;
+	float: right;
+	overflow: hidden;
+}
+                           	/* PAGINA DESCRIPCION VINOS */
+#cajaDB1{
+	width: 30%;
+	float: left;
+	/*    padding: 2%;              	/*expande la caja alrededor del texto*/
+	border: white 8px groove;
+	overflow: hidden;	
+}
+#cajaDB2{
+	width: 30%;
+	float: left;
+	border: white 8px groove; 
+	overflow: hidden;	
+}
+#cajaDB3{
+	width: 30%;
+	float: left;
+	padding: 2%; 
+		/*vertical-align: middle;*/
+	border: white 8px groove;
+	overflow: hidden;	
+	width:400px;
+	height: 200px; 
+}
+.clear{
+	clear: both;
+}
+.imgC
+{
+	/*overflow: hidden;*/
+	width:300px;
+	height: 300px; 
+}
+.imgD
+{
+	/*overflow: hidden;*/
+	width:200px;
+	height: 250px; 
+}
