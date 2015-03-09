@@ -16,18 +16,15 @@
 	<BODY >
 		<div class="container">
 		<section id="miSlide" class="carousel slide">
-			<ol class="carousel-indicators"><!--se colocan mas <li> si hay mas imágenes que mostrar en el slide-->
-				<li data-target="#miSlide" data-slide-to="0" class="active"></li>
-				<li data-target="#miSlide" data-slide-to="1"></li>
-				<li data-target="#miSlide" data-slide-to="2"></li>
-				<li data-target="#miSlide" data-slide-to="3"></li>
-			</ol>
+			
 
 			<div class="carousel-inner"><!--se colocan mas <div> si queremos colocar más imágenes-->
 				<div class="item active">
-					<img src="Fotos/plato1.jpg" alt="Arte Visual" class="adaptar">
+					<img src="Fotos/plato1.jpg" alt="Arte Visual" >
 				</div>
-				
+				<div class="item">
+					<img src="Fotos/plato2.jpg" alt="Arte Visual" >
+				</div>
 				
 				
 			</div>

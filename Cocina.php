@@ -12,7 +12,7 @@
 	<link href="css/medium.css" 		rel="stylesheet" type="text/css" media="screen and (min-width: 481px) and (max-width: 980px)" >
 	<link href="css/mini.css" 			rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" >
 
-	<link rel="stylesheet" href="bootstrap/3.3.2/-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
   	
 
 </head>
@@ -90,38 +90,44 @@
 				</ul>
 				<div class="clear"></div>
 			</div>	
+		</div>
 			
         	<!--<div id="cajafotos">		-->								<!-- FOTOS ALEATORIAS  -->	
         	             <!--<div id="cajafotos">-->	
-        	<div id="cajafotos">
+        	<div class="container cajafotos2">
         		<!--<embed src="diapositiva.mp4">*/-->
         		<!--<video src="Fotos/diapositiva.mp4" autoplay loop controls width="300" height="200"></video>-->
         		<!--<video id="video-background" src="Fotos/video-menu.mp4" autoplay loop controls width="300" height="315"></video>-->
         		<!--<video  src="Fotos/video-menu.mp4" autoplay loop controls width="1000" height="615" ></video>        ¡¡¡buenoBUENO-->
-
-        		<div id="myCarousel" class="carousel slide" data-ride="carousel" >
-        			<div class="carousel-inner">
-					        <div class="active item"><img  src="Fotos/plato1.jpg" alt="banner1" /></div>
-					        <div class="item"><img  src="Fotos/plato2.jpg" alt="banner2" /></div>
-					        <div class="item"><img  src="Fotos/plato3.jpg" alt="banner3" /></div>
-					        <div class="item"><img  src="Fotos/plato4.jpg" alt="banner4" /></div>
-					        <div class="item"><img  src="Fotos/plato5.jpg" alt="banner5" /></div>
-					 </div>         		
+        	   <div class="row">
+        	   		<div class="col-xs-12 col-sm-7 col-md-9 col-lg-9">
+        				<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+        					<div class="carousel-inner">
+						        <div class="active item cajacarrusel"><img  src="Fotos/plato1.jpg" alt="banner1" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato2.jpg" alt="banner2" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato3.jpg" alt="banner3" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato4.jpg" alt="banner4" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato5.jpg" alt="banner5" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato6.jpg" alt="banner5" /></div>
+					 		</div>         		
         			<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
         			<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-        		</div>
-
-        	</div>	
-           	<div id="cajautilidades" class="grande mediano mini">			
-           		<ul><h3><FONT COLOR="#585858">
-							<!--<li><a href="" >Menus Semanales</a> </li><br>-->
-							<li><a href="Menus.php"> Menus Semanales</a> </li><br>
-							<li>Foro Chat</li><br>
-							<li>Consejos utiles</li><br>
-							<li>Consejos de familia</li><br>
-				</h3></ul>																	<!-- UTILIDADES  -->	
+        				</div>
+        			</div>
+        			<div id="cajautilidades" class="col-xs-12 col-sm-5 col-md-3 col-lg-3">			
+	           		<ul><h3><FONT COLOR="#585858">
+								<!--<li><a href="" >Menus Semanales</a> </li><br>-->
+								<li><a href="Menus.php"> Menus Semanales</a> </li><br>
+								<li>Foro Chat</li><br>
+								<li>Consejos utiles</li><br>
+								<li>Consejos de familia</li><br>
+					</h3></ul>																	<!-- UTILIDADES  -->	
         	
-           	</div>	
+           		</div>	
+        		</div>
+        		
+        	</div>	
+           	
         	<div class="clear"></div>
 		</div>	                                                <!--	CIERRE CAJA CUERPO  -->
 																							<!-- PIE  -->	
@@ -130,7 +136,7 @@
 			<div class="clear"></div>
 		</div>	
 
-	<script src="bootstrap/3.3.2/-dist/js/jquery-1.11.2.min.js"></script>
-  	<script src="bootstrap/3.3.2/-dist/js/bootstrap.min.js"></script>
+	<script src="bootstrap-3.3.2-dist/js/jquery-1.11.2.min.js"></script>
+	<script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 	</body>
 </html>
