@@ -90,7 +90,7 @@
 			 <!-- <img	src="Fotos/cuchara.jpg" alt="Logotipo" class="imglogo">  -->
 			<!--                                                                                 AVATAR      -->
 			<div id = "cajaavatar" >    
-				<img	src="Fotos/avatar.jpg"  alt="Avatar" 	class="imgavatar">  
+				<img	src="Fotos/cocina3.jpg"  alt="Avatar" 	class="imgavatar">  
 			</div>    
 		<!--                                                                                 FORMULARIO -->
 			<div id="cajaformulario" >

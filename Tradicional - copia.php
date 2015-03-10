@@ -33,6 +33,7 @@
   <div class="row">
    <div id = "caja1B" >    																	
 				<input type="search" value="Buscador">													<!-- BUSCADOR  -->
+        <img  src="Fotos/logo.png"  alt="Logo" class="imglogo">
 		    	
 		    </div>    
 		    <div id = "caja2B" > 																		<!-- LOGIN  -->   
@@ -96,7 +97,7 @@
     <div class="col-sm-6 colchoco cajachoco">
      
       <ul>
-        <img  alt="Infografia - Mapa gastronomico de platos tipicos" src="fotos/varios-platos.jpg">
+        <img class="imgmapa" alt="Infografia - Mapa gastronomico de platos tipicos" src="fotos/varios-platos.jpg">
         
      </ul>  
     </div>

@@ -12,7 +12,7 @@
 	<link href="css/medium.css" 		rel="stylesheet" type="text/css" media="screen and (min-width: 481px) and (max-width: 980px)" >
 	<link href="css/mini.css" 			rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" >
 
-	<link rel="stylesheet" href="bootstrap/3.3.2/-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
   	
 
 </head>
@@ -22,6 +22,7 @@
 			 <!-- <img	src="Fotos/cuchara.jpg" alt="Logotipo" class="imglogo">  -->
 			<div id = "caja1B" >    																	
 				<input type="search" value="Buscador">													<!-- BUSCADOR  -->
+				<img	src="Fotos/logo.png"  alt="Logo" class="imglogo">
 		    	
 		    </div>    
 		    <div id = "caja2B" > 																		<!-- LOGIN  -->   
@@ -39,7 +40,7 @@
 		    <div class="clear"></div>  
 		</div>	
 																							<!-- CUERPO  -->
-		<div id="cuerpo" class="grande mediano mini">									<!-- DESPLEGABLE  -->
+		<div id="container" class="grande mediano mini">									<!-- DESPLEGABLE  -->
 			
 				<!--<video id="video-background" src="Fotos/video-menu.mp4" autoplay loop controls width="560" height="315"></video>-->
 
@@ -90,83 +91,59 @@
 				</ul>
 				<div class="clear"></div>
 			</div>	
-			<!--
-			<div id="fotos-ale">
-				<img src="Fotos/cocina.jpg" />
-	            <img src="Fotos/plato1.jpg" />
-	            <img src="Fotos/cocina2.jpg" />
-	            <img src="Fotos/plato2.jpg" />
-	            <img src="Fotos/cocina3.jpg" />
-	            <img src="Fotos/plato3.jpg" />
-	            <img src="Fotos/fogones.jpg" />
-	            <img src="Fotos/plato4.jpg" />
-	            <img src="Fotos/libro.jpg" />
-	            <img src="Fotos/plato5.jpg" />
-	            <div class="clear"></div>
-        	</div> -->
+		</div>
+			
         	<!--<div id="cajafotos">		-->								<!-- FOTOS ALEATORIAS  -->	
         	             <!--<div id="cajafotos">-->	
-        	<div id="cajafotos">
+        	<div class="container cajafotos2">
         		<!--<embed src="diapositiva.mp4">*/-->
         		<!--<video src="Fotos/diapositiva.mp4" autoplay loop controls width="300" height="200"></video>-->
         		<!--<video id="video-background" src="Fotos/video-menu.mp4" autoplay loop controls width="300" height="315"></video>-->
         		<!--<video  src="Fotos/video-menu.mp4" autoplay loop controls width="1000" height="615" ></video>        ¡¡¡buenoBUENO-->
-
-        		<div id="myCarousel" class="carousel slide" role="listbox">
-        			<div class="carousel-inner">
-        				<div class="item active">
-        					<img src="Fotos/plato1.jpg" alt="">
-        					<div class="carousel-caption">
-        						<h4>First Thumbnail label</h4>
-        						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-        					</div>
-        				</div>
-        				<div class="item">
-        					<img src="Fotos/plato2.jpg" alt="">
-        					<div class="carousel-caption">
-        						<h4>Second Thumbnail label</h4>
-        						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-        					</div>
-        				</div>
-        				<div class="item">
-        					<img src="Fotos/plato3.jpg" alt="">
-        					<div class="carousel-caption">
-        						<h4>Third Thumbnail label</h4>
-        						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-        					</div>
-        				</div>
-        				<div class="item">
-        					<img src="Fotos/plato4.jpg" alt="">
-        					<div class="carousel-caption">
-        						<h4>Third Thumbnail label</h4>
-        						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-        					</div>
+        	   <div class="row">
+        	   		<div class="col-xs-12 col-sm-7 col-md-9 col-lg-9">
+        				<div id="myCarousel" class="carousel slide carousel-margen-mio" data-ride="carousel" >
+        					<div class="carousel-inner">
+						        <div class="active item cajacarrusel"><img  src="Fotos/plato0.jpg" alt="banner1" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/cocina1.jpg" alt="banner2" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato1.jpg" alt="banner2" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/cocina2.jpg" alt="banner2" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato2.jpg" alt="banner2" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/cocina3.jpg" alt="banner2" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato3.jpg" alt="banner3" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato4.jpg" alt="banner4" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato5.jpg" alt="banner5" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato6.jpg" alt="banner5" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato7.jpg" alt="banner5" /></div>
+						        <div class="item cajacarrusel"><img  src="Fotos/plato8.jpg" alt="banner5" /></div>
+					 		</div>         		
+        			<!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+        			<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>-->
         				</div>
         			</div>
-        			<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-        			<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+        			<div id="cajautilidades" class="col-xs-12 col-sm-5 col-md-3 col-lg-3">			
+	           		<ul><h3><FONT COLOR="#585858">
+								<!--<li><a href="" >Menus Semanales</a> </li><br>-->
+								<li><a href="Menus.php"> Menus Semanales</a> </li><br>
+								<li>Foro Chat</li><br>
+								<li>Consejos utiles</li><br>
+								<li>Consejos de familia</li><br>
+					</h3></ul>																	<!-- UTILIDADES  -->	
+        	
+           		</div>	
         		</div>
         		
-           	</div>	
-           	<div id="cajautilidades" class="grande mediano mini">			
-           		<ul><h3><FONT COLOR="#585858">
-							<!--<li><a href="" >Menus Semanales</a> </li><br>-->
-							<li><a href="Menus.php"> Menus Semanales</a> </li><br>
-							<li>Foro Chat</li><br>
-							<li>Consejos utiles</li><br>
-							<li>Consejos de familia</li><br>
-				</h3></ul>																	<!-- UTILIDADES  -->	
-        	
-           	</div>	
+        	</div>	
+           	
         	<div class="clear"></div>
-		</div>	
+		</div>	                                                <!--	CIERRE CAJA CUERPO  -->
 																							<!-- PIE  -->	
 		<div id="pie" class="grande mediano mini">
 			
 			<div class="clear"></div>
 		</div>	
 
-	<script src="bootstrap/3.3.2/-dist/js/jquery-1.11.2.min.js"></script>
-  	<script src="bootstrap/3.3.2/-dist/js/bootstrap.min.js"></script>
+	<script src="bootstrap-3.3.2-dist/js/jquery-1.11.2.min.js"></script>
+	<script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 	</body>
 </html>

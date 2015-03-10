@@ -147,3 +147,15 @@ function cargarceldas()
 				}	
 			}	
 	}
+function abrir (URL)
+{ 
+  x = (screen.width / 2) - (1000/2);
+  y = (screen.height / 2) - (900/2);
+
+  window.open(URL,"ventana1","width=1000,height=750,scrollbars=NO,,left= "+ x + ",top=" + y +""); 
+} 
+
+function refrescar()
+{
+		location.reload(true);
+}

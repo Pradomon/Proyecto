@@ -102,19 +102,9 @@ input[type=date] {
 	width: 400px;
 	
 }	
-.carousel-control-mio
+.carousel-margen-mio
 {
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	width:5%;
-	font-size:20px;
-	color:#fff;
-	text-align:center;
-	text-shadow:0 1px 2px rgba(0,0,0,.6);
-	filter:alpha(opacity=50);
-	opacity:.5;
+	margin:5%;
 }
 
 #cajafotos2{
@@ -153,6 +143,7 @@ input[type=date] {
 .tablam{
 	
 	border: 2px solid #666666;
+	text-align: center;
 	/*border: 2px solid black;
 	border-style:double;
 	border-collapse: collapse;*/
@@ -164,6 +155,18 @@ tr td{
 	border: 2px solid #666666;
 }
 
+th
+{
+	text-align: center !important;
+	color:#8A4B08 !important;
+}
+caption
+{
+	padding-top:8px;
+	padding-bottom:8px;
+	color:#8A4B08 !important;
+	text-align:center !important; 
+}
 
 .botonG{
 	font-family: mollbora;
@@ -211,10 +214,11 @@ tr td{
 }
 .imglogo
 {
-	float: center;
+	float: right;
 	overflow: hidden;	
-	width:100%;
-	height: 100%;
+	margin:5% ;
+	width:90%;
+	height: 75%;
 	
 }
 .imgavatar
@@ -262,6 +266,7 @@ div#listas a{
 div#listas li.pestañas{
 	float: left;
 	margin: 0 2em;
+	
 	/*font-size: 1.8em;*/
 }
 
@@ -269,6 +274,7 @@ div#listas li.pestañas ul{
 	visibility: hidden;
 	/*display: none;*/
 	position: absolute;
+	z-index: 5;
 	/*	background-color: orange;*/
 	/*min-width: 8em;*/
 }
@@ -279,7 +285,7 @@ div#listas li.pestañas ul li{
 	padding: 0.2em;
 	font-size: 0.7em;
 	background-color: #F5ECCE;
-
+	
 }
 
 div#listas li.pestañas:hover ul{
@@ -292,26 +298,42 @@ div#listas li.pestañas:hover ul{
 /*a:hover, a:active {text-decoration: underline;}*/
 /*a:visited, a:link {text-decoration: none;}*/
 
-a:link{ color: #8A4B08; text-decoration: underline;}
-a:active{ color: #8A4B08; text-decoration: none}
-a:visited{ color: #8A4B08; text-decoration: none}
-a:hover{ color: #FF8000; text-decoration: underline}
+a:link
+{ 
+	color: #8A4B08 !important;
+    text-decoration: underline !important;
+}
+a:active
+{
+  color: #8A4B08 !important;
+  text-decoration: none !important;
+}
+a:visited
+{ 
+	color: #8A4B08 !important; 
+	text-decoration: none!important;
+}
+a:hover
+{ 
+	color: #FF8000 !important; 
+	text-decoration: underline !important;
+}
 
 a.ex5:link 
 {
-	text-decoration: underline;
-	color: #8A4B08;
+	text-decoration: underline !important;
+	color: #8A4B08 !important;
 }
 
 a.ex5:active, a.ex5:visited
  {
- 	text-decoration: none;
- 	color: #FF8000;
+ 	text-decoration: none !important;
+ 	color: #FF8000 !important;
  }
 a.ex5:hover
  {
- 	text-decoration: underline;
- 	color: #B45F04;
+ 	text-decoration: underline !important;
+ 	color: #B45F04 !important;
  	/*color: #FF0000;*/
  }
 

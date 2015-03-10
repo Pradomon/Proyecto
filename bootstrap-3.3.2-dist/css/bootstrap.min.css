@@ -7583,6 +7583,7 @@ button.close
 .carousel-inner
 {
 	position:relative;
+	margin:5%;
 	width:100%;
 	overflow:hidden;
 }

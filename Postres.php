@@ -33,6 +33,7 @@
   <div class="row">
    <div id = "caja1B" >    																	
 				<input type="search" value="Buscador">													<!-- BUSCADOR  -->
+        <img  src="Fotos/logo.png"  alt="Logo" class="imglogo">
 		    	
 		    </div>    
 		    <div id = "caja2B" > 																		<!-- LOGIN  -->   
