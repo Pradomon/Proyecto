@@ -24,8 +24,17 @@
 			 <!-- <img	src="Fotos/cuchara.jpg" alt="Logotipo" class="imglogo">  -->
 			<div id = "caja1B" >    																	
 				<input type="search" value="Buscador">													<!-- BUSCADOR  -->
-				<img	src="Fotos/logo.png"  alt="Logo" class="imglogo">
-		    	
+				<img	src="Fotos/logo3.gif"  alt="Logo" class="imglogo">
+				
+					
+					
+				
+<?php
+$url = "<script>document.write(url)</script>";
+echo $url;
+?>
+					
+						    	
 		    </div>    
 		    <div id = "caja2B" > 																		<!-- LOGIN  -->   
 		    	<form action="http://192.168.1.190/Formularios/Ejercicio1/recibir.php" method ="get"> 

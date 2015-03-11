@@ -1,4 +1,10 @@
-var arrp = new Array(10);
+		
+
+		/*var url = document.location.href;*/
+		/*var url = parent.location;*/
+		var url = location.href;
+		
+		var arrp = new Array(10);
 		var arrs = new Array(10);
 		var arrt = new Array(10);
 		var tabr = new Array(10);
@@ -9,6 +15,8 @@ var arrp = new Array(10);
 		var s = 0;
 		var t = 0;
 
+		var x = 0;
+		var y = 0;
 		var z = 0;
 
 
@@ -75,19 +83,19 @@ function cargarterceros()
 }
 function cargarceldas()
 	{
-		var x = 0;
-		var y = 0;
-		var z = 0;
 		
+		
+					/*Genera nº aleatorios */
 
 			for (x=0;x<=10;x++)
 			{
 				tabr[x] = Math.round(Math.random()*9);
 			}
+					/*inicializamos tabg*/
 
 			for (x=0;x<=10;x++)
 			{
-				tabg[x] = 0;
+				tabg[x] = -1;
 			}
 
 			tabg[z]=tabr[z];
@@ -103,7 +111,7 @@ function cargarceldas()
 					}
 					else
 					{
-						if (tabg[y+1]==0)
+						if (tabg[y+1]==-1)
 						{
 							z=z+1;
 							tabg[z]=tabr[x];
@@ -125,8 +133,8 @@ function cargarceldas()
 						
 				{
 					var p = tabg[x];				
-					var s = tabg[x];					
-					var t = tabg[x];
+					var s = tabg[x+1];					
+					var t = tabg[x+2];
 					switch(y)
 					{
 						case 1:
@@ -150,7 +158,7 @@ function cargarceldas()
 function abrir (URL)
 { 
   x = (screen.width / 2) - (1000/2);
-  y = (screen.height / 2) - (900/2);
+  y = (screen.height / 2) - (750/2);
 
   window.open(URL,"ventana1","width=1000,height=750,scrollbars=NO,,left= "+ x + ",top=" + y +""); 
 } 
@@ -158,4 +166,9 @@ function abrir (URL)
 function refrescar()
 {
 		location.reload(true);
+}
+function paginicio()
+{
+	window.location.href=("Cocina.php");
+	/*    window.location("cocina.php");*/
 }

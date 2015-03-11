@@ -12,7 +12,10 @@
 	<link href="css/medium.css" 		rel="stylesheet" type="text/css" media="screen and (min-width: 481px) and (max-width: 980px)" >
 	<link href="css/mini.css" 			rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" >
 
+
+	<script type="text/javascript" src="js/cocina.js"></script>
 	<script type="text/javascript">
+
 
 	function validar()
 	{
@@ -126,7 +129,10 @@
 					<p></p>
 					<p></p>
 					<p></p>	
-					<input class="grande mediano mini botonL" type="submit" name="Aceptar" value="Aceptar" />
+					
+					<input class="grande mediano mini botonL puntero" type="submit" name="Aceptar" value="&nbsp;&nbsp;&nbsp;Aceptar&nbsp;&nbsp;&nbsp;" />
+					<p></p>	
+					<input class="grande mediano mini botonL puntero" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
 				</form>
 			</div>	
 		</div>

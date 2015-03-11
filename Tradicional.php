@@ -6,12 +6,15 @@
 
   <div class="row">
     <div class="col-sm-12 jumbotronmio"></div>
+   
       <!--<blockquote><blockquote><h1><font color="#61380B">ARROCES VARIOS</font></h1></blockquote></blockquote>     sangrar-->
       <h1><font color="#61380B">TRADICIONAL Y MAS.........</font></h1>
-
+      
       <p>España tiene una gastronomía extensa, variada y sobre todo: ¡muy sabrosa! Por ello te proponemos que realices un tour a través de las recetas que únicamente encontrarás en nuestra tierra. Se trata de platos que han ido pasando de generación en generación creando un legado inigualable. Porque, al fin y al cabo, tenemos un país para comérselo. </p>
       <p>Por ello estos son 10 platos típicos de España que debes probar una vez en la vida...¡¡¡¡¡
       <a href="http://www.skyscanner.es/noticias/10-platos-tipicos-de-espana-que-debes-probar-una-vez-en-la-vida"  role="button" onclick="abrir(this.href);return false">Leer más....</a></p>
+      <input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
+      <p></p>
    </div>
    <div class="clear"></div>
 
@@ -51,7 +54,7 @@
     <div class="col-sm-6 colchoco cajachoco">
      
       <ul>
-        <img class="imgmapa" alt="Infografia - Mapa gastronomico de platos tipicos" src="fotos/varios-platos.jpg">
+        <img class="imgmapa" alt="Infografia - Mapa gastronomico de platos tipicos" src="fotos/cuchara.jpg">
         
      </ul>  
     </div>
