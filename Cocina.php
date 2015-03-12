@@ -1,59 +1,9 @@
 <?php
 	require_once("Cabecera.inc");
+	require_once("Listas.inc");
 ?>
 																							<!-- CUERPO  -->
-		<div id="container" class="grande mediano mini">									<!-- DESPLEGABLE  -->
-			
-				<!--<video id="video-background" src="Fotos/video-menu.mp4" autoplay loop controls width="560" height="315"></video>-->
-
-			<div id="listas">
-				<ul>
-					<li class="pestañas">
-						<a href="Tradicional.php">Tradicional</a>
-						<ul>
-							<li><a href="Tradicional.php">De la Agüela</a></li>
-							<li><a href="Tradicional.php">Regional</a></li>
-							<li><a href="Tradicional.php">Cuchara</a></li>
-						</ul>
-					</li>
-					<li class="pestañas">
-						<a href="Carnes.php">Carnes</a>
-						<ul>
-							<li><a href="Carnes.php">Pollo</a></li>
-							<li><a href="Carnes.php">Ternera</a></li>
-							<li><a href="Carnes.php">Cordero</a></li>
-							<li><a href="Carnes.php">Cerdo</a></li>
-						</ul>
-					</li>
-					<li class="pestañas">
-						<a href="Pescados.php">Pescados<a/>
-						<ul>
-							<li><a href="Pescados.php">Blancos<a/></li>
-							<li><a href="Pescados.php">Azules</a></li>
-						</ul>
-					</li>
-					<li class="pestañas">
-						<a href="Arroces.php">Arroces</a>
-						<ul>
-							<li><a href="Arroces.php">Carnes</a></li>
-							<li><a href="Arroces.php">Pescados</a></li>
-							<li><a href="Arroces.php">Calderos</a></li>
-							<li><a href="Arroces.php">Verduras</a></li>
-						</ul>
-					</li>
-					<li class="pestañas">
-						<a href="Postres.php">Postres</a>
-						<ul>
-							<li><a href="Postres.php">Con Frutas</a></li>
-							<li><a href="Postres.php">Bizcochos</a></li>
-							<li><a href="Postres.php">Tartas</a></li>
-							<li><a href="Postres.php">Flanes</a></li>
-						</ul>
-					</li>
-				</ul>
-				<div class="clear"></div>
-			</div>	
-		</div>
+		
 			
         	<!--<div id="cajafotos">		-->								<!-- FOTOS ALEATORIAS  -->	
         	             <!--<div id="cajafotos">-->	
@@ -62,44 +12,77 @@
         		<!--<video src="Fotos/diapositiva.mp4" autoplay loop controls width="300" height="200"></video>-->
         		<!--<video id="video-background" src="Fotos/video-menu.mp4" autoplay loop controls width="300" height="315"></video>-->
         		<!--<video  src="Fotos/video-menu.mp4" autoplay loop controls width="1000" height="615" ></video>        ¡¡¡buenoBUENO-->
-        	   <div class="row">
-        	   		<div class="col-xs-12 col-sm-7 col-md-9 col-lg-9">
-        				<div id="myCarousel" class="carousel slide carousel-margen-mio" data-ride="carousel" >
-        					<div class="carousel-inner">
-						        <div class="active item cajacarrusel"><img  src="Fotos/plato0.jpg" alt="banner1" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/cocina1.jpg" alt="banner2" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/plato1.jpg" alt="banner2" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/cocina2.jpg" alt="banner2" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/plato2.jpg" alt="banner2" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/cocina3.jpg" alt="banner2" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/plato3.jpg" alt="banner3" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/plato4.jpg" alt="banner4" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/plato5.jpg" alt="banner5" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/plato6.jpg" alt="banner5" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/plato7.jpg" alt="banner5" /></div>
-						        <div class="item cajacarrusel"><img  src="Fotos/plato8.jpg" alt="banner5" /></div>
-					 		</div>         		
-        			<!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-        			<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>-->
-        				</div>
-        			</div>
+        	 
+        	   		<div class="modal fade" id="miventana" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><!--los tres contenedores tienen que estar siempre ya que será para el llamamiento-->
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4>Arquitectura</h4>
+								</div>
+								<div class="modal-body">												
+									<section id="miSlide" class="carousel slide">
+										<ol class="carousel-indicators"><!--se colocan mas <li> si hay mas imágenes que mostrar en el slide-->
+											<li data-target="#miSlide" data-slide-to="0" class="active"></li>
+											<li data-target="#miSlide" data-slide-to="1"></li>
+											<li data-target="#miSlide" data-slide-to="2"></li>
+											<li data-target="#miSlide" data-slide-to="3"></li>
+											<li data-target="#miSlide" data-slide-to="4"></li>
+											<li data-target="#miSlide" data-slide-to="5"></li>
+											<li data-target="#miSlide" data-slide-to="6"></li>
+											<li data-target="#miSlide" data-slide-to="7"></li>
+										</ol>
+
+									<div class="carousel-inner"><!--se colocan mas <div> si queremos colocar más imágenes-->
+										<div class="item active">
+											<img src="Fotos/plato0.jpg" alt="Arte Visual" class="imgtam">
+										</div>
+										<div class="item">
+											<img src="Fotos/cocina1.jpg" alt="Arte Visual" class="imgtam">
+										</div>
+										<div class="item">
+											<img src="Fotos/plato1.jpg" alt="Arte Visual" class="imgtam">
+										</div>
+										<div class="item">
+											<img src="Fotos/cocina2.jpg" alt="Arte Visual" class="imgtam">
+										</div>
+										<div class="item">
+											<img src="Fotos/plato2.jpg" alt="Arte Visual" class="imgtam">
+										</div>
+										<div class="item">
+											<img src="Fotos/cocina3.jpg" alt="Arte Visual" class="imgtam">
+										</div>
+										<div class="item">
+											<img src="Fotos/plato3.jpg" alt="Arte Visual" class="imgtam">
+										</div>
+										<div class="item">
+											<img src="Fotos/plato4.jpg" alt="Arte Visual" class="imgtam">
+										</div>
+									</div>
+
+								<a href="#miSlide" class="left carousel-control" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+								<a href="#miSlide" class="right carousel-control" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+		
+									</section><br>					
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+								</div>
+							</div>
+						</div>
+					</div>
         			<div id="cajautilidades" class="col-xs-12 col-sm-5 col-md-3 col-lg-3">			
-	           		<ul><h3><FONT COLOR="#585858">
-								<!--<li><a href="" >Menus Semanales</a> </li><br>-->
-								<li><a href="Menus.php"> Menus Semanales</a> </li><br>
-								<li>Foro Chat</li><br>
-								<li>Consejos utiles</li><br>
-								<li>Consejos de familia</li><br>
-					</h3></ul>																	<!-- UTILIDADES  -->	
-        	
-           		</div>	
-        		</div>
-        		
-        	</div>	
-           	
-        	<div class="clear"></div>
-		</div>	                                                <!--	CIERRE CAJA CUERPO  -->
-																							<!-- PIE  -->	
+		           		<ul><h3><FONT COLOR="#585858">
+									<!--<li><a href="" >Menus Semanales</a> </li><br>-->
+									<li><a href="Menus.php"> Menus Semanales</a> </li><br>
+									<li>Foro Chat</li><br>
+									<li>Consejos utiles</li><br>
+									<li>Consejos de familia</li><br>
+						</h3></ul>																	<!-- UTILIDADES  -->	
+  
+        				<div class="clear"></div>
+					</div>	                                                <!--	CIERRE CAJA CUERPO  -->
+		
+		</div>																					<!-- PIE  -->	
 		<div id="pie" class="grande mediano mini">
 			
 			<div class="clear"></div>

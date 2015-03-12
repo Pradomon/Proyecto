@@ -1,6 +1,7 @@
 
 <?php
 	require_once("Cabecera.inc");
+	require_once("Listas.inc");
 ?>
 
 																						<!-- CUERPO  -->
@@ -10,7 +11,7 @@
 			<!--table style="width:100%" border="2px" class="tablam">-->
 						
 			  <caption align="center" valign="top"><h2>Menus Semanales </h2>  </caption>
-			  <input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
+			  
 			   
 			  <tr>
 			  	<!--<th style="border: hidden"></th>     quita borde a la celda sola-->

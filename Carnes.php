@@ -1,12 +1,11 @@
 <?php
   require_once("Cabecera.inc");
+  require_once("Listas.inc");
 ?>
 
   <div class="row">
     <div class="col-sm-12 jumbotronmio"></div>
-    <input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
-      <p></p>
-      <p></p>
+    
      <h1><font color="#61380B">CARNES</font></h1>
      
    </div>

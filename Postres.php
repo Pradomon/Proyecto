@@ -1,6 +1,7 @@
 
 <?php
   require_once("Cabecera.inc");
+  require_once("Listas.inc");
 ?>
 
   <div class="row">

@@ -1,9 +1,4 @@
-		
-
-		/*var url = document.location.href;*/
-		/*var url = parent.location;*/
-		var url = location.href;
-		
+			
 		var arrp = new Array(10);
 		var arrs = new Array(10);
 		var arrt = new Array(10);
@@ -39,8 +34,8 @@ function cargarprimeros()
 	arrp[3]='<a href="http://www.lentejas.net/" onclick="abrir(this.href);return false"> Lentejas </a>';
 	arrp[4]='<a href="http://www.vegetarianismo.net/recetas/habichuelas.html" onclick="abrir(this.href);return false"> Judias con Arroz </a>';
 	arrp[5]='<a href="http://www.recetamacarrones.com/" onclick="abrir(this.href);return false"> Macarrones </a>';
-	arrp[6]='<a href="http://cocina.facilisimo.com/ensalada-murciana" onclick="abrir(this.href);return false"> Ensalada Murciana   </a>';
-	//arrp[6]='<a href="http://cocina.facilisimo.com/ensalada-murciana" onclick="abrir(this.href);return false"> <img	src="Fotos/EM.jpg"  alt="Ensalada Murciana" title="Ensalada Murciana" class="imgrecetas">   </a>';
+	//arrp[6]='<a href="http://cocina.facilisimo.com/ensalada-murciana" onclick="abrir(this.href);return false"> Ensalada Murciana   </a>';
+	arrp[6]='<a href="http://cocina.facilisimo.com/ensalada-murciana" onclick="abrir(this.href);return false"> <img	src="Fotos/EM.jpg"  alt="Ensalada Murciana" title="Ensalada Murciana" class="imgrecetas">   </a>';
 	arrp[7]='<a href="http://www.recetasdiarias.com/recetas/ensalada/ensalada-de-pasta/" onclick="abrir(this.href);return false"> Ensalada de Pasta </a>';
 	arrp[8]='<a href="http://placeralplato.com/sopas/sopa-fideos-casera" onclick="abrir(this.href);return false"> Sopa de Fideos </a>';
 	arrp[9]='<a href="http://www.hogarutil.com/cocina/recetas/ensaladas-verduras/listado-1321.html" onclick="abrir(this.href);return false"> Menestra </a>';

@@ -25,14 +25,16 @@
 			<div id = "caja1B" >    																	
 				<input type="search" value="Buscador">													<!-- BUSCADOR  -->
 				<img	src="Fotos/logo3.gif"  alt="Logo" class="imglogo">
-				
-					
 					
 				
-<?php
-$url = "<script>document.write(url)</script>";
-echo $url;
-?>
+				<?php
+				if (basename($_SERVER['PHP_SELF']) != "Cocina.php")
+				{
+				?>	
+					<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
+				<?php
+				}
+				?>
 					
 						    	
 		    </div>    
