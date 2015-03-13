@@ -110,17 +110,18 @@ input[type=date] {
 
 #cajafotos2{
 	margin-top: 1em;
-	width: 30%;
-	height: 120px;
+	width: 45%;
+	height: 320px;
 	float: center;
 	overflow: hidden;
-	border: 1px solid red;
-	background-size:cover;
+	border: 1px  solid #765F15;
+	border-radius: 40px 0px ;
+	/*background-size:cover;*/
 }
 #cajautilidades{
 	margin-top: 1em;
 	width: 25%;
-	height: 420px;
+	height: 320px;
 	/*float: right;*/
 	overflow: hidden;
 	border: 1px  solid #765F15;
@@ -135,6 +136,9 @@ input[type=date] {
 	/*<FONT COLOR="#848484>Texto Negro </FONT>*/
 	/*p { color: #FF0000; }*/
 	color: #2E2E2E; 
+}
+.margin-top{
+	margin-top: 0 !important;
 }
 .tablac{
 	width:100%;
@@ -249,6 +253,13 @@ caption
 	
 	float: left;
 	width: 93%;
+	height: 500%; 
+	margin-left: -10px;
+}
+.imgcajas
+{
+	float: center;
+	width: 90%;
 	height: 500%; 
 	margin-left: -10px;
 }

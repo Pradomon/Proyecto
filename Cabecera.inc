@@ -7,10 +7,7 @@
 	<!--                                                                                 PROPIOS    -->
 	<link href="css/cocina.css" 		rel="stylesheet" type="text/css" media="screen" > 
 	<!--                                                                                 ADAPTACION -->
-	<link href="css/base.css" 			rel="stylesheet" type="text/css" >
-	<link href="css/great.css" 			rel="stylesheet" type="text/css" media="screen and (min-width: 981px)" >
-	<link href="css/medium.css" 		rel="stylesheet" type="text/css" media="screen and (min-width: 481px) and (max-width: 980px)" >
-	<link href="css/mini.css" 			rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" >
+	
 
 	<link rel="stylesheet" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
 	<script type="text/javascript" src="js/cocina.js"></script>
@@ -18,7 +15,7 @@
 
 </head>
 	<BODY id="foto-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
-		<div class="container"> 
+		<div class="container grande mediano mini"> 
 																							<!-- CABECERA  -->
 		<div id="cabecera" class="grande mediano mini">
 			 <!-- <img	src="Fotos/cuchara.jpg" alt="Logotipo" class="imglogo">  -->
@@ -38,7 +35,7 @@
 					
 						    	
 		    </div>    
-		    <div id = "caja2B" > 																		<!-- LOGIN  -->   
+		    <div id = "caja2B" class="grande mediano mini" > 																		<!-- LOGIN  -->   
 		    	<form action="http://192.168.1.190/Formularios/Ejercicio1/recibir.php" method ="get"> 
 					<input type="text" placeholder="Usuario" 	value="" />			<p></p>
 					<input type="text" placeholder="Contraseña"	value="" maxlength = "6" />		<p></p>
