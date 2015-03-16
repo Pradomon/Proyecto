@@ -20,39 +20,57 @@
    <div class="clear"></div>
 
   <div class="row">
-    <div class="col-sm-6 colchoco cajachoco">
+    <div class="col-sm-4  cajachoco">
      <h3><font color="#61380B">De la Agüela</font></h3>
      <ul>
-       	<li><a class="ex5" href="http://sevilla.abc.es/tusrecetas/recetas/andalucia/tiramisu-de-frutas.html" onclick="abrir(this.href);return false">Tiramisú de Frutas</a></li>
-       	<li><a class="ex5" href="http://www.yanuq.com/buscador.asp?idreceta=1404" onclick="abrir(this.href);return false">Founde de Frutas</a></li>
-       	<li><a class="ex5" href="http://allrecipes.com.mx/recetas/etiqueta-1139/recetas-de-postres-de-frutas.aspx" onclick="abrir(this.href);return false">Varios</a></li>
+       	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/2014/01/lentejas-caseras-con-chorizo.html" onclick="abrir(this.href);return false">Lentejas</a></li>
+       	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/" onclick="abrir(this.href);return false">Cazuela de Merluza</a></li>
+       	<li><a class="ex5" href="http://www.recetascomidas.com/recetas-de/la-cocina-de-mi-abuela" onclick="abrir(this.href);return false">Varios</a></li>
+        
      </ul>	
+    </div>
+    <div class="col-sm-2 cajachoco">
+    
+     <ul>
+        <img class="imgcajas" alt="Cocina de la abuela" src="fotos/cocina-abuela.jpg">
+     </ul> 
     </div>
    
-    <div class="col-sm-6 colchoco cajachoco">
+    <div class="col-sm-4  cajachoco">
       <h3><font color="#61380B">Regional</font></h3>
       <ul>
-       	<li><a class="ex5" href="http://www.midulcebizcocho.com/2013/10/bizcocho-de-queso-philadelphia-con.html" onclick="abrir(this.href);return false">De queso Philadelphia y chocolate</a></li>
-       	<li><a class="ex5" href="http://www.bizcochodeyogur.es/" onclick="abrir(this.href);return false">De Yogour</a></li>
-       	<li><a class="ex5" href="http://www.pequerecetas.com/receta/bizcocho-casero-15-recetas/" onclick="abrir(this.href);return false">Caseros</a></li>
+       	<li><a class="ex5" href="http://www.mis-recetas.org/recetas/show/39152-migas-manchegas-tradicionales" onclick="abrir(this.href);return false">Migas</a></li>
+       	<li><a class="ex5" href="http://recetasderechupete.hola.com/receta-de-fabada-o-fabes-asturianas/982//" onclick="abrir(this.href);return false">Fabada Asturiana</a></li>
+       	<li><a class="ex5" href="http://xn--recetacocidomadrileo-m7b.com/" onclick="abrir(this.href);return false">Codido Madrileño</a></li>
      </ul>	
     </div>
-     
+     <div class="col-sm-2 cajachoco">
+    
+     <ul>
+        <img class="imgcajas" alt="Regional" src="fotos/cocina-regional.jpg">
+     </ul> 
+    </div>
   </div>
 
   <div class="clear"></div>
 
 <div class="row">
-    <div class="col-sm-6 colchoco cajachoco">
+    <div class="col-sm-4  cajachoco">
      <h3><font color="#61380B">De cuchara</font></h3>
      <ul>
-       	<li><a class="ex5" href="http://www.recetatartadequeso.com/" onclick="abrir(this.href);return false">De queso</a></li>
-       	<li><a class="ex5" href="http://tartadesantiago.com.es/" onclick="abrir(this.href);return false">De Santiago</a></li>
-       	<li><a class="ex5" href="http://www.hogarutil.com/cocina/recetas/postres/listado-1521.html" onclick="abrir(this.href);return false">Varias</a></li>
+       	<li><a class="ex5" href="http://www.petitchef.es/recetas/plato/sopa-de-esparragos-y-ajo-fid-774970" onclick="abrir(this.href);return false">Sopa de Esparragos y ajo</a></li>
+       	<li><a class="ex5" href="http://recetasderechupete.hola.com/receta-tradicional-de-sopas-de-ajo-o-sopa-castellana/2431/" onclick="abrir(this.href);return false">Sopa Castellana</a></li>
+        <li><a class="ex5" href="http://www.recetasdemama.es/categoria/cremas-y-sopas/" onclick="abrir(this.href);return false">Cremas y Sopas</a></li>
      </ul>	
     </div>
+    <div class="col-sm-2 cajachoco">
+    
+     <ul>
+        <img class="imgcajas" alt="Cuchara" src="fotos/cocina-cuchara.jpg">
+     </ul> 
+    </div>
  
-    <div class="col-sm-6 colchoco cajachoco">
+    <div class="col-sm-6  cajachoco">
      
       <ul>
         <img class="imgmapa" alt="Infografia - Mapa gastronomico de platos tipicos" src="fotos/cuchara.jpg">
