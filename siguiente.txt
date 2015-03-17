@@ -1,0 +1,46 @@
+
+https://es.answers.yahoo.com/question/index?qid=20100204235739AALJhiN
+
+El HTML: 
+
+<div id="botones"> 
+<img class="anterior" src="pixeltransparente.gif" /> 
+<img class="inicio" src="pixeltransparente.gif" /> 
+<img class="siguiente" src="pixeltransparente.gif" /> 
+</div> 
+
+
+
+El CSS: 
+
+#botones{ 
+display: block; 
+margin: 0px auto; 
+padding: 0px; 
+} 
+
+.anterior{ 
+width: /*pon el ancho del botón 'anterior'*/ ; 
+height: /*pon el alto del botón*/ ; 
+background: url( /*pon la URI del boton 'anterior' */ ) no-repeat; 
+} 
+
+.inicio{ 
+width: /*pon el ancho del botón 'inicio'*/ ; 
+height: /*pon el alto del botón*/ ; 
+background: url( /*pon la URI del boton 'inicio' */ ) no-repeat; 
+} 
+
+.siguiente{ 
+width: /*pon el ancho del botón 'siguiente'*/ ; 
+height: /*pon el alto del botón*/ ; 
+background: url( /*pon la URI del boton 'siguiente' */ ) no-repeat; 
+}
+
+===================================================================================================
+
+onClick="history.back()"
+
+====================================================================================================
+
+http://homerocheff.blogspot.com.es/
