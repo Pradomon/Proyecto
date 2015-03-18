@@ -232,8 +232,29 @@ caption
 .imgtam
 		{
 			width: 300px;
+			margin: -50px 50px;
+			float: right;
+
+		}
+
+.imgtam2
+		{
+			width: 900px;
 			margin: auto;
 		}
+.imgtam3
+		{
+			
+			margin-left: 200px !important;
+		}
+.pop
+		{
+			padding: 0;
+			overflow: hidden;
+
+			
+		}
+
 .imgavatar
 {
 	float: right;

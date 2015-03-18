@@ -21,7 +21,7 @@
 
   <div class="row">
     <div class="col-sm-4  cajachoco">
-     <h3><font color="#61380B">De la Agüela</font></h3>
+     <?php require_once("Lentejas.inc");?>
      <ul>
        	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/2014/01/lentejas-caseras-con-chorizo.html" onclick="abrir(this.href);return false">Lentejas</a></li>
        	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/" onclick="abrir(this.href);return false">Cazuela de Merluza</a></li>
