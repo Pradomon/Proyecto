@@ -21,7 +21,7 @@
 
   <div class="row">
     <div class="col-sm-4  cajachoco">
-     <?php require_once("Lentejas.inc");?>
+     <?php require_once("Abuela.inc");?>
      <ul>
        	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/2014/01/lentejas-caseras-con-chorizo.html" onclick="abrir(this.href);return false">Lentejas</a></li>
        	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/" onclick="abrir(this.href);return false">Cazuela de Merluza</a></li>
@@ -41,7 +41,7 @@
       <ul>
        	<li><a class="ex5" href="http://www.mis-recetas.org/recetas/show/39152-migas-manchegas-tradicionales" onclick="abrir(this.href);return false">Migas</a></li>
        	<li><a class="ex5" href="http://recetasderechupete.hola.com/receta-de-fabada-o-fabes-asturianas/982//" onclick="abrir(this.href);return false">Fabada Asturiana</a></li>
-       	<li><a class="ex5" href="http://xn--recetacocidomadrileo-m7b.com/" onclick="abrir(this.href);return false">Codido Madrileño</a></li>
+       	<li><a class="ex5" href="http://xn--recetacocidomadrileo-m7b.com/" onclick="abrir(this.href);return false">Cocido Madrileño</a></li>
      </ul>	
     </div>
      <div class="col-sm-2 cajachoco">

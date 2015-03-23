@@ -76,12 +76,30 @@
                         </p>  
                         
                       </font></div>
-                      <div class="item">
-                        <h2>Cazuela de Merluza Tradicional</h2>
+                      <div class="item"><font face="Tw Cen MT" size="4">
+                        <h2>Pollo en salsa</h2>
+                        <img src="Fotos/pollo en salsa.jpg" alt="Merluza a la Cazuela" class="imgtam">
                         <ul><h3>Ingredientes:</h3>
+                          <li>1 pollo troceado.</li>
+                          <li>1 cabeza de ajos.</li>
+                          <li>1 cebolla.</li>
+                          <li>1 vasito de vino blanco.</li>
+                          <li>Una pizca de canela en rama( del tamaño de un garbanzo).</li>
+                          <li>Dos clavos de olor.</li>
+                          <li>10 g de pimienta.</li>
+                          <li>10 almendras picaditas.</li>
+                          <li>Sal y pimienta molida al gusto.</li>
+                          <li>1 hoja de laurel.</li>
+                          <li>Aceite de oliva.</li>
                         </ul>  
                         <h4>Preparación:</h4>
-                        <p class="pop">
+                        <p class="pop">Paso 1: Salpimentar el pollo, cortar la mitad de los ajos en rodajas e introducirlos dentro de los trozos ( si no os gusta micho el ajo, no lo hagais). Reservar.<br>
+
+Paso 2: En una cazuela poner aceite y freir la hoja de laurel con la cebolla cortada en trozos grandes. Apartar cuando estén fritas y reservar la cebolla.<br>
+
+Paso 3: En el mismo aceite, freir los trozos de pollo hasta que estén dorados, añadir el vino, un poco de agua, la canela, los clavos y la pimienta en grano. Dejar cocer a fuego lento hasta que el pollo esté tierno ( unos 30 minutos) y la salsa haya espesado.<br>
+
+Paso 4: Antes de servir, machacamos en un mortero el resto de los ajos fritos, los trozos de cebolla que habíamos reservado y las almendras y lo añadimos a la salsa y ya está listo para comer.
 
                         </p> 
                       </div>

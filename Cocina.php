@@ -20,28 +20,28 @@
 										</ol>
 										<div class="carousel-inner">
 											<div class="item active">
-												<img src="Fotos/plato0.jpg" alt="Arte Visual" class="imgtam">
+												<img src="Fotos/plato0.jpg" alt="Arte Visual" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/cocina1.jpg" alt="Arte Visual" class="imgtam">
+												<img src="Fotos/cocina1.jpg" alt="Arte Visual" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/plato1.jpg" alt="Arte Visual" class="imgtam">
+												<img src="Fotos/plato1.jpg" alt="Arte Visual" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/cocina2.jpg" alt="Arte Visual" class="imgtam">
+												<img src="Fotos/cocina2.jpg" alt="Arte Visual" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/plato2.jpg" alt="Arte Visual" class="imgtam">
+												<img src="Fotos/plato2.jpg" alt="Arte Visual" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/cocina3.jpg" alt="Arte Visual" class="imgtam">
+												<img src="Fotos/cocina3.jpg" alt="Arte Visual" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/plato3.jpg" alt="Arte Visual" class="imgtam">
+												<img src="Fotos/plato3.jpg" alt="Arte Visual" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/plato4.jpg" alt="Arte Visual" class="imgtam">
+												<img src="Fotos/plato4.jpg" alt="Arte Visual" class="imgtam1">
 											</div>
 										</div>
 										<a href="#miSlide" class="left carousel-control" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
