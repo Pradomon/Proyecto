@@ -1,18 +1,18 @@
 
-  <a href"#" class="ex5 puntero" data-toggle="modal" data-target="#miventana"> <h3><font color="#61380B">De la Agüela</font></h3></a>
+  <a href"#" class="ex5 puntero" data-toggle="modal" data-target="#miventana"> <h3><font color="#61380B">Regional</font></h3></a>
 
       <div class="modal fade" id="miventana" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><!--los tres contenedores tienen que estar siempre ya que será para el llamamiento-->
       <div class="modal-dialog imgtam3">
         <div class="modal-content imgtam2" >
-          <div class="modal-header"><h4>Tradicional</h4>  </div>
+          <div class="modal-header"><h4>Regional</h4>  </div>
           <a href="#" data-dismiss="modal" class="btn">Cerrar</a>
           <div class="modal-body">
 
                 <section id="miSlide" class="carousel slide">
                     
                     <div class="carousel-inner">
-                      <div class="item active">
-                        <h2> Lentejas caseras con chorizo</h2>
+                      <div class="item active"><font face="Tw Cen MT" size="4"></font>
+                        <h2>Lentejas caseras con chorizo</h2>
                         <img src="Fotos/lentejas-verdura-chorizo.jpg" alt="Lentejas" class="imgtam">
                         <ul><h3>Ingredientes:</h3>
                             <li>400 gr de lentejas Pardinas.</li>
@@ -49,7 +49,7 @@
 
                         </p>
                       </div>
-                      <div class="item">
+                      <div class="item"><font face="Tw Cen MT" size="4"></font>
                         <h2>Cazuela de Merluza Tradicional</h2>
                         <img src="Fotos/cazuela-merluza.jpg" alt="Merluza a la Cazuela" class="imgtam">
                         
@@ -76,7 +76,7 @@
                         </p>  
                         
                       </div>
-                      <div class="item">
+                      <div class="item"><font face="Tw Cen MT" size="4"></font>
                         <h2>Pollo en salsa</h2>
                         <img src="Fotos/pollo en salsa.jpg" alt="Merluza a la Cazuela" class="imgtam">
                         <ul><h3>Ingredientes:</h3>
@@ -110,7 +110,7 @@ Paso 4: Antes de servir, machacamos en un mortero el resto de los ajos fritos, l
 
           </section><br>    
         </div>        
-      <div class="clear"></div>
+      
     
    </div>
  </div>

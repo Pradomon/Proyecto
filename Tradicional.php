@@ -30,14 +30,14 @@
      </ul>	
     </div>
     <div class="col-sm-2 cajachoco">
-    
+     
      <ul>
         <img class="imgcajas" alt="Cocina de la abuela" src="fotos/cocina-abuela.jpg">
      </ul> 
     </div>
    
     <div class="col-sm-4  cajachoco">
-      <h3><font color="#61380B">Regional</font></h3>
+      <?php require_once("Regional.inc");?>
       <ul>
        	<li><a class="ex5" href="http://www.mis-recetas.org/recetas/show/39152-migas-manchegas-tradicionales" onclick="abrir(this.href);return false">Migas</a></li>
        	<li><a class="ex5" href="http://recetasderechupete.hola.com/receta-de-fabada-o-fabes-asturianas/982//" onclick="abrir(this.href);return false">Fabada Asturiana</a></li>
