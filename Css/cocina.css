@@ -231,7 +231,7 @@ caption
 }
 .imgtam
 		{
-			width: 300px;
+			width: 280px;
 			margin: -50px 50px;
 			float: right;
 
@@ -256,7 +256,7 @@ caption
 			padding: 0;
 			overflow: hidden;
 			
-			font : Tw Cen MT;
+			font-family: Century Gothic, sans-serif;;
 			font-size: 4;
 
 			

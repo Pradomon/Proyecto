@@ -1,16 +1,16 @@
 
-  <a href"#" class="ex5 puntero" data-toggle="modal" data-target="#miventana"> <h3><font color="#61380B">De la Agüela</font></h3></a>
+  <a href"#" class="ex5 puntero" data-toggle="modal" data-target="#miventanaabu"> <h3><font color="#61380B">De la Agüela</font></h3></a>
 
-      <div class="modal fade" id="miventana" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><!--los tres contenedores tienen que estar siempre ya que será para el llamamiento-->
+      <div class="modal fade" id="miventanaabu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><!--los tres contenedores tienen que estar siempre ya que será para el llamamiento-->
       <div class="modal-dialog imgtam3">
         <div class="modal-content imgtam2" >
           <div class="modal-header"><h4>Tradicional</h4>  </div>
           <a href="#" data-dismiss="modal" class="btn">Cerrar</a>
           <div class="modal-body">
 
-                <section id="miSlide" class="carousel slide">
+                <section id="miSlideabu" class="carousel slide">
                     
-                    <div class="carousel-inner">
+                    <div class="carousel-inner pop">
                       <div class="item active">
                         <h2> Lentejas caseras con chorizo</h2>
                         <img src="Fotos/lentejas-verdura-chorizo.jpg" alt="Lentejas" class="imgtam">
@@ -32,7 +32,7 @@
 
                         
                         <h4>Preparación:</h4>
-                        <p class="pop">
+                        <p >
                         
                           Dejamos nuestras lentejas en remojo durante la noche, normalmente 12 horas. (Si son lentejas pardinas no es necesario, pero remojandolas se cocinarán media hora más rápido).Al día siguiente las escurrimos y las reservamos.
                           <br>  Picamos la cebolla y el ajo en trozos muy pequeños. Los ponemos en el fondo de la olla y en un chorro de aceite de oliva los doramos.
@@ -66,7 +66,7 @@
                           <li>Aceite de oliva y sal.</li>
                         </ul>  
                         <h4>Preparacion:</h4>
-                        <p class="pop">Pelamos los dientes de ajo y la cebolla, los pícamos muy finos picamos también el pimiento verde.
+                        <p >Pelamos los dientes de ajo y la cebolla, los pícamos muy finos picamos también el pimiento verde.
                         En una cazuela ancha , en abundante aceite de oliva lo pochamos bien. Con cuidado de que no se nos queme.
                         <br> Cuando la cebolla y el ajo estén pochados añadimos la harina y cocinamos durante un minuto sin dejar de revolver.
                         <br> Añadimos el perejil picado y el pimentón, cocinamos medio minuto más.
@@ -93,7 +93,7 @@
                           <li>Aceite de oliva.</li>
                         </ul>  
                         <h4>Preparación:</h4>
-                        <p class="pop">Paso 1: Salpimentar el pollo, cortar la mitad de los ajos en rodajas e introducirlos dentro de los trozos ( si no os gusta micho el ajo, no lo hagais). Reservar.<br>
+                        <p >Paso 1: Salpimentar el pollo, cortar la mitad de los ajos en rodajas e introducirlos dentro de los trozos ( si no os gusta micho el ajo, no lo hagais). Reservar.<br>
 
 Paso 2: En una cazuela poner aceite y freir la hoja de laurel con la cebolla cortada en trozos grandes. Apartar cuando estén fritas y reservar la cebolla.<br>
 
@@ -105,8 +105,8 @@ Paso 4: Antes de servir, machacamos en un mortero el resto de los ajos fritos, l
                       </div>
                       
                     </div>
-                    <a href="#miSlide" class="left carousel-control" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                    <a href="#miSlide" class="right carousel-control" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a href="#miSlideabu" class="left carousel-control" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                    <a href="#miSlideabu" class="right carousel-control" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 
           </section><br>    
         </div>        

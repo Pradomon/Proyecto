@@ -24,7 +24,7 @@
      <?php require_once("Abuela.inc");?>
      <ul>
        	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/2014/01/lentejas-caseras-con-chorizo.html" onclick="abrir(this.href);return false">Lentejas</a></li>
-       	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/" onclick="abrir(this.href);return false">Cazuela de Merluza</a></li>
+       	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/2014/01/merluza-la-cazuela.html" onclick="abrir(this.href);return false">Cazuela de Merluza</a></li>
        	<li><a class="ex5" href="http://www.recetascomidas.com/recetas-de/la-cocina-de-mi-abuela" onclick="abrir(this.href);return false">Varios</a></li>
         
      </ul>	
