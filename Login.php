@@ -30,13 +30,31 @@
 			return false;
 		}
 
+		//.......................................VALIDAR PASSWORD ............. QUE SEAN IGUALES
+		var p1,p2='';	
+		p1 = document.getElementById('password1').value;	
+		p2 = document.getElementById('password2').value;	
 
+		if (p1!=p2)
+		{	
+			alert("Password distinta " );
+			return false;
+		}	
+
+		//.......................................VALIDAR CORREO ............. QUE SEAN IGUALES	
+		var c1,c2='';
+		c1 = document.getElementById('correo1').value;	
+		c2 = document.getElementById('correo2').value;	
+
+		if (c1!=c2)
+		{	
+			alert("Correos distintos " );
+			return false;
+		}	
+		//....................................VALIDAR FECHA
 		var fechai = '';
 		var aaaa, mm, dd = 0;
 		var d = 0;
-
-		var p1,p2='';
-		//....................................VALIDAR FECHA
 
 		fechai = document.getElementById('fecha').value;
 		
@@ -71,18 +89,111 @@
 		}
 	
 
-		//.......................................VALIDAR PASSWORD ............. QUE SEAN IGUALES	
-		p1 = document.getElementById('password1').value;	
-		p2 = document.getElementById('password2').value;	
-
-		if (p1!=p2)
-		{	
-			alert("Password distinta " );
+		//.......................................VALIDAR DNI ............. 
+		var dni = document.getElementById("dni");
+		if(dni.value == null || dni.value.length != 9) //no cumple
+		{
+			alert("DNI Incorrecto" );
 			return false;
-		}	
+		}
+
+		var letra;
+		letra = dni.value.charAt(8);
+		if(!isALetter(letra))
+		{
+			alert("Letra DNI Incorrecta" );
+			return false;
+		}
+
+		var numero;
+		numero = dni.value.substr(0,8);
+		if(isNaN(numero))
+		{
+			return false;
+		}
+
+		if(!letracorrecta(Number(numero), letra))
+		{
+			alert("Letra DNI Incorrecta" );
+			return false;
+		}
 
 
 		return true;
+
+		function letracorrecta(numero, letra)
+{
+	var resto;
+	var c;
+
+	resto = numero%23;
+
+	switch(resto)
+	{
+		case 0:
+			c = "T"; break;
+		case 1:
+			c = "R"; break;
+		case 2:
+			c = "W"; break;
+		case 3:
+			c = "A"; break;
+		case 4:
+			c = "G"; break;
+		case 5:
+			c = "M"; break;
+		case 6:
+			c = "Y"; break;
+		case 7:
+			c = "F"; break;
+		case 8:
+			c = "P"; break;
+		case 9:
+			c = "D"; break;
+		case 10:
+			c = "X"; break;
+		case 11:
+			c = "B"; break;
+		case 12:
+			c = "N"; break;
+		case 13:
+			c = "J"; break;
+		case 14:
+			c = "Z"; break;
+		case 15:
+			c = "S"; break;
+		case 16:
+			c = "Q"; break;
+		case 17:
+			c = "V"; break;
+		case 18:
+			c = "H"; break;
+		case 19:
+			c = "L"; break;
+		case 20:
+			c = "C"; break;
+		case 21:
+			c = "K"; break;
+		case 22:
+			c = "E"; break;
+		default:
+			c="Error";
+	}
+
+	if(c.toUpperCase() == letra.toUpperCase())
+		return true;
+	else
+		return false;
+}
+
+function isALetter(charVal)
+{
+    if( charVal.toUpperCase() != charVal.toLowerCase() )
+       return true;
+    else
+       return false;
+}
+
 
 	}
 	</script>
@@ -104,13 +215,25 @@
 				<form action="recibir.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> 
 														  	
 					<input type="text" 	   id="nomusu" placeholder="Nombre Usuario" name="nomusu"	value="" required>					<p><p>
+					
 					<input type="password" id="password1" placeholder="Contraseña  aaa123"	name="password1"	value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
+					
 					<input type="password" id="password2" placeholder="Confirmación Contraseña" name="password2" value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
-					<input type="text" 	   placeholder="Correo"	name="correo"	size="50" maxlength="30"	value="" required	
+					
+					<input type="text" 	   id="correo1" placeholder="Correo"	name="correo1"	size="50" maxlength="30"	value="" required	
 						pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" ><p></p>
+					
+					<input type="text" 	   id="correo2" placeholder="Confirmacion Correo"	name="correo2"	size="50" maxlength="30"	value="" required	
+						pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" ><p></p>	
+					
 					<input type="text" 	   placeholder="Nombre"		name="nombre"		value="" required>	<p></p>
+					
 					<input type="text" 	   placeholder="Apellidos"	name="apellidos"	value="" required>	<p></p>
+					
+					<input type="text" 	   id="alias" placeholder="Alias" name="alias"	value="" >	<p><p>
+					
 					Fecha de Nacimiento <input type="Date" 	id="fecha" name="fecha" 	value"" required> <p></p>
+					
 					<input type="text"     id="dni" placeholder="DNI" name="dni" size="9" maxlength="9"> <p></p>
 						<div id="datosf" >
 						Sexo <br/>

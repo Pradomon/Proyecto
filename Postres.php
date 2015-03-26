@@ -7,7 +7,12 @@
   <div class="row">
     <div class="col-sm-12 jumbotronmio"></div>
       <!--<blockquote><blockquote><h1><font color="#61380B">ARROCES VARIOS</font></h1></blockquote></blockquote>     sangrar-->
-      <h1><font color="#61380B">POSTRES VARIOS <img src="Fotos/galletas-sonrientes.jpg" alt="Galletas" height="50" width="50" img src="Fotos/galletas-ninja.jpg" alt="Galletas" height="50" width="50"> </font></h1>
+      <h1><font color="#61380B">POSTRES VARIOS
+       <img src="Fotos/galletas-sonrientes.jpg" alt="Galletas" height="50" width="50"> 
+       <img src="Fotos/galletas-muñeco.jpg" alt="Galletas" height="50" width="50"> 
+       <img src="Fotos/galletas-ninja.jpg" alt="Galletas" height="50" width="50">
+       
+     </font></h1>
    </div>
    <div class="clear"></div>
 

@@ -9,8 +9,11 @@
 	$nomusu = $_POST["nomusu"];
 	$password1 = $_POST["password1"];
 	$password2 = $_POST["password2"];
+	$correo1 = $_POST["correo1"];
+	$correo2 = $_POST["correo2"];
 	$nombre = $_POST["nombre"];
 	$apellidos = $_POST["apellidos"];
+	$alias = $_POST["alias"];
 	$dni = $_POST["dni"];
 	$fecha = $_POST["fecha"];
 
@@ -20,9 +23,15 @@
 	echo "<p></p>";
 	echo $password2;
 	echo "<p></p>";
+	echo $correo1;
+	echo "<p></p>";
+	echo $correo2;
+	echo "<p></p>";
 	echo $nombre;
 	echo "<p></p>";
 	echo $apellidos;
+	echo "<p></p>";
+	echo $alias;
 	echo "<p></p>";
 	echo $dni;
 	echo "<p></p>";
@@ -86,6 +95,14 @@
 	{	
 		$pantalla = "<h1>Error en el envio</h1>
 			<p>Password's distintas </p>";
+			echo $pantalla;
+			echo "<p></p>";
+	}	
+	//                                            	CORREOS IGUALES
+	if ($correo1!=$correo2)
+	{	
+		$pantalla = "<h1>Error en el envio</h1>
+			<p>Correos distinta </p>";
 			echo $pantalla;
 			echo "<p></p>";
 	}	
@@ -240,28 +257,7 @@ function FileUploadErrorMsg($error_code)
     } 
 }
 
-	function validar_campos($campo,$descampo,$tamaño)
-	{
-		
-		$len=(strlen($campo));
-		if ($len >= $tamaño)
-		{
-			$pantalla = "<h1>Datos recibidos</h1>
-			<P>$descampo: $campo </P> "; 
-	  		echo $pantalla;
-			echo "<p></p>";
-			return true;
-		}
-		else
-		{
-			$pantalla = "<h1>Error en el envio</h1>
-			<p>$descampo  demasiado corto	</p>";
-			echo $pantalla;
-			echo "<p></p>";
-			return false;
-		}	
-	}
-
+	
 	function validar_dni($dni)
 	{
 
@@ -324,7 +320,7 @@ function FileUploadErrorMsg($error_code)
 			$c="Error";
 	}
 
-	if ($c != $letra)
+	if ($c != strtoupper($letra))
 	{
 		$pantalla = "<h1>Error en letra DNI</h1>
 			<p>La letra no es correcta</p>";
@@ -335,6 +331,29 @@ function FileUploadErrorMsg($error_code)
 	}
 	return true;
  }
+
+ function validar_campos($campo,$descampo,$tamaño)
+	{
+		
+		$len=(strlen($campo));
+		if ($len >= $tamaño)
+		{
+			$pantalla = "<h1>Datos recibidos</h1>
+			<P>$descampo: $campo </P> "; 
+	  		echo $pantalla;
+			echo "<p></p>";
+			return true;
+		}
+		else
+		{
+			$pantalla = "<h1>Error en el envio</h1>
+			<p>$descampo  demasiado corto	</p>";
+			echo $pantalla;
+			echo "<p></p>";
+			return false;
+		}	
+	}
+
 ?>
 
 </body>
