@@ -16,6 +16,8 @@
 	$alias = $_POST["alias"];
 	$dni = $_POST["dni"];
 	$fecha = $_POST["fecha"];
+	$sexo = $_POST["sexo"];
+	$notas = $_POST["notas"];
 
 	echo $nomusu;
 	echo "<p></p>";
@@ -36,6 +38,10 @@
 	echo $dni;
 	echo "<p></p>";
 	echo $fecha;
+	echo "<p></p>";
+	echo $sexo;
+	echo "<p></p>";
+	echo $notas;
 	echo "<p></p>";
 
 //                                            NOMUSU   NOMBRE USUARIO
@@ -170,7 +176,7 @@
 			echo "<p></p>";
 	}
 //                                                         FICHERO
-	$nombre  = $_FILES['foto']['name'];
+	$nombref  = $_FILES['foto']['name'];
 	$tamaño  = $_FILES['foto']['size'];
 	$error   = $_FILES['foto']['error'];
 	$tipo    = $_FILES['foto']['type'];
@@ -189,7 +195,7 @@
 	
 
 			$pantalla = "<h1>Datos recibidos</h1>
-			<P>Nombre: $nombre </p>
+			<P>Nombre: $nombref </p>
 			<p>Tamaño : $tamaño</p>
 			<p>Error  :  $error</p>
 			<p>Tipo   : $tipo</p>
@@ -205,7 +211,7 @@
 		else
 		{
 			$pantalla = "<h1>El tipo del archivo no es el correcto</h1>
-			<P>Nombre: $nombre </p>
+			<P>Nombre: $nombref </p>
 			<p>Tamaño : $tamaño</p>
 			<p>Error  :  $error</p>
 			<p>Tipo   : $tipo</p>
@@ -221,7 +227,7 @@
 	{
 		//echo var_dump($_FILES);
 		$pantalla = "<h1>Error en la recepcion del archivo</h1>
-			<P>Nombre : $nombre </p>
+			<P>Nombre : $nombref </p>
 			<p>Tamaño : $tamaño</p>
 			<p>Error  :  $error</p>
 			<p>Tipo   : $tipo</p>
@@ -233,6 +239,65 @@
 
 	        echo FileUploadErrorMsg($_FILES["foto"]["error"]);
 	}
+//                                                               COGEMOS FECHA SISTEMA PARA CAMPO DE ULTIMA VISITA
+$hoy = date("Y-m-d");
+
+echo "<p></p>";
+echo $hoy;
+
+if ($notas=='Recibir')
+{
+	$notas=1;
+}
+
+//                       INSERTAMOS EN LA BD
+
+$ok = insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias);
+	if($ok)
+		echo "<p>Datos insertado correctamente</p>";
+	else
+		echo "<p>Error en la inserción de datos</p>";
+
+
+	echo "Todo correcto, saltar a la página index con usuario logado";
+
+//                       INSERTAMOS EN LA BD
+
+function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias)
+{
+//guardar los datos en la BD
+	$link = @mysqli_connect(
+		'localhost', // El servidor
+		'usuweb', // El usuario
+		'webcocina', // La contraseña
+		'foro-cocina'); // La base de datos
+	
+	if(!$link) 
+	{
+		echo "<p>Error al conectar con la base de datos: " 
+			. mysqli_connect_error()
+			. "</p>";
+
+		return false;
+	}
+
+	$query = "INSERT INTO" 
+		. " usuarios (nomusu, email, nombre, apellidos, fnacimiento, fultvisita, dni, sexo, notificaciones, password, foto, alias)"
+		. " VALUES ('$nomusu', '$correo1', '$nombre','$apellidos', '$fecha', '$hoy', '$dni', '$sexo', '$notas', '$password1', '$foto', '$alias')";
+	
+	echo "<p>$query</p>";
+
+	$resultado = @mysqli_query($link, $query);
+	if(!$resultado) 
+	{
+		echo "<p>Error al ejecutar la sentencia <b>$query</b>: " 
+		. mysqli_error($link)
+		. "</p>";
+		return false;
+	}
+
+	return true;
+}
 
 function FileUploadErrorMsg($error_code)
 {

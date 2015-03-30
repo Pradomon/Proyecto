@@ -64,6 +64,7 @@
 		mm = mm - 1;
 		
 		var d = new Date(aaaa,mm,dd);
+		var f = new Date();
 
 		
 		if ( Object.prototype.toString.call(d) === "[object Date]" )
@@ -214,7 +215,7 @@ function isALetter(charVal)
 				<!--<form action="http://192.168.1.195/validar/recibir.php" method ="get" onsubmit="return validar()"> -->
 				<form action="recibir.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> 
 														  	
-					<input type="text" 	   id="nomusu" placeholder="Nombre Usuario" name="nomusu"	value="" required>					<p><p>
+					<input type="text" 	   id="nomusu" placeholder="Nombre Usuario" name="nomusu"	value="" maxlength = "10" required>					<p><p>
 					
 					<input type="password" id="password1" placeholder="Contraseña  aaa123"	name="password1"	value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
 					
@@ -240,7 +241,7 @@ function isALetter(charVal)
 							<input type="radio" name="sexo" value="mujer"  checked="checked" /> Mujer
 							<input type="radio" name="sexo" value="hombre" /> Hombre 
 						<p></p>
-						<input name="Recibir" type="checkbox" value="Recibir" checked="checked"/> Recibir nuevas publicaciones	
+						<input name="notas" type="checkbox" value="Recibir" checked="checked"/> Recibir nuevas publicaciones	
 						<p></p>
 						
 							Incluir mi foto <input  accept="image/jpeg, image/png" class="grande mediano mini botonG" type="file" name="foto" id="foto">
