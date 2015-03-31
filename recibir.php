@@ -17,7 +17,8 @@
 	$dni = $_POST["dni"];
 	$fecha = $_POST["fecha"];
 	$sexo = $_POST["sexo"];
-	$notas = $_POST["notas"];
+	if(isset($_POST['notas']))	$notas = $_POST["notas"];
+	if(isset($_POST['foto']))   $foto = $_POST["foto"];
 
 	echo $nomusu;
 	echo "<p></p>";
@@ -41,7 +42,7 @@
 	echo "<p></p>";
 	echo $sexo;
 	echo "<p></p>";
-	echo $notas;
+	if(isset($_POST['notas'])) echo $notas;
 	echo "<p></p>";
 
 //                                            NOMUSU   NOMBRE USUARIO
@@ -176,7 +177,7 @@
 			echo "<p></p>";
 	}
 //                                                         FICHERO
-	$nombref  = $_FILES['foto']['name'];
+	$foto    = $_FILES['foto']['name'];
 	$tamaño  = $_FILES['foto']['size'];
 	$error   = $_FILES['foto']['error'];
 	$tipo    = $_FILES['foto']['type'];
@@ -195,7 +196,7 @@
 	
 
 			$pantalla = "<h1>Datos recibidos</h1>
-			<P>Nombre: $nombref </p>
+			<P>Nombre: $foto </p>
 			<p>Tamaño : $tamaño</p>
 			<p>Error  :  $error</p>
 			<p>Tipo   : $tipo</p>
@@ -211,7 +212,7 @@
 		else
 		{
 			$pantalla = "<h1>El tipo del archivo no es el correcto</h1>
-			<P>Nombre: $nombref </p>
+			<P>Nombre: $foto </p>
 			<p>Tamaño : $tamaño</p>
 			<p>Error  :  $error</p>
 			<p>Tipo   : $tipo</p>
@@ -227,7 +228,7 @@
 	{
 		//echo var_dump($_FILES);
 		$pantalla = "<h1>Error en la recepcion del archivo</h1>
-			<P>Nombre : $nombref </p>
+			<P>Nombre : $foto </p>
 			<p>Tamaño : $tamaño</p>
 			<p>Error  :  $error</p>
 			<p>Tipo   : $tipo</p>
@@ -245,10 +246,13 @@ $hoy = date("Y-m-d");
 echo "<p></p>";
 echo $hoy;
 
+
 if ($notas=='Recibir')
 {
 	$notas=1;
 }
+else $notas=0;
+
 
 //                       INSERTAMOS EN LA BD
 

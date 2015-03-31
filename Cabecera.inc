@@ -38,9 +38,10 @@
 			    <div id = "caja2B" class="col-sm-6 grande mediano mini" > 																		<!-- LOGIN  -->   
 			    	<form action="http://192.168.1.190/Formularios/Ejercicio1/recibir.php" method ="get"> 
 						<input type="text" placeholder="Usuario" 	value="" />			<p></p>
-						<input type="text" placeholder="Contraseña"	value="" maxlength = "6" />		<p></p>
+						<input type="password" id="password1" placeholder="Contraseña  aaa123"	name="password1"	value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
+						
 						<input class="grande mediano mini botonL" type="submit" name="Aceptar" value="&nbsp;&nbsp;&nbsp;Aceptar&nbsp;&nbsp;&nbsp;" />
-						<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Nuevo Usuario&nbsp;&nbsp;&nbsp;" onClick="location.href='login.php'"  />
+						<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Nuevo Usuario&nbsp;&nbsp;&nbsp;" onClick="location.href='Alta.php'"  />
 						<p></p>
 					<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;¿Has olvidado usuario/contraseña?&nbsp;&nbsp;&nbsp;" onClick="location.href='login.php'"  />
 					<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Cerrar Sesion&nbsp;&nbsp;&nbsp;" onClick="location.href='login.php'"  />
