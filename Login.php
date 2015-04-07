@@ -55,8 +55,14 @@
 	
 //$query="SELECT nomusu, email, fnacimiento FROM usuarios WHERE nomusu = '$nomusu'";	
 //$query="SELECT * FROM usuarios WHERE codusu > 1";	
-$query = "SELECT * FROM usuarios";	
-$resultado = mysql_query($link,$query);
+$query = "SELECT * FROM usuarios"
+		. " where password = '$password1'"
+		. " and nomusu = '$nomusu'";
+
+echo "<p> Query : $query </p>";
+
+
+$resultado = @mysqli_query($link, $query);
 
 if (!$resultado) 
 {
@@ -66,16 +72,22 @@ if (!$resultado)
     exit;
 }
 
-$posts = array();
-while ($row = mysql_fetch_assoc($resultado)) {
-    $posts[] = $row;
+
+
+
+if($fila = mysqli_fetch_assoc($resultado))
+{
+	$id=$fila['codusu'];
+	$email=$fila['email'];
+	$fnacimiento=$fila['fnacimiento'];
 }
+	;
 
-$fila = mysql_fetch_row($resultado);
-
-echo $fila[0]; // nomusu
-echo $fila[1]; // email
-echo $fila[2]; // fecha nacimiento
+echo $id; 					// nomusu
+ echo "<p></p>";
+echo $email;			 	// email
+ echo "<p></p>";
+echo $fnacimiento;		// fecha nacimiento
 
 ?>
 
