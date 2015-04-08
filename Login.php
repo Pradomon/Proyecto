@@ -78,8 +78,9 @@ if (!$resultado)
 if($fila = mysqli_fetch_assoc($resultado))
 {
 	$id=$fila['codusu'];
+	$nomusu=$fila['nomusu'];
 	$email=$fila['email'];
-	$fnacimiento=$fila['fnacimiento'];
+	$fultvisita=$fila['fultvisita'];
 }
 	;
 
@@ -87,7 +88,7 @@ echo $id; 					// nomusu
  echo "<p></p>";
 echo $email;			 	// email
  echo "<p></p>";
-echo $fnacimiento;		// fecha nacimiento
+echo $fultvisita;		// fecha ultima visita
 
 ?>
 

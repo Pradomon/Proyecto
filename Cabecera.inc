@@ -25,6 +25,8 @@
 						
 					
 					<?php
+					//$pag=basename($_SERVER['PHP_SELF']);
+					//echo "<p> Server : $pag </p>";
 					if (basename($_SERVER['PHP_SELF']) != "Cocina.php")
 					{
 					?>	
@@ -37,17 +39,21 @@
 			    </div>    
 			    <div id = "caja2B" class="col-sm-6 grande mediano mini" > 																		<!-- LOGIN  -->   
 			    	<!--<form action="http://192.168.1.190/Formularios/Ejercicio1/recibir.php" method ="get"> -->
-			    		<form action="login.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> 
+			    	<form action="login.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> 
 			    		<!--	<form action="recibir.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> -->
 						<input type="text" name="nomusu" placeholder="Usuario" 	value="" />			<p></p>
 						<input type="password" id="password1" placeholder="Contraseña  aaa123"	name="password1"	value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
 						
 						<input class="grande mediano mini botonL" type="submit" name="Aceptar" value="&nbsp;&nbsp;&nbsp;Aceptar&nbsp;&nbsp;&nbsp;" onClick="location.href='login.php'"/>
+
 						<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Nuevo Usuario&nbsp;&nbsp;&nbsp;" 
 						onClick="location.href='Alta.php'"  />
+						
 						<p></p>
-					<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;¿Has olvidado usuario/contraseña?&nbsp;&nbsp;&nbsp;" onClick="location.href='login.php'"  />
-					<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Cerrar Sesion&nbsp;&nbsp;&nbsp;" onClick="location.href='Alta.php'"  />
+						<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;¿Has olvidado usuario/contraseña?&nbsp;&nbsp;&nbsp;" onClick="<?php require_once("olvido.inc");?>"/> 
+
+						<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Cerrar Sesion&nbsp;&nbsp;&nbsp;" 
+						onClick="location.href='cerrar.php'"  />
 						
 					</form>
 			    </div>  
