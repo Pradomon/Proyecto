@@ -19,6 +19,8 @@
 
 <?php
 
+	session_start();
+
 	$nomusu = $_POST["nomusu"];
 	$password1 = $_POST["password1"];
 	
@@ -66,7 +68,7 @@ $resultado = @mysqli_query($link, $query);
 
 if (!$resultado) 
 {
-    echo 'No se pudo ejecutar la consulta: ' . mysql_error();
+    echo 'No se pudo ejecutar la consulta: ' . mysqli_error();
     echo "<p></p>";
     echo 'error : ' . $resultado;
     exit;
@@ -77,19 +79,23 @@ if (!$resultado)
 
 if($fila = mysqli_fetch_assoc($resultado))
 {
-	$id=$fila['codusu'];
+	$codusu=$fila['codusu'];
 	$nomusu=$fila['nomusu'];
 	$email=$fila['email'];
 	$fultvisita=$fila['fultvisita'];
 }
-	;
+	
 
-echo $id; 					// nomusu
+echo $codusu; 					// codusu
+ echo "<p></p>";
+ echo $nomusu; 					// nomusu
  echo "<p></p>";
 echo $email;			 	// email
  echo "<p></p>";
 echo $fultvisita;		// fecha ultima visita
-
+ echo "<p></p>";
+echo "Todo correcto, saltar a la página index con usuario logado";
+$_SESSION['iduser'] = $codusu;
 ?>
 
 </body>

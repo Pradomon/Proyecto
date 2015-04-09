@@ -6,6 +6,8 @@
 
 <?php
 
+	session_start();
+
 	$nomusu = $_POST["nomusu"];
 	$password1 = $_POST["password1"];
 	$password2 = $_POST["password2"];
@@ -51,7 +53,7 @@
 	{
 		$campo=$nomusu;
 		$descampo="Nombre-Usuario";
-		$tamaño=6;
+		$tamaño=3;
 		
 		validar_campos($campo,$descampo,$tamaño);
 	}
@@ -255,27 +257,12 @@ else $notas=0;
 
 
 //                       INSERTAMOS EN LA BD
-
-$ok = insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias);
-	if($ok)
-		echo "<p>Datos insertado correctamente</p>";
-	else
-		echo "<p>Error en la inserción de datos</p>";
-
-
-	echo "Todo correcto, saltar a la página index con usuario logado";
-
-//                       INSERTAMOS EN LA BD
-
-function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias)
-{
-//guardar los datos en la BD
-	$link = @mysqli_connect(
+$link = @mysqli_connect(
 		'localhost', // El servidor
 		'usuweb', // El usuario
 		'webcocina', // La contraseña
 		'foro-cocina'); // La base de datos
-	
+	echo "<p> Link--Conexion :  </p>";
 	if(!$link) 
 	{
 		echo "<p>Error al conectar con la base de datos: " 
@@ -285,6 +272,65 @@ function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $s
 		return false;
 	}
 
+$ok = insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link);
+	if($ok)
+		echo "<p>Datos insertado correctamente</p>";
+	else
+	{
+		echo "<p>Error en la inserción de datos</p>";
+		return false;
+	}
+//                       LEEMOS PARA COGER EL IDUSER DE LA BD		
+
+$query = "SELECT * FROM usuarios"
+		. " where password = '$password1'"
+		. " and nomusu = '$nomusu'";
+
+echo "<p> Query : $query </p>";
+
+echo "<p> Link--Select-Antes :  </p>";
+$resultado = @mysqli_query($link, $query);
+echo "<p> Link--Select-Despues :  </p>";
+
+if (!$resultado) 
+{
+    echo 'No se pudo ejecutar la consulta: ' . mysqli_error($link);
+    echo "<p></p>";
+    echo 'error : ' . $resultado;
+    exit;
+}
+
+
+
+
+if($fila = mysqli_fetch_assoc($resultado))
+{
+	$codusu=$fila['codusu'];
+	$nomusu=$fila['nomusu'];
+	$email=$fila['email'];
+	$fultvisita=$fila['fultvisita'];
+}
+	
+
+echo $codusu; 					// codusu
+ echo "<p></p>";
+ echo $nomusu; 					// nomusu
+ echo "<p></p>";
+echo $email;			 	// email
+ echo "<p></p>";
+echo $fultvisita;		// fecha ultima visita
+ echo "<p></p>";		
+
+	$_SESSION['iduser'] = $codusu;
+	echo "Todo correcto, saltar a la página index con usuario logado";
+
+//                       INSERTAMOS EN LA BD
+
+function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link)
+{
+//guardar los datos en la BD
+	
+
 	$query = "INSERT INTO" 
 		. " usuarios (nomusu, email, nombre, apellidos, fnacimiento, fultvisita, dni, sexo, notificaciones, password, foto, alias)"
 		. " VALUES ('$nomusu', '$correo1', '$nombre','$apellidos', '$fecha', '$hoy', '$dni', '$sexo', '$notas', '$password1', '$foto', '$alias')";
@@ -292,11 +338,13 @@ function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $s
 	echo "<p>$query</p>";
 
 	$resultado = @mysqli_query($link, $query);
+	echo "<p> Link--Insert :  </p>";
 	if(!$resultado) 
 	{
 		echo "<p>Error al ejecutar la sentencia <b>$query</b>: " 
 		. mysqli_error($link)
 		. "</p>";
+		echo mysqli_errno($link) . ": " . mysqli_error($link) . "\n";
 		return false;
 	}
 
@@ -422,6 +470,7 @@ function FileUploadErrorMsg($error_code)
 			return false;
 		}	
 	}
+
 
 ?>
 
