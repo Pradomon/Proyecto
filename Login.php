@@ -44,7 +44,6 @@
 			. mysqli_connect_error()
 			. "</p>";
 
-		return false;
 	}
 
 	
@@ -85,6 +84,9 @@ if($fila = mysqli_fetch_assoc($resultado))
 	$fultvisita=$fila['fultvisita'];
 }
 	
+	$pag=basename($_SERVER['PHP_SELF']);
+  echo "<p> Server : $pag </p>";
+
 
 echo $codusu; 					// codusu
  echo "<p></p>";

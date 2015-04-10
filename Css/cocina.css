@@ -245,12 +245,18 @@ caption
 		{
 			width: 900px;
 			margin: auto;
+			
 		}
 .imgtam3
 		{
 			
 			margin-left: 200px !important;
+			
 		}
+.colorpop
+{
+	background-color: #61380B !important;
+}		
 .pop
 		{
 			padding: 0;

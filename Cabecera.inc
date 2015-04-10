@@ -37,13 +37,13 @@
 						
 							    	
 			    </div>    
-			    <div id = "caja2B" class="col-sm-6 grande mediano mini" > 																		<!-- LOGIN  -->   
+			    <div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGIN  -->   
 			    	<!--<form action="http://192.168.1.190/Formularios/Ejercicio1/recibir.php" method ="get"> -->
 			    	<!--<form action="login.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> -->
-			    	<form action="login.php" method ="post" enctype="multipart/form-data" onsubmit=""> 	
+			    	<form action="login.php" method ="post" enctype="multipart/form-data" > 	
 			    		<!--	<form action="recibir.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> -->
 						<input type="text"     id="nomusu"    name="nomusu"    placeholder="Usuario" 	        value="" required/>			<p></p>
-						<input type="password" id="password1" name="password1" placeholder="Contraseña  aaa123"	value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
+						<input type="password" id="password1" name="password1" placeholder="Contraseña  aaa123"	value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required/>	<p></p>
 						
 						<input class="grande mediano mini botonL" type="submit" name="Aceptar" value="&nbsp;&nbsp;&nbsp;Aceptar&nbsp;&nbsp;&nbsp;" />
 						<!--onClick="location.href='login.php'"/>-->
@@ -52,12 +52,14 @@
 						onClick="location.href='Alta.php'"  />
 						
 						<p></p>
-						<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;¿Has olvidado usuario/contraseña?&nbsp;&nbsp;&nbsp;" onClick="<?php require_once 'olvido.inc';?>"/>
-
-						<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Cerrar Sesion&nbsp;&nbsp;&nbsp;" 
-						onClick="location.href='cerrar.php'"  />
+						
+						<!--<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Cerrar Sesion&nbsp;&nbsp;&nbsp;" -->
+						<!--onClick="location.href='cerrar.php'"  />-->
 						
 					</form>
+					<?php require_once("olvido.inc");?>
+					<!--<a href="olvido.php" class="grande mediano mini botonL" >&nbsp;&nbsp;&nbsp;¿Has olvidado usuario/contraseña?&nbsp;&nbsp;&nbsp;</a>-->
+					
 			    </div>  
 			    <div class="clear"></div>  
 			</div>	
