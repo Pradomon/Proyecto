@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es"> 
 <head><!-- Index -->
@@ -14,7 +16,7 @@
   	
 
 </head>
-	<BODY id="foto-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
+	<BODY id="foto1-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
 		<div class="container grande mediano mini"> 
 		<div class="row" >			
 			<div id="cabecera" class="col-sm-6 grande mediano mini">
@@ -36,7 +38,13 @@
 					?>
 						
 							    	
-			    </div>    
+			    </div> 
+			    <?php
+			    
+			    
+			    if ($_SESSION['iduser'] == -1 )
+			    {	
+			    ?>	
 			    <div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGIN  -->   
 			    	<!--<form action="http://192.168.1.190/Formularios/Ejercicio1/recibir.php" method ="get"> -->
 			    	<!--<form action="login.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> -->
@@ -59,8 +67,22 @@
 					</form>
 					<?php require_once("olvido.inc");?>
 					<!--<a href="olvido.php" class="grande mediano mini botonL" >&nbsp;&nbsp;&nbsp;¿Has olvidado usuario/contraseña?&nbsp;&nbsp;&nbsp;</a>-->
+				</div>  
+				<?php
+				}
+				else
+				{
 					
-			    </div>  
+					$nomusu=$_SESSION['nombreusu'];
+					?>
+					<div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGADO  -->   
+			    	Hola <?php echo $nomusu; ?>
+					</div>  
+					
+				<?php	
+				}
+				?>
+			    
 			    <div class="clear"></div>  
 			</div>	
 		</div>	

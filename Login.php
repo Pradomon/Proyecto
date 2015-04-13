@@ -18,8 +18,16 @@
 <body>
 
 <?php
+require_once("phpDB/conexion.php");
+require_once("phpDB/selectusuarios.php");
+?>
+
+
+<?php
 
 	session_start();
+	
+
 
 	$nomusu = $_POST["nomusu"];
 	$password1 = $_POST["password1"];
@@ -31,31 +39,9 @@
 	echo "<p></p>";
 	
 	
-	//    CONEXION A LA BD
-	$link = mysqli_connect(
-		'localhost', // El servidor
-		'usuweb', // El usuario
-		'webcocina', // La contraseña
-		'foro-cocina'); // La base de datos
-	
-	if(!$link) 
-	{
-		echo "<p>Error al conectar con la base de datos: " 
-			. mysqli_connect_error()
-			. "</p>";
+$link=abrirconexion();
 
-	}
 
-	
-//                       LEEMOS DE LA BD
-
-//$query = "SELECT INTO" 
-//		. " usuarios (nomusu, email, fnacimiento)"
-//		. " WHERE (nomusu='Pradomon')";
-
-	
-//$query="SELECT nomusu, email, fnacimiento FROM usuarios WHERE nomusu = '$nomusu'";	
-//$query="SELECT * FROM usuarios WHERE codusu > 1";	
 $query = "SELECT * FROM usuarios"
 		. " where password = '$password1'"
 		. " and nomusu = '$nomusu'";
@@ -63,41 +49,8 @@ $query = "SELECT * FROM usuarios"
 echo "<p> Query : $query </p>";
 
 
-$resultado = @mysqli_query($link, $query);
+$resultado = leerusuarios2($link, $query);
 
-if (!$resultado) 
-{
-    echo 'No se pudo ejecutar la consulta: ' . mysqli_error();
-    echo "<p></p>";
-    echo 'error : ' . $resultado;
-    exit;
-}
-
-
-
-
-if($fila = mysqli_fetch_assoc($resultado))
-{
-	$codusu=$fila['codusu'];
-	$nomusu=$fila['nomusu'];
-	$email=$fila['email'];
-	$fultvisita=$fila['fultvisita'];
-}
-	
-	$pag=basename($_SERVER['PHP_SELF']);
-  echo "<p> Server : $pag </p>";
-
-
-echo $codusu; 					// codusu
- echo "<p></p>";
- echo $nomusu; 					// nomusu
- echo "<p></p>";
-echo $email;			 	// email
- echo "<p></p>";
-echo $fultvisita;		// fecha ultima visita
- echo "<p></p>";
-echo "Todo correcto, saltar a la página index con usuario logado";
-$_SESSION['iduser'] = $codusu;
 ?>
 
 </body>

@@ -10,7 +10,8 @@
 <?php
 
 session_start();
-
+require_once("phpDB/conexion.php");
+require_once("phpDB/selectusuarios.php");
 
 
 $email = "No llega nada";
@@ -21,31 +22,8 @@ if (isset($_POST['correoo']))
  echo "<p></p>";
  
   
-  //    CONEXION A LA BD
-  $link = mysqli_connect(
-    'localhost', // El servidor
-    'usuweb', // El usuario
-    'webcocina', // La contraseña
-    'foro-cocina'); // La base de datos
-  
-  if(!$link) 
-  {
-    echo "<p>Error al conectar con la base de datos: " 
-      . mysqli_connect_error()
-      . "</p>";
-
-    
-  }
-
-  
-//                       LEEMOS DE LA BD
-
-//$query = "SELECT INTO" 
-//    . " usuarios (nomusu, email, fnacimiento)"
-//    . " WHERE (nomusu='Pradomon')";
-
-  
-//$query="SELECT nomusu, email, fnacimiento FROM usuarios WHERE nomusu = '$nomusu'";  
+$link=abrirconexion();
+ 
 
 $query = "SELECT * FROM usuarios"
     . " where email = '$email'";
@@ -53,49 +31,9 @@ $query = "SELECT * FROM usuarios"
 echo "<p> Query : $query </p>";
 
 
-$resultado = @mysqli_query($link, $query);
+$resultado = leerusuarios1($link, $query);
 
-$reg=mysqli_num_rows($resultado);
-echo "<p> Reg : $reg </p>";
 
-if (mysqli_num_rows($resultado)>0)
- {
-  echo "Exite al menos un registro";
-  if($fila = mysqli_fetch_assoc($resultado))
-  {
-    $codusu=$fila['codusu'];
-    $nomusu=$fila['nomusu'];
-    $password=$fila['password'];
-    $email=$fila['email'];
-  }
- 
-
-    $pag=basename($_SERVER['PHP_SELF']);
-    echo "<p> Server : $pag </p>";
-
-    echo $codusu;
-    echo "<p></p>";
-    echo $nomusu;
-    echo "<p></p>";
-    echo $password;
-    echo "<p></p>";
-    echo $email;
-    echo "<p></p>";
-    echo "Todo correcto, saltar a la página index con usuario logado";
-    $_SESSION['iduser'] = $codusu;
-  } 
-else
- {
-  echo "No existe usuario con este email : $email";
-   echo "<p></p>";
-  
-  ob_start(); 
-  header("refresh: 7; url = Cocina.php"); 
-   
-  echo 'Espere un momento y será redireccionado...'; 
-
-ob_end_flush();  
- }
 
 
 ?>

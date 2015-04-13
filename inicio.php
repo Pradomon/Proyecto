@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION['iduser'] = -1;
 
 	require_once("Cabecera.inc");
 	require_once("Listas.inc");

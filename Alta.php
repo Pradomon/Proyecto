@@ -238,8 +238,8 @@ function isALetter(charVal)
 					<input type="text"     id="dni" placeholder="DNI" name="dni" size="9" maxlength="9"> <p></p>
 						<div id="datosf" >
 						Sexo <br/>
-							<input type="radio" name="sexo" value="mujer"  checked="checked" /> Mujer
-							<input type="radio" name="sexo" value="hombre" /> Hombre 
+							<input type="radio" name="sexo" value="Mujer"  checked="checked" /> Mujer
+							<input type="radio" name="sexo" value="Hombre" /> Hombre 
 						<p></p>
 						<input name="notas" type="checkbox" value="Recibir" checked="checked"/> Recibir nuevas publicaciones	
 						<p></p>
