@@ -29,10 +29,10 @@
 					<?php
 					//$pag=basename($_SERVER['PHP_SELF']);
 					//echo "<p> Server : $pag </p>";
-					if (basename($_SERVER['PHP_SELF']) != "Cocina.php")
+					if ((basename($_SERVER['PHP_SELF']) != "Cocina.php") && (basename($_SERVER['PHP_SELF']) != "inicio.php"))
 					{
 					?>	
-						<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
+					<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
 					<?php
 					}
 					?>
@@ -40,9 +40,42 @@
 							    	
 			    </div> 
 			    <?php
+			    $pag=basename($_SERVER['PHP_SELF']);
+				echo "<p> Server : $pag </p>";
+			   
+			   	if(isset($_GET["usu"]))
+			   	{
+			   		$usu = $_GET["usu"];
+			   		echo $usu;
+			   		echo "<p>get usu con datos</p>";
+			   	}
+				else
+				{
+					echo "<p>GET usu VACIA</p>";
+					echo "<p></p>";
+				}	
+			    
+			    //$usu=$_SESSION['iduser'];
+			   // echo $usu;
+			    echo "<p></p>";
+			    if(isset($_GET["nomusu"]))
+			    {
+			    	$nomusu = $_GET["nomusu"];
+			    	echo $nomusu;
+			    	echo "<p>get nomusu con datos</p>";
+			    }	
+			    	
+			    else
+			    	{
+			    		echo "<p>GET nomusu VACIA</p>";
+						echo "<p></p>";
+			    	}
 			    
 			    
-			    if ($_SESSION['iduser'] == -1 )
+			    
+			    //if($_SESSION['iduser'] = -1)
+
+			    if($usu == -1)	
 			    {	
 			    ?>	
 			    <div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGIN  -->   
@@ -72,9 +105,7 @@
 				}
 				else
 				{
-					
-					$nomusu=$_SESSION['nombreusu'];
-					?>
+				?>
 					<div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGADO  -->   
 			    	Hola <?php echo $nomusu; ?>
 					</div>  

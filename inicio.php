@@ -1,11 +1,12 @@
 <?php
 session_start();
 $_SESSION['iduser'] = -1;
+$_SESSION['nombreusu'] = "";
 
 	require_once("Cabecera.inc");
 	require_once("Listas.inc");
 
-
+session_destroy();
 
 ?>
 																							<!-- CUERPO  -->

@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html lang="es"> 
-<head><!-- Index -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-	<title> LOGIN </title>
-	<!--                                                                                 PROPIOS    -->
-	<link href="css/cocina.css" 		rel="stylesheet" type="text/css" media="screen" > 
-	<!--                                                                                 ADAPTACION -->
-	
 
-	<link rel="stylesheet" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
-	<script type="text/javascript" src="js/cocina.js"></script>
-  	
-
-</head>	
-
-<body>
-
-<?php
-require_once("phpDB/conexion.php");
-require_once("phpDB/selectusuarios.php");
-?>
 
 
 <?php
 
-	session_start();
-	
+	//session_start();
+	require_once("phpDB/conexion.php");
+	require_once("phpDB/selectusuarios.php");
 
 
 	$nomusu = $_POST["nomusu"];
@@ -51,7 +30,30 @@ echo "<p> Query : $query </p>";
 
 $resultado = leerusuarios2($link, $query);
 
-?>
+	$usu=$_SESSION['iduser'];
+    $nomusu=$_SESSION['nombreusu'];
+    echo "<p></p>";
+    echo "variables de session variables de session variables de session despues de leerusuarios2.................";
+    echo "<p></p>";
+    echo "variables de session variables de session variables de session despues de leerusuarios2.................";
+    echo "<p></p>";
+    echo "variables de session variables de session variables de session despues de leerusuarios2.................";
+    echo "<p></p>";
+    echo "variables de session variables de session variables de session despues de leerusuarios2.................";
+    echo "<p></p>";
+    echo "variables de session variables de session variables de session despues de leerusuarios2.................";
+    echo "<p></p>";
+    $pag=basename($_SERVER['PHP_SELF']);
+	echo "<p> Server : $pag </p>";
+    echo "<p></p>";
+    echo $usu;
+    echo "<p></p>";
+    echo $nomusu;
+     echo "<p></p>";
+     echo "<p></p>";
+    echo "............................antes del header .................";
+    //header("refresh: 10; url = Cocina.php"); 
+     header("refresh: 10; url = Cocina.php/?usu=$usu&nomusu=$nomusu"); 
 
-</body>
-</html>
+
+?>
