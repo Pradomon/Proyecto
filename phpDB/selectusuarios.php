@@ -79,6 +79,8 @@ if (mysqli_num_rows($resultado)>0)
   
     $pag=basename($_SERVER['PHP_SELF']);
     echo "<p> Server : $pag </p>";
+    echo "<p></p>";
+    echo "<p>tamos en selectusuarios</p>";
 
     echo $codusu;
     echo "<p></p>";
@@ -89,41 +91,40 @@ if (mysqli_num_rows($resultado)>0)
     echo $email;
     echo "<p></p>";
     echo "Todo correcto, saltar a la página index con usuario logado";
+    session_start();
     $_SESSION['nombreusu'] = $nomusu;
     $_SESSION['iduser'] = $codusu;
 
-    $usu=$_SESSION['iduser'];
-    $nomusu=$_SESSION['nombreusu'];
+    //$usu=$_SESSION['iduser'];
+    //$nomusu=$_SESSION['nombreusu'];
     echo "<p></p>";
-    echo "variables de session variables de session variables de session";
+    //echo $usu;
     echo "<p></p>";
-    echo $usu;
+    //echo $nomusu;
     echo "<p></p>";
-    echo $nomusu;
-     echo "<p></p>";
+    echo "<p>salimos de selectusuarios</p>";
+   
     //header("refresh: 10; url = Cocina.php"); 
     //header("refresh: 10; url = Cocina.php/?usu=$usu"); 
-     header("refresh: 10; url = Cocina.php/?usu=$usu&nomusu=$nomusu"); 
+     //header("refresh: 10; url = Cocina.php/?usu=$usu&nomusu=$nomusu"); 
    }
    else 
    {
-    $_SESSION['iduser'] = -1;
-    $_SESSION['nombreusu'] = "";
+    
     echo "ERRORRRRRRRRRRRRRRRRRRRRRR ";
     echo "<p></p>";
-    header("refresh: 7; url = inicio.php"); 
+    header("refresh: 7; url = Cocina.php"); 
    } 
 
   } 
 else
  {
-  $_SESSION['iduser'] = -1;
-  $_SESSION['nombreusu'] = "";
+  
   echo "No existe usuario ";
   echo "<p></p>";
   
   //ob_start(); 
-  header("refresh: 7; url = inicio.php"); 
+  header("refresh: 7; url = Cocina.php"); 
    
   echo 'Espere un momento y será redireccionado...'; 
 

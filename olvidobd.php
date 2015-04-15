@@ -10,7 +10,7 @@
 <?php
 
 session_start();
-require_once("phpDB/conexion.php");
+require_once("phpDB/conex.php");
 require_once("phpDB/selectusuarios.php");
 
 

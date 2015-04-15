@@ -1,119 +1,170 @@
+<?php 
+	require_once("define.php");
+	require_once("phpDB/conexion.php");
+	require_once("phpDB/tablausuarios.php");
+
+	session_start();
+
+	/*si no existe la variable se crea y se fija a -1
+	valor que sirve de referencia para decir que 
+	ningún usuario ha intruducido su mail y password*/
+	if(!isset($_SESSION['iduser']))
+		$_SESSION['iduser'] = -1;	
+
+	/*se ha hecho clic en "Cerrar sesion"*/
+	if(isset($_REQUEST["cerrar"]))
+	{
+        //echo "<p>Nombre de la sesion" . session_name() . "</p>";
+
+		// Borra todas las variables de sesión
+		$_SESSION = array();
+		// Borra la cookie que almacena la sesión
+				
+		// Borra la cookie que almacena la sesión
+		if(isset($_COOKIE[session_name()])) {
+			setcookie(session_name(), '', time() - 42000, '/');
+		}
+		
+
+		// Finalmente, destruye la sesión
+		session_destroy();
+
+		/*vuelvo a abrir otra sesion para tener la referencia de 
+		la variable iduser y así saber si alguien esta logado o no
+		*/
+		session_start();
+		$_SESSION['iduser'] = -1;
+	}
 
 
-<!DOCTYPE html>
-<html lang="es"> 
-<head><!-- Index -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-	<title> SIN QUEMAR LA COCINA </title>
-	<!--                                                                                 PROPIOS    -->
-	<link href="css/cocina.css" 		rel="stylesheet" type="text/css" media="screen" > 
-	<!--                                                                                 ADAPTACION -->
-	
+	/*el usuario esta intentando logarse
+	hay que comprobar su mail y su password*/
+	if(isset($_REQUEST["mail"]) 	
+		&& isset($_REQUEST["password"]))
+	{
+		$email = $_REQUEST["mail"];
+		$pass = $_REQUEST["password"];
 
-	<link rel="stylesheet" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
-	<script type="text/javascript" src="js/cocina.js"></script>
-  	
+		//comprobar que el mail y el pass existen
+		$link = abrirconexion();
+		$idusuario = getidusuariobyemailpass($link, $email, $pass);
+		if($idusuario)
+		{
+			//obtener datos del usuario
+			$_SESSION['iduser'] = $idusuario; 
+		}
+		else
+		{
+			$_SESSION['iduser']	= -1;
+		}
+		cerrarconexion($link);
+		
+	}
 
+	if($_SESSION['iduser'] != -1)
+	{
+		
+		$link = abrirconexion();
+
+		$nombre = getnombreusuariobyid($link, $_SESSION['iduser']);
+		$foto = getfotousuariobyid($link, $_SESSION['iduser']);
+
+		/*$nombre = "Tomas";
+		$foto = "foto.jpg";*/
+
+		cerrarconexion($link);
+	}
+?>
+
+<html>
+<head>
+	<title></title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
+
+	<script src="./bootstrap/js/jquery.js"></script>
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+				 
+	<script type="text/javascript" src="js/validar.js"></script>
 </head>
-	<BODY id="foto1-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
-		<div class="container grande mediano mini"> 
-		<div class="row" >			
-			<div id="cabecera" class="col-sm-6 grande mediano mini">
-				 <!-- <img	src="Fotos/cuchara.jpg" alt="Logotipo" class="imglogo">  -->
-				<div id = "caja1B" class="col-sm-6 grande mediano mini" >    																	
-					<input type="search" value="Buscador">													<!-- BUSCADOR  -->
-					<img	src="Fotos/logo3.gif"  alt="Logo" class="imglogo">
-						
-					
-					<?php
-					//$pag=basename($_SERVER['PHP_SELF']);
-					//echo "<p> Server : $pag </p>";
-					if ((basename($_SERVER['PHP_SELF']) != "Cocina.php") && (basename($_SERVER['PHP_SELF']) != "inicio.php"))
+<body>
+<div class="container">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+	  	<div class="container-fluid">
+		    <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse"
+	              data-target=".navbar-ex1-collapse">
+			        <span class="sr-only">Desplegar navegación</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		      	</button>
+	      		<a class="navbar-brand" href="index.php">Social Network</a>
+		    </div>
+
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+
+
+			<?php
+			if($_SESSION['iduser'] == -1)
+			{
+			?>
+
+			<form class="navbar-form navbar-left" role="search">
+		        <div class="form-group" onclick="return validarlogin()">
+					<input class="form-control" type="text" placeholder="e-mail" id="mail" name="mail">
+					<input class="form-control" type="password" placeholder="******" id="password" name="password">
+		        </div>
+		        <button type="submit" class="btn btn-default">Login</button>
+	      	</form>
+
+			<div>
+				<ul class="nav navbar-nav">
+			        <li>
+						<a href="registro.php">Registro</a>
+			        </li>
+			        <li>
+						<a href="#">Olvidaste tu contraseña?</a>
+			        </li>
+				</ul>
+			</div>
+
+			<?php 
+			}
+			else
+			{
+			?>
+		    <div>
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Home</a></li>
+		        <li><a href="#">Page 1</a></li>
+		        <li><a href="#">Page 2</a></li>
+		        <li><a href="#">Page 3</a></li>
+		      </ul>
+		    </div>
+			<div  class="pull-right">
+			  <ul class="nav navbar-nav">
+					<?php  
+					if(file_exists(USER_FOLDER."/".$foto))
 					{
-					?>	
-					<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
-					<?php
+						//navbar-brand
+						echo "<li><img class='navbar-brand' src='"
+							.USER_FOLDER."/$foto'></li>";
 					}
 					?>
-						
-							    	
-			    </div> 
-			    <?php
-			    $pag=basename($_SERVER['PHP_SELF']);
-				echo "<p> Server : $pag </p>";
-			   
-			   	if(isset($_GET["usu"]))
-			   	{
-			   		$usu = $_GET["usu"];
-			   		echo $usu;
-			   		echo "<p>get usu con datos</p>";
-			   	}
-				else
-				{
-					echo "<p>GET usu VACIA</p>";
-					echo "<p></p>";
-				}	
-			    
-			    //$usu=$_SESSION['iduser'];
-			   // echo $usu;
-			    echo "<p></p>";
-			    if(isset($_GET["nomusu"]))
-			    {
-			    	$nomusu = $_GET["nomusu"];
-			    	echo $nomusu;
-			    	echo "<p>get nomusu con datos</p>";
-			    }	
-			    	
-			    else
-			    	{
-			    		echo "<p>GET nomusu VACIA</p>";
-						echo "<p></p>";
-			    	}
-			    
-			    
-			    
-			    //if($_SESSION['iduser'] = -1)
+					<li class=""><a href="registro.php" class="navbar-link">Hola <?php echo $nombre; ?></a></li>
+					<li class=""><a href="index.php?cerrar=yes" class="navbar-link">(Cerrar sesión)</a></li>
+			  </ul>
+			</div>		    
 
-			    if($usu == -1)	
-			    {	
-			    ?>	
-			    <div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGIN  -->   
-			    	<!--<form action="http://192.168.1.190/Formularios/Ejercicio1/recibir.php" method ="get"> -->
-			    	<!--<form action="login.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> -->
-			    	<form action="login.php" method ="post" enctype="multipart/form-data" > 	
-			    		<!--	<form action="recibir.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> -->
-						<input type="text"     id="nomusu"    name="nomusu"    placeholder="Usuario" 	        value="" required/>			<p></p>
-						<input type="password" id="password1" name="password1" placeholder="Contraseña  aaa123"	value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required/>	<p></p>
-						
-						<input class="grande mediano mini botonL" type="submit" name="Aceptar" value="&nbsp;&nbsp;&nbsp;Aceptar&nbsp;&nbsp;&nbsp;" />
-						<!--onClick="location.href='login.php'"/>-->
+			<?php
+			}
+			?>
+		</div>
+    	</div>
+	</div>
 
-						<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Nuevo Usuario&nbsp;&nbsp;&nbsp;" 
-						onClick="location.href='Alta.php'"  />
-						
-						<p></p>
-						
-						<!--<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Cerrar Sesion&nbsp;&nbsp;&nbsp;" -->
-						<!--onClick="location.href='cerrar.php'"  />-->
-						
-					</form>
-					<?php require_once("olvido.inc");?>
-					<!--<a href="olvido.php" class="grande mediano mini botonL" >&nbsp;&nbsp;&nbsp;¿Has olvidado usuario/contraseña?&nbsp;&nbsp;&nbsp;</a>-->
-				</div>  
-				<?php
-				}
-				else
-				{
-				?>
-					<div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGADO  -->   
-			    	Hola <?php echo $nomusu; ?>
-					</div>  
-					
-				<?php	
-				}
-				?>
-			    
-			    <div class="clear"></div>  
-			</div>	
-		</div>	
+	<div class="clearfix "></div>

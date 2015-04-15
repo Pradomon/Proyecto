@@ -1,6 +1,6 @@
 
 <?php
-	require_once("Cabecera.inc");
+	require_once("cab.inc");
 	require_once("Listas.inc");
 ?>
 

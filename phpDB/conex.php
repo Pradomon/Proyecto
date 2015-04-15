@@ -3,10 +3,10 @@
 function abrirconexion()
 {
 	$link = @mysqli_connect(
-		'localhost', // El servidor
-		'webdb', // El usuario
-		'yYTVR7n23FCxPu7F', // La contraseña
-		'socialnetwork'); // La base de datos	
+		'localhost',    // El servidor
+		'usuweb',       // El usuario
+		'webcocina',    // La contraseña
+		'foro-cocina'); // La base de datos	
 
 	if(!$link) 
 	{
