@@ -14,12 +14,11 @@ require_once("phpDB/conex.php");
 require_once("phpDB/selectusuarios.php");
 
 
-$email = "No llega nada";
+
 if (isset($_POST['correoo'])) 
    $email = $_POST['correoo'];
   
-   echo $email;  
- echo "<p></p>";
+  
  
   
 $link=abrirconexion();
@@ -28,7 +27,7 @@ $link=abrirconexion();
 $query = "SELECT * FROM usuarios"
     . " where email = '$email'";
     
-echo "<p> Query : $query </p>";
+
 
 
 $resultado = leerusuarios1($link, $query);

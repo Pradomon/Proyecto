@@ -40,34 +40,35 @@
 							    	
 			    </div> 
 			    <?php
-			    session_start();
+			    
+				session_start();
 			    $pag=basename($_SERVER['PHP_SELF']);
-				echo "<p> Server : $pag </p>";
+		        $pag1=basename($_SERVER['REQUEST_URI']);
+		        $pag2=basename($_SERVER['SERVER_NAME']);
+		        $pag3=basename($_SERVER['HTTP_REFERER']);
+                   
+                   
 
-				if(isset($_POST["usu"]))
+        echo "<p> PHP-CAB : $pag </p>";
+        echo "<p> REQ-CAB : $pag1 </p>";
+        echo "<p> SER-CAB : $pag2 </p>";
+        echo "<p> HTT-CAB : $pag3 </p>";
+
+
+				if(isset($_SESSION['iduser']))
+
 				{	
-			    	$_SESSION['iduser'] = $_POST["usu"];
-			    	$_SESSION['nombreusu'] = $_POST["nomusu"];
-			    	$_SESSION['foto'] = $_POST["foto"];
+					echo "con valor";
+					
+			    	//$_SESSION['iduser'] = $_POST["usu"];
+			    	//$_SESSION['nombreusu'] = $_POST["nomusu"];
+			    	//$_SESSION['foto'] = $_POST["foto"];
  				}
-
-			   	if(isset($_SESSION['iduser']))
-			   	{
-			   		
-			   		echo "<p> usu con datos</p>";
-			   	}
-				else
-				{
-					echo "<p> usu VACIA</p>";
-					echo "<p></p>";
-					
-					
-				}	
-			    
-			   
-			    echo "<p></p>";
-			  
-			    
+ 				else
+ 				{
+ 					echo "sin valor";
+ 				}
+			   				    
 			    if(!isset($_SESSION['iduser']))
    			    {	
 			    ?>	
@@ -102,19 +103,23 @@
 					<div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGADO  -->   
 			    	Hola <?php echo $_SESSION['nombreusu']; ?>
 			    	<?php  
-					if(file_exists(images_user."/".$_SESSION['foto']))
+					if(file_exists(USER_FOLDER."/".$_SESSION['foto']))
 						
 					{
-						 
-						 echo "<img  src='".images_user."/$foto'>";
+						 $foto=$_SESSION['foto'];
+						 //echo "<img  src='".images_user."/$foto'>";
+						 echo "<img class='navbar-brand1' src='".USER_FOLDER."/$foto'>";
+
 					}
+					 require_once("cerrar.inc");
 					?>
+					<!--<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Cerrar Sesion&nbsp;&nbsp;&nbsp;" -->
+					<!--	onClick="location.href='cerrar.inc'"  />-->
 			    	 
 					</div>  
 					
 				<?php	
-				//                QUITAR
-					//require_once("borrar.inc");
+				
 
 				}
 				?>

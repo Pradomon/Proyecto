@@ -7,34 +7,38 @@ function leerusuarios1($link,$query)
 
 $resultado = @mysqli_query($link, $query);
 
-$reg=mysqli_num_rows($resultado);
-echo "<p> Reg : $reg </p>";
+
 
 if (mysqli_num_rows($resultado)>0)
  {
-  echo "Exite al menos un registro";
+  
   if($fila = mysqli_fetch_assoc($resultado))
   {
     $codusu=$fila['codusu'];
     $nomusu=$fila['nomusu'];
     $password=$fila['password'];
     $email=$fila['email'];
+    $foto=$fila['foto'];
   
-    $pag=basename($_SERVER['PHP_SELF']);
-    echo "<p> Server : $pag </p>";
+          $pag=basename($_SERVER['PHP_SELF']);
+            $pag1=basename($_SERVER['REQUEST_URI']);
+            $pag2=basename($_SERVER['SERVER_NAME']);
+            $pag3=basename($_SERVER['HTTP_REFERER']);
+                   
+                   
 
-    echo $codusu;
+        echo "<p> PHP : $pag </p>";
+        echo "<p> REQ : $pag1 </p>";
+        echo "<p> SER : $pag2 </p>";
+        echo "<p> HTT : $pag3 </p>";
     echo "<p></p>";
-    echo $nomusu;
-    echo "<p></p>";
-    echo $password;
-    echo "<p></p>";
-    echo $email;
-    echo "<p></p>";
-    echo "Todo correcto, saltar a la página index con usuario logado";
+    echo "Todo correcto, Espere un momento y será redireccionado...OLVIDO";
     $_SESSION['nombreusu'] = $nomusu;
     $_SESSION['iduser'] = $codusu;
-    header("refresh: 7; url = Cocina.php"); 
+    $_SESSION['foto'] = $foto;
+    
+    //header("refresh: 3; url = Cocina.php/?usu=$codusu&nomusu=$nomusu&foto=$foto"); 
+    header("refresh: 3; url =$pag/?usu=$codusu&nomusu=$nomusu&foto=$foto"); 
   }
   else
   {
@@ -50,9 +54,9 @@ else
    echo "<p></p>";
   
   ob_start(); 
-  header("refresh: 7; url = Cocina.php"); 
+  header("refresh: 3; url = Cocina.php"); 
    
-  echo 'Espere un momento y será redireccionado...'; 
+  echo "Espere un momento y será redireccionado..."; 
 
   ob_end_flush();  
  }
@@ -62,58 +66,63 @@ else
 
 function leerusuarios2($link,$query)
 {
-
+session_start();
  $resultado = @mysqli_query($link, $query); 
-$reg=mysqli_num_rows($resultado);
-echo "<p> Reg : $reg </p>";
+
 
 if (mysqli_num_rows($resultado)>0)
  {
-  echo "Exite al menos un registro";
+  
   if($fila = mysqli_fetch_assoc($resultado))
   {
     $codusu=$fila['codusu'];
     $nomusu=$fila['nomusu'];
     $password=$fila['password'];
     $email=$fila['email'];
-  
-    $pag=basename($_SERVER['PHP_SELF']);
-    echo "<p> Server : $pag </p>";
-    echo "<p></p>";
-    echo "<p>tamos en selectusuarios</p>";
+    $foto=$fila['foto'];
+  $pag=basename($_SERVER['PHP_SELF']);
+            $pag1=basename($_SERVER['REQUEST_URI']);
+            $pag2=basename($_SERVER['SERVER_NAME']);
+            $pag3=basename($_SERVER['HTTP_REFERER']);
+                   
+                   
 
-    echo $codusu;
+        echo "<p> PHP-LOG : $pag </p>";
+        echo "<p> REQ-LOG : $pag1 </p>";
+        echo "<p> SER-LOG : $pag2 </p>";
+        echo "<p> HTT-LOG : $pag3 </p>";
+   
     echo "<p></p>";
-    echo $nomusu;
-    echo "<p></p>";
-    echo $password;
-    echo "<p></p>";
-    echo $email;
-    echo "<p></p>";
-    echo "Todo correcto, saltar a la página index con usuario logado";
-    session_start();
+    echo "Todo correcto, Espere un momento y será redireccionado... LOGIN";
+    //session_start();
+    $_POST["usu"]=$codusu;
     $_SESSION['nombreusu'] = $nomusu;
     $_SESSION['iduser'] = $codusu;
-
-    //$usu=$_SESSION['iduser'];
-    //$nomusu=$_SESSION['nombreusu'];
+    $_SESSION['foto'] = $foto;
+    $usu=$_SESSION['iduser'];
+    $nomusu=$_SESSION['nombreusu'];
+    $foto=$_SESSION['foto'];
     echo "<p></p>";
-    //echo $usu;
+    echo $usu;
     echo "<p></p>";
-    //echo $nomusu;
-    echo "<p></p>";
-    echo "<p>salimos de selectusuarios</p>";
+    echo $nomusu;
+    
    
     //header("refresh: 10; url = Cocina.php"); 
     //header("refresh: 10; url = Cocina.php/?usu=$usu"); 
-     //header("refresh: 10; url = Cocina.php/?usu=$usu&nomusu=$nomusu"); 
+   header("refresh: 3; url = Cocina.php/?usu=$codusu&nomusu=$nomusu&foto=$foto"); 
+   // $url="$pag3"."./?usu=$codusu&nomusu=$nomusu&foto=$foto";
+   // header("refresh: 10;Location: ".$url);
+     //header("refresh: 3; url='$pag3'./?usu=$codusu&nomusu=$nomusu&foto=$foto"); 
+     //header("Location:".$_SERVER['HTTP_REFERER']);  
+     //header("Location:".$_SERVER['HTTP_REFERER']); 
    }
    else 
    {
     
     echo "ERRORRRRRRRRRRRRRRRRRRRRRR ";
     echo "<p></p>";
-    header("refresh: 7; url = Cocina.php"); 
+    header("refresh: 3; url = Cocina.php"); 
    } 
 
   } 
@@ -124,7 +133,7 @@ else
   echo "<p></p>";
   
   //ob_start(); 
-  header("refresh: 7; url = Cocina.php"); 
+  header("refresh: 3; url = Cocina.php"); 
    
   echo 'Espere un momento y será redireccionado...'; 
 
