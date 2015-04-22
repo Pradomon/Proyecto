@@ -1,20 +1,20 @@
-<?php
-	echo basename($_SERVER['PHP_SELF']);
-	echo "tont@";
-?>
+
 		<div id="container" class="grande mediano mini">
 			<div id="listas">
 				<ul>
-					<?php
-						echo basename($_SERVER['PHP_SELF']);
-						?>
+
 					<li class="pestañas">
 						<?php
-						echo basename($_SERVER['PHP_SELF']);
+
 							if (basename($_SERVER['PHP_SELF']) != "Tradicional.php")
 							{
+								$usu=$_SESSION['iduser'];
+								$nomusu=$_SESSION['nombreusu'];
+    							$foto=$_SESSION['foto'];
+    							echo "<a href='Tradicional.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Tradicional</a>"
+
 						?>
-								<a href="Tradicional.php">Tradicional</a>
+								<!--<a href="Tradicional.php">Tradicional</a>-->
 								<ul>
 									<li><a href="Tradicional.php">De la Agüela</a></li>
 									<li><a href="Tradicional.php">Regional</a></li>

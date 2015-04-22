@@ -29,7 +29,7 @@
 					<?php
 					//$pag=basename($_SERVER['PHP_SELF']);
 					//echo "<p> Server : $pag </p>";
-					if ((basename($_SERVER['PHP_SELF']) != "Cocina.php") && (basename($_SERVER['PHP_SELF']) != "inicio.php"))
+					if ((basename($_SERVER['PHP_SELF']) != "Cocina.php"))
 					{
 					?>	
 					<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 

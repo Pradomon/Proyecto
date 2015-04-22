@@ -31,7 +31,16 @@ $resultado = leerusuarios2($link, $query);
    
    // header("refresh: 10; url = Cocina.php"); 
     //header("refresh: 10; url = Cocina.php/?usu=$usu&nomusu=$nomusu"); 
-   // header('refresh:7; url=Cocina.php?usu=$usu&nomusu=$nomusu&foto=$foto');
+	$usu=$_SESSION['iduser'];
+    $nomusu=$_SESSION['nombreusu'];
+    $foto=$_SESSION['foto'];
+   
+	$pag2=basename($_SERVER['HTTP_REFERER']);	
+	$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
+ 
+ 	header("refresh: 10; url=$url");
+ 
+ //  header('refresh:7; url=Cocina.php?usu=$usu&nomusu=$nomusu&foto=$foto');
 
 
 ?>

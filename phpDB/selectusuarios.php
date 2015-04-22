@@ -80,7 +80,8 @@ if (mysqli_num_rows($resultado)>0)
     $password=$fila['password'];
     $email=$fila['email'];
     $foto=$fila['foto'];
-  $pag=basename($_SERVER['PHP_SELF']);
+    
+            $pag=basename($_SERVER['PHP_SELF']);
             $pag1=basename($_SERVER['REQUEST_URI']);
             $pag2=basename($_SERVER['SERVER_NAME']);
             $pag3=basename($_SERVER['HTTP_REFERER']);
@@ -95,27 +96,11 @@ if (mysqli_num_rows($resultado)>0)
     echo "<p></p>";
     echo "Todo correcto, Espere un momento y será redireccionado... LOGIN";
     //session_start();
-    $_POST["usu"]=$codusu;
+    //$_POST["usu"]=$codusu;
     $_SESSION['nombreusu'] = $nomusu;
     $_SESSION['iduser'] = $codusu;
     $_SESSION['foto'] = $foto;
-    $usu=$_SESSION['iduser'];
-    $nomusu=$_SESSION['nombreusu'];
-    $foto=$_SESSION['foto'];
-    echo "<p></p>";
-    echo $usu;
-    echo "<p></p>";
-    echo $nomusu;
     
-   
-    //header("refresh: 10; url = Cocina.php"); 
-    //header("refresh: 10; url = Cocina.php/?usu=$usu"); 
-   header("refresh: 3; url = Cocina.php/?usu=$codusu&nomusu=$nomusu&foto=$foto"); 
-   // $url="$pag3"."./?usu=$codusu&nomusu=$nomusu&foto=$foto";
-   // header("refresh: 10;Location: ".$url);
-     //header("refresh: 3; url='$pag3'./?usu=$codusu&nomusu=$nomusu&foto=$foto"); 
-     //header("Location:".$_SERVER['HTTP_REFERER']);  
-     //header("Location:".$_SERVER['HTTP_REFERER']); 
    }
    else 
    {

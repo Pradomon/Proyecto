@@ -165,5 +165,18 @@ function refrescar()
 function paginicio()
 {
 	window.location.href=("Cocina.php");
-	/*    window.location("cocina.php");*/
+	/*usu=$_SESSION['iduser'];
+    nomusu=$_SESSION['nombreusu'];
+    foto=$_SESSION['foto'];
+    $_POST["usu"]=$codusu;
+    $_SESSION['nombreusu'] = $nomusu;
+    $_SESSION['iduser'] = $codusu;
+    $_SESSION['foto'] = $foto;
+    $usu=$_SESSION['iduser'];
+    $nomusu=$_SESSION['nombreusu'];
+    $foto=$_SESSION['foto'];
+	url="Cocina.php?usu=$usu&nomusu=$nomusu&foto=$foto";
+	window.location.href=url;*/
+	
+	
 }
