@@ -1,5 +1,5 @@
 <?php
-	//session_start();
+	session_start();
 	require_once("define.php");
 	require_once("cab.inc");
 	require_once("Listas.inc");

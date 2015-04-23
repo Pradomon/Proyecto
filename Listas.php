@@ -8,9 +8,10 @@
 
 							if (basename($_SERVER['PHP_SELF']) != "Tradicional.php")
 							{
-								$usu=$_SESSION['iduser'];
-								$nomusu=$_SESSION['nombreusu'];
-    							$foto=$_SESSION['foto'];
+								
+    							if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
+								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
+								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
     							echo "<a href='Tradicional.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Tradicional</a>"
 
 						?>
@@ -29,8 +30,12 @@
 						echo basename($_SERVER['PHP_SELF']);
 							if (basename($_SERVER['PHP_SELF']) != "Carnes.php")
 							{
+								if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
+								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
+								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
+    							echo "<a href='Carnes.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Carnes</a>"
 						?>
-								<a href="Carnes.php">Carnes</a>
+								<!--<a href="Carnes.php">Carnes</a>-->
 								<ul>
 									<li><a href="Carnes.php">Pollo</a></li>
 									<li><a href="Carnes.php">Ternera</a></li>
@@ -46,8 +51,12 @@
 						echo basename($_SERVER['PHP_SELF']);
 							if (basename($_SERVER['PHP_SELF']) != "Pescados.php")
 							{
+								if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
+								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
+								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
+    							echo "<a href='Pescados.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Pescados</a>"
 						?>
-								<a href="Pescados.php">Pescados<a/>
+								<!--<a href="Pescados.php">Pescados<a/>-->
 								<ul>
 									<li><a href="Pescados.php">Blancos<a/></li>
 									<li><a href="Pescados.php">Azules</a></li>
@@ -61,8 +70,12 @@
 						echo basename($_SERVER['PHP_SELF']);
 							if (basename($_SERVER['PHP_SELF']) != "Arroces.php")
 							{
+								if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
+								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
+								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
+    							echo "<a href='Arroces.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Arrocess</a>"
 						?>
-								<a href="Arroces.php">Arroces</a>
+								<!--<a href="Arroces.php">Arroces</a>-->
 								<ul>
 									<li><a href="Arroces.php">Carnes</a></li>
 									<li><a href="Arroces.php">Pescados</a></li>
@@ -78,8 +91,12 @@
 						echo basename($_SERVER['PHP_SELF']);
 							if (basename($_SERVER['PHP_SELF']) != "Postres.php")
 							{
+								if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
+								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
+								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
+    							echo "<a href='Postres.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Postres</a>"
 						?>
-								<a href="Postres.php">Postres</a>
+								<!--<a href="Postres.php">Postres</a>-->
 								<ul>
 									<li><a href="Postres.php">Con Frutas</a></li>
 									<li><a href="Postres.php">Bizcochos</a></li>

@@ -162,9 +162,37 @@ function refrescar()
 {
 		location.reload(true);
 }
-function paginicio()
+function paginicio(usu,nomusu,foto)
 {
-	window.location.href=("Cocina.php");
+	//window.location.href=("Cocina.php");
+
+	
+	
+	//usu="<? echo $_SESSION['iduser'] ?>"; 
+
+	
+	//usu='<?php echo$_SESSION['iduser'];?>';
+	//nomusu='<?php echo$_SESSION['nombreusu'];?>';
+	//foto='<?php echo$_SESSION['foto'];?>';
+
+	//usu= "<?php echo $_SESSION['iduser']; ?>";
+	//nomusu= "<?php echo $_SESSION['nombreusu']; ?>";
+	//foto= "<?php echo $_SESSION['foto']; ?>";
+
+	//usu="<?php echo $_SESSION['iduser']; ?>";
+	//nomusu="<?php echo $_SESSION['nombreusu']; ?>";
+	//foto="<?php echo $_SESSION['foto']; ?>";
+	
+    //usu="<? echo $_SESSION['iduser'] ?>"; 
+    //nomusu="<? echo $_SESSION['nombreusu'] ?>"; 
+    //foto="<? echo $_SESSION['foto'] ?>"; 
+    
+
+	//usu=$_SESSION['iduser'];
+    //nomusu=$_SESSION['nombreusu'];
+    //foto=$_SESSION['foto'];
+
+	window.location.href='Cocina.php?usu='+usu+'&nomusu='+nomusu+'&foto='+foto;
 	/*usu=$_SESSION['iduser'];
     nomusu=$_SESSION['nombreusu'];
     foto=$_SESSION['foto'];

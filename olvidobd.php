@@ -1,11 +1,3 @@
-<html>
-<head>
-  <title>OLVIDO</title>
-</head>
-<body>
-
-
-
 
 <?php
 
@@ -31,6 +23,15 @@ $query = "SELECT * FROM usuarios"
 
 
 $resultado = leerusuarios1($link, $query);
+
+$usu=$_SESSION['iduser'];
+$nomusu=$_SESSION['nombreusu'];
+$foto=$_SESSION['foto'];
+   
+$pag2=basename($_SERVER['HTTP_REFERER']);	
+$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
+ 
+header("refresh: 7; url=$url");
 
 
 

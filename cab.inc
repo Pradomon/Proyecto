@@ -27,13 +27,31 @@
 						
 					
 					<?php
-					//$pag=basename($_SERVER['PHP_SELF']);
-					//echo "<p> Server : $pag </p>";
+											
 					if ((basename($_SERVER['PHP_SELF']) != "Cocina.php"))
 					{
+						if(isset($_GET['usu'])) 
+						{
+							echo "del inicio con datos";
+							echo "<p></p>";
+							$usu=$_GET["usu"];
+							$nomusu=$_GET["nomusu"];
+							$foto=$_GET["foto"]; 
 					?>	
-					<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
-					<?php
+							<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;"
+					 		onclick="paginicio('<?php echo $usu; ?>', '<?php echo $nomusu; ?>',  '<?php echo $foto; ?>' )" />
+						
+						<?php
+						}
+						else
+						{
+							echo "del inicio sin datos";
+							echo "<p></p>";
+						?>	
+							<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" 
+							 onclick="paginicio()"/>
+					<?php	
+						}
 					}
 					?>
 						
@@ -41,7 +59,7 @@
 			    </div> 
 			    <?php
 			    
-				session_start();
+				//session_start();
 			    $pag=basename($_SERVER['PHP_SELF']);
 		        $pag1=basename($_SERVER['REQUEST_URI']);
 		        $pag2=basename($_SERVER['SERVER_NAME']);
@@ -63,6 +81,9 @@
 			    	//$_SESSION['iduser'] = $_POST["usu"];
 			    	//$_SESSION['nombreusu'] = $_POST["nomusu"];
 			    	//$_SESSION['foto'] = $_POST["foto"];
+			    	$_GET["usu"]=$_SESSION['iduser'];
+			    	$_GET["nomusu"]=$_SESSION['nombreusu'];
+			    	$_GET["foto"]=$_SESSION['foto'];
  				}
  				else
  				{

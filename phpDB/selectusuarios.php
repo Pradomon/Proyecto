@@ -36,9 +36,10 @@ if (mysqli_num_rows($resultado)>0)
     $_SESSION['nombreusu'] = $nomusu;
     $_SESSION['iduser'] = $codusu;
     $_SESSION['foto'] = $foto;
+
     
     //header("refresh: 3; url = Cocina.php/?usu=$codusu&nomusu=$nomusu&foto=$foto"); 
-    header("refresh: 3; url =$pag/?usu=$codusu&nomusu=$nomusu&foto=$foto"); 
+    
   }
   else
   {
@@ -66,7 +67,7 @@ else
 
 function leerusuarios2($link,$query)
 {
-session_start();
+//session_start();
  $resultado = @mysqli_query($link, $query); 
 
 
@@ -95,7 +96,7 @@ if (mysqli_num_rows($resultado)>0)
    
     echo "<p></p>";
     echo "Todo correcto, Espere un momento y será redireccionado... LOGIN";
-    //session_start();
+    session_start();
     //$_POST["usu"]=$codusu;
     $_SESSION['nombreusu'] = $nomusu;
     $_SESSION['iduser'] = $codusu;

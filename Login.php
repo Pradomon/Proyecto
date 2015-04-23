@@ -3,7 +3,7 @@
 
 <?php
 
-	
+	//session_start();
 	require_once("phpDB/conex.php");
 	require_once("phpDB/selectusuarios.php");
 
@@ -38,7 +38,7 @@ $resultado = leerusuarios2($link, $query);
 	$pag2=basename($_SERVER['HTTP_REFERER']);	
 	$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
  
- 	header("refresh: 10; url=$url");
+ 	header("refresh: 7; url=$url");
  
  //  header('refresh:7; url=Cocina.php?usu=$usu&nomusu=$nomusu&foto=$foto');
 

@@ -192,7 +192,18 @@
 		if($_FILES['foto']['type'] == "image/jpeg"
 			|| $_FILES['foto']['type'] == "image/png")
 		{
-
+			$ruta="images_user1";
+			 if (is_dir($ruta))
+			 {
+			 	echo "exite";
+			 	echo "<p></p>";
+			 }
+			 else
+			 {
+			 	echo "no exite..........lo creamos";
+			 	mkdir($ruta);
+			 	echo "<p></p>";
+			 }
 			move_uploaded_file($_FILES['foto']['tmp_name'],
 				"images_user/".$_FILES['foto']['name']);
 	
@@ -322,7 +333,19 @@ echo $fultvisita;		// fecha ultima visita
  echo "<p></p>";		
 
 	$_SESSION['iduser'] = $codusu;
+	$_SESSION['nombreusu']=$nomusu;
+	$_SESSION['foto']=$foto;
 	echo "Todo correcto, saltar a la página index con usuario logado";
+
+	$usu=$_SESSION['iduser'];
+    $nomusu=$_SESSION['nombreusu'];
+    $foto=$_SESSION['foto'];
+   
+	$pag2="Cocina.php";
+	$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
+ 
+ 	header("refresh: 7; url=$url");
+
 
 //                       INSERTAMOS EN LA BD
 
