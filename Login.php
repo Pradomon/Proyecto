@@ -35,6 +35,8 @@ $resultado = leerusuarios2($link, $query);
     $nomusu=$_SESSION['nombreusu'];
     $foto=$_SESSION['foto'];
    
+   	 echo "<p></p>";
+    echo "...LOGIN";
 	$pag2=basename($_SERVER['HTTP_REFERER']);	
 	$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
  

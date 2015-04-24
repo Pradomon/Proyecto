@@ -33,6 +33,7 @@ if (mysqli_num_rows($resultado)>0)
         echo "<p> HTT : $pag3 </p>";
     echo "<p></p>";
     echo "Todo correcto, Espere un momento y será redireccionado...OLVIDO";
+    
     $_SESSION['nombreusu'] = $nomusu;
     $_SESSION['iduser'] = $codusu;
     $_SESSION['foto'] = $foto;

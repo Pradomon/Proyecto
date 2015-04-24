@@ -192,7 +192,7 @@ function paginicio(usu,nomusu,foto)
     //nomusu=$_SESSION['nombreusu'];
     //foto=$_SESSION['foto'];
 
-	window.location.href='Cocina.php?usu='+usu+'&nomusu='+nomusu+'&foto='+foto;
+	window.location.href="Cocina.php?usu='+usu+'&nomusu='+nomusu+'&foto='+foto";
 	/*usu=$_SESSION['iduser'];
     nomusu=$_SESSION['nombreusu'];
     foto=$_SESSION['foto'];

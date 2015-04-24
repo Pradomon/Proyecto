@@ -19,7 +19,7 @@
 
 	function validar()
 	{
-		
+		return true;
 		//....................................VALIDAR NOMBRE USUARIO
 		var usu = '';
 		usu = document.getElementById('nomusu').value;

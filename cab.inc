@@ -30,13 +30,18 @@
 											
 					if ((basename($_SERVER['PHP_SELF']) != "Cocina.php"))
 					{
-						if(isset($_GET['usu'])) 
+
+						//if(isset($_GET['usu'])) 
+							if(isset($_SESSION['iduser']))
 						{
 							echo "del inicio con datos";
 							echo "<p></p>";
-							$usu=$_GET["usu"];
-							$nomusu=$_GET["nomusu"];
-							$foto=$_GET["foto"]; 
+							//$usu=$_GET["usu"];
+							//$nomusu=$_GET["nomusu"];
+							//$foto=$_GET["foto"]; 
+							$usu=$_SESSION['iduser'];
+			    			$nomusu=$_SESSION['nombreusu'];
+			    			$foto=$_SESSION['foto'];
 					?>	
 							<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;"
 					 		onclick="paginicio('<?php echo $usu; ?>', '<?php echo $nomusu; ?>',  '<?php echo $foto; ?>' )" />
@@ -64,19 +69,22 @@
 		        $pag1=basename($_SERVER['REQUEST_URI']);
 		        $pag2=basename($_SERVER['SERVER_NAME']);
 		        $pag3=basename($_SERVER['HTTP_REFERER']);
-                   
+		       
                    
 
         echo "<p> PHP-CAB : $pag </p>";
         echo "<p> REQ-CAB : $pag1 </p>";
         echo "<p> SER-CAB : $pag2 </p>";
         echo "<p> HTT-CAB : $pag3 </p>";
+        
+
+        
 
 
 				if(isset($_SESSION['iduser']))
 
 				{	
-					echo "con valor";
+					echo "con valor................CAB";
 					
 			    	//$_SESSION['iduser'] = $_POST["usu"];
 			    	//$_SESSION['nombreusu'] = $_POST["nomusu"];
@@ -87,7 +95,7 @@
  				}
  				else
  				{
- 					echo "sin valor";
+ 					echo "sin valor................CAB";
  				}
 			   				    
 			    if(!isset($_SESSION['iduser']))

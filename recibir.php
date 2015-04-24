@@ -63,6 +63,8 @@
 			<p>Falta campo Nombre	</p>";
 			echo $pantalla;
 			echo "<p></p>";
+			header("refresh: 7; url='Alta.php'");
+			return false;
 	}
 	//                                          PASSWORD1 LONGITUD
 	if (isset($password1) )
@@ -80,6 +82,8 @@
 			<p>Falta campo Password1	</p>";
 			echo $pantalla;
 			echo "<p></p>";
+			header("refresh: 7; url='Alta.php'");
+			return false;
 	}
 //                                            PASSWORD2 LONGITUD
 	if (isset($password2) )
@@ -97,6 +101,8 @@
 			<p>Falta campo Password2	</p>";
 			echo $pantalla;
 			echo "<p></p>";
+			header("refresh: 7; url='Alta.php'");
+			return false;
 	}
 
 	//                                            	PASSWORD IGUALES
@@ -106,6 +112,8 @@
 			<p>Password's distintas </p>";
 			echo $pantalla;
 			echo "<p></p>";
+			header("refresh: 7; url='Alta.php'");
+			return false;
 	}	
 	//                                            	CORREOS IGUALES
 	if ($correo1!=$correo2)
@@ -114,6 +122,8 @@
 			<p>Correos distinta </p>";
 			echo $pantalla;
 			echo "<p></p>";
+			header("refresh: 7; url='Alta.php'");
+			return false;
 	}	
 
 	//                                            		NOMBRE
@@ -132,6 +142,8 @@
 			<p>Falta campo Nombre	</p>";
 			echo $pantalla;
 			echo "<p></p>";
+			header("refresh: 7; url='Alta.php'");
+			return false;
 	}
 
 	//                                             			APELLIDOS
@@ -150,6 +162,8 @@
 				<p>Falta campo apellidos</p>";
 				echo $pantalla;
 				echo "<p></p>";
+				header("refresh: 7; url='Alta.php'");
+				return false;
 		}
 	
 	//                                              		DNI
@@ -169,6 +183,8 @@
 				<p>DNI erroneo</p>";
 				echo $pantalla;
 				echo "<p></p>";
+				header("refresh: 7; url='Alta.php'");
+				return false;
 		}
 	}
 	else
@@ -177,6 +193,8 @@
 			<p>Falta campo dni</p>";
 			echo $pantalla;
 			echo "<p></p>";
+			header("refresh: 7; url='Alta.php'");
+			return false;
 	}
 //                                                         FICHERO
 	$foto    = $_FILES['foto']['name'];
@@ -234,6 +252,9 @@
 			
 	  		echo $pantalla;
 			echo "<p></p>";
+			header("refresh: 7; url='Alta.php'");
+			return false;
+
 				
 		}
 	}
@@ -252,6 +273,8 @@
 			echo "<p></p>";
 
 	        echo FileUploadErrorMsg($_FILES["foto"]["error"]);
+	        header("refresh: 7; url='Alta.php'");
+	        return false;
 	}
 //                                                               COGEMOS FECHA SISTEMA PARA CAMPO DE ULTIMA VISITA
 $hoy = date("Y-m-d");

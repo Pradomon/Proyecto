@@ -5,14 +5,32 @@
 
 					<li class="pestañas">
 						<?php
-
+							echo "............................................LISTAS..........................................";
 							if (basename($_SERVER['PHP_SELF']) != "Tradicional.php")
 							{
 								
-    							if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
-								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
-								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
-    							echo "<a href='Tradicional.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Tradicional</a>"
+    							//if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
+								//if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
+								//if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
+								if(isset($_SESSION['iduser']))
+
+								{	
+									echo "con valor................LISTAS";
+									$_GET["usu"]=$_SESSION['iduser'];
+			    					$_GET["nomusu"]=$_SESSION['nombreusu'];
+			    					$_GET["foto"]=$_SESSION['foto'];
+			    					$usu=$_GET["usu"];
+			    					$nomusu=$_GET["nomusu"];
+			    					$foto=$_GET["foto"]; 
+    								echo "<a href='Tradicional.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Tradicional</a>"
+    							}	
+    							else
+    							{
+    								echo "sin valor................LISTAS";
+    								echo $usu;
+    								echo "<p></p>";
+    								
+    							}
 
 						?>
 								<!--<a href="Tradicional.php">Tradicional</a>-->
@@ -27,13 +45,28 @@
 					</li>
 					<li class="pestañas">
 						<?php
-						echo basename($_SERVER['PHP_SELF']);
+							echo "............................................LISTAS..........................................";
 							if (basename($_SERVER['PHP_SELF']) != "Carnes.php")
 							{
-								if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
-								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
-								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
+								if(isset($_SESSION['iduser']))
+
+								{	
+									echo "con valor................LISTAS";
+									$_GET["usu"]=$_SESSION['iduser'];
+			    					$_GET["nomusu"]=$_SESSION['nombreusu'];
+			    					$_GET["foto"]=$_SESSION['foto'];
+			    					$usu=$_GET["usu"];
+			    					$nomusu=$_GET["nomusu"];
+			    					$foto=$_GET["foto"]; 
     							echo "<a href='Carnes.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Carnes</a>"
+    							}
+    							else
+    							{
+    								echo "sin valor................LISTAS";
+    								echo $usu;
+    								echo "<p></p>";
+    								
+    							}
 						?>
 								<!--<a href="Carnes.php">Carnes</a>-->
 								<ul>
@@ -48,13 +81,28 @@
 					</li>
 					<li class="pestañas">
 						<?php
-						echo basename($_SERVER['PHP_SELF']);
+							echo "............................................LISTAS..........................................";
 							if (basename($_SERVER['PHP_SELF']) != "Pescados.php")
 							{
-								if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
-								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
-								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
+								if(isset($_SESSION['iduser']))
+
+								{	
+									echo "con valor................LISTAS";
+									$_GET["usu"]=$_SESSION['iduser'];
+			    					$_GET["nomusu"]=$_SESSION['nombreusu'];
+			    					$_GET["foto"]=$_SESSION['foto'];
+			    					$usu=$_GET["usu"];
+			    					$nomusu=$_GET["nomusu"];
+			    					$foto=$_GET["foto"]; 
     							echo "<a href='Pescados.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Pescados</a>"
+    							}
+    							else
+    							{
+    								echo "sin valor................LISTAS";
+    								echo $usu;
+    								echo "<p></p>";
+    								
+    							}
 						?>
 								<!--<a href="Pescados.php">Pescados<a/>-->
 								<ul>
@@ -67,13 +115,28 @@
 					</li>
 					<li class="pestañas">
 						<?php
-						echo basename($_SERVER['PHP_SELF']);
+							echo "............................................LISTAS..........................................";
 							if (basename($_SERVER['PHP_SELF']) != "Arroces.php")
 							{
-								if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
-								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
-								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
+								if(isset($_SESSION['iduser']))
+
+								{	
+									echo "con valor................LISTAS";
+									$_GET["usu"]=$_SESSION['iduser'];
+			    					$_GET["nomusu"]=$_SESSION['nombreusu'];
+			    					$_GET["foto"]=$_SESSION['foto'];
+			    					$usu=$_GET["usu"];
+			    					$nomusu=$_GET["nomusu"];
+			    					$foto=$_GET["foto"]; 
     							echo "<a href='Arroces.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Arrocess</a>"
+    							}
+    							else
+    							{
+    								echo "sin valor................LISTAS";
+    								echo $usu;
+    								echo "<p></p>";
+    								
+    							}
 						?>
 								<!--<a href="Arroces.php">Arroces</a>-->
 								<ul>
@@ -88,13 +151,28 @@
 					</li>
 					<li class="pestañas">
 						<?php
-						echo basename($_SERVER['PHP_SELF']);
+							echo "............................................LISTAS..........................................";
 							if (basename($_SERVER['PHP_SELF']) != "Postres.php")
 							{
-								if(isset($_GET['usu'])) 	$usu=$_GET["usu"];
-								if(isset($_GET['nomusu']))	$nomusu=$_GET["nomusu"];
-								if(isset($_GET['foto']))	$foto=$_GET["foto"]; 
+								if(isset($_SESSION['iduser']))
+
+								{	
+									echo "con valor................LISTAS";
+									$_GET["usu"]=$_SESSION['iduser'];
+			    					$_GET["nomusu"]=$_SESSION['nombreusu'];
+			    					$_GET["foto"]=$_SESSION['foto'];
+			    					$usu=$_GET["usu"];
+			    					$nomusu=$_GET["nomusu"];
+			    					$foto=$_GET["foto"]; 
     							echo "<a href='Postres.php?usu=$usu&nomusu=$nomusu&foto=$foto'>Postres</a>"
+    							}
+    							else
+    							{
+    								echo "sin valor................LISTAS";
+    								echo $usu;
+    								echo "<p></p>";
+
+    							}
 						?>
 								<!--<a href="Postres.php">Postres</a>-->
 								<ul>
