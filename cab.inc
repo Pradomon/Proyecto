@@ -1,4 +1,6 @@
-
+<?php
+error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+?>
 
 <!DOCTYPE html>
 <html lang="es"> 
@@ -16,7 +18,7 @@
   	
 
 </head>
-	<BODY id="foto1-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
+	<BODY id="foto-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
 		<div class="container grande mediano mini"> 
 		<div class="row" >			
 			<div id="cabecera" class="col-sm-6 grande mediano mini">
@@ -27,44 +29,52 @@
 						
 					
 					<?php
-											
+									
+								/*	<?=$algo;?>
+
+									es lo mismo 
+
+									<?php
+									echo $algo;
+									?>*/
+					session_start();				
 					if ((basename($_SERVER['PHP_SELF']) != "Cocina.php"))
 					{
 
 						//if(isset($_GET['usu'])) 
 							if(isset($_SESSION['iduser']))
-						{
-							echo "del inicio con datos";
-							echo "<p></p>";
-							//$usu=$_GET["usu"];
-							//$nomusu=$_GET["nomusu"];
-							//$foto=$_GET["foto"]; 
-							$usu=$_SESSION['iduser'];
-			    			$nomusu=$_SESSION['nombreusu'];
-			    			$foto=$_SESSION['foto'];
+							{
+								echo "del inicio con datos";
+								echo "<p></p>";
+								//$usu=$_GET["usu"];
+								//$nomusu=$_GET["nomusu"];
+								//$foto=$_GET["foto"]; 
+								$usu=$_SESSION['iduser'];
+				    			$nomusu=$_SESSION['nombreusu'];
+				    			$foto=$_SESSION['foto'];
 					?>	
-							<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;"
-					 		onclick="paginicio('<?php echo $usu; ?>', '<?php echo $nomusu; ?>',  '<?php echo $foto; ?>' )" />
+								<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;"
+						 		onclick="paginicio('<?php echo $usu; ?>', '<?php echo $nomusu; ?>',  '<?php echo $foto; ?>' )" />
 						
-						<?php
-						}
-						else
-						{
-							echo "del inicio sin datos";
-							echo "<p></p>";
-						?>	
-							<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" 
-							 onclick="paginicio()"/>
-					<?php	
-						}
-					}
+
+					<?php
+							}
+							else
+							{
+									
+					?>
+								<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" 
+								 onclick="paginicio()"/>
+					<?php
+							}
+					}		
 					?>
 						
 							    	
 			    </div> 
 			    <?php
 			    
-				//session_start();
+				session_start();
 			    $pag=basename($_SERVER['PHP_SELF']);
 		        $pag1=basename($_SERVER['REQUEST_URI']);
 		        $pag2=basename($_SERVER['SERVER_NAME']);

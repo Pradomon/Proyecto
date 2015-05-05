@@ -1,0 +1,17 @@
+INSERT INTO `usuarios`(`codusu`, `nomusu`, `email`, `nombre`, `apellidos`, `fnacimiento`, `fultvisita`, `dni`, `sexo`, `notificaciones`,
+ `password`, `foto`, `alias`) 
+VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12],[value-13])
+
+
+INSERT INTO `usuarios`(`codusu`, `nomusu`, `email`, `nombre`, `apellidos`, `fnacimiento`, `fultvisita`, `dni`, `sexo`, `notificaciones`, `password`, `foto`, `alias`) 
+VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12],[value-13])
+
+
+INSERT INTO `usuarios`(`nomusu`, `email`, `nombre`, `apellidos`, `fnacimiento`, `fultvisita`, `dni`, `sexo`, `notificaciones`, `password`, `foto`, `alias`) 
+VALUES ([Juanjo],[juanjo@gmai.com],[Juan Jose],[Serrano],[30-10-1963],[04-05-2015],[21463834G],[H],[0],[jua123],[],[Juanjo])
+
+
+
+
+INSERT INTO `usuarios`(`nomusu`, `email`, `nombre`, `apellidos`, `fnacimiento`, `fultvisita`, `dni`, `sexo`, `notificaciones`, `password`, `foto`, `alias`) 
+VALUES ("Juanjo","juanjo@gmai.com","Juan Jose","Serrano","30-10-1963","04-05-2015","21463834G","H","0","jua123","","Juanjo")

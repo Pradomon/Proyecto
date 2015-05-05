@@ -205,6 +205,12 @@
 
 	
 
+	echo "...................RESULTADOOOOO.................";
+	echo "<p></p>";
+	echo $a;
+
+
+
 	if($_FILES['foto']['error'] == 0)
 	{
 		if($_FILES['foto']['type'] == "image/jpeg"
@@ -289,6 +295,14 @@ if ($notas=='Recibir')
 }
 else $notas=0;
 
+$a=1;
+	++$a;
+	$a*=$a;
+	echo "...................RESULTADOOOOO.................";
+	echo "<p></p>";
+	echo $a;
+
+
 
 //                       INSERTAMOS EN LA BD
 $link = @mysqli_connect(
@@ -305,6 +319,14 @@ $link = @mysqli_connect(
 
 		return false;
 	}
+
+$a=1;
+	++$a;
+	$a*=$a;
+	echo "...................RESULTADOOOOO.................";
+	echo "<p></p>";
+	echo $a;
+
 
 $ok = insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link);
 	if($ok)
@@ -382,6 +404,14 @@ function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $s
 		. " VALUES ('$nomusu', '$correo1', '$nombre','$apellidos', '$fecha', '$hoy', '$dni', '$sexo', '$notas', '$password1', '$foto', '$alias')";
 	
 	echo "<p>$query</p>";
+
+	$a=1;
+	++$a;
+	$a*=$a;
+	echo "...................RESULTADOOOOO.................";
+	echo "<p></p>";
+	echo $a;
+
 
 	$resultado = @mysqli_query($link, $query);
 	echo "<p> Link--Insert :  </p>";

@@ -158,6 +158,12 @@ function abrir (URL)
   window.open(URL,"ventana1","width=1000,height=750,scrollbars=NO,,left= "+ x + ",top=" + y +""); 
 } 
 
+function abredoc(){	
+//window.location='Receta.docx';	
+var url="Receta.docx"; 
+window.open(url); 
+} 
+
 function refrescar()
 {
 		location.reload(true);

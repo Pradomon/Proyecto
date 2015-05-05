@@ -1,4 +1,5 @@
 <?php
+	error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 	session_start();
 	require_once("define.php");
 	require_once("cab.inc");
