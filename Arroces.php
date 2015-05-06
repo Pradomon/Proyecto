@@ -33,8 +33,8 @@ session_start();
       <ul>
        	<li><a class="ex5" href="http://www.mis-recetas.org/recetas/search?text=arroz+de+marisco" onclick="abrir(this.href);return false"><h4>Marisco</h4></a></li>
        	<!--<li><a class="ex5" href="http://www.arroznegro.net/" onclick="abrir(this.href);return false"><h4>Negro</h4></a></li>-->
-        <li><a class="ex5"  onclick="abredoc();"><h4>Negro</h4></a></li>
-        <!--<? include("Receta.docx"); ?>-->
+        <li><a class="ex5"  href="#" onclick="abredoc('Menestra.pdf')"><h4>Negro</h4></a></li>
+      
        	<li><a class="ex5" href="http://www.sabormediterraneo.com/cocina/receta_arrozabanda.html" onclick="abrir(this.href);return false"><h4>A banda</h4></a></li>
      </ul>	
     </div>
