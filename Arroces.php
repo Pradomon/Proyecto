@@ -16,9 +16,9 @@ session_start();
     <div class="col-sm-4  cajachoco">
      <h3><font color="#61380B">Carnes</font></h3>
      <ul>
-       	<li><a class="ex5" href="http://www.arrozpollo.net/" onclick="abrir(this.href);return false"><h4>Pollo</h4></a></li>
-       	<li><a class="ex5" href="http://www.mis-recetas.org/recetas/search?text=arroz+con+conejo" onclick="abrir(this.href);return false"><h4>Conejo</h4></a></li>
-       	<li><a class="ex5" href="http://www.mytaste.es/b/arroz-con-magro-de-cerdo.html" onclick="abrir(this.href);return false"><h4>Magro</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Pollo.pdf');return false"><h4>Pollo</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Conejo.pdf');return false"><h4>Conejo</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Magro.pdf');return false"><h4>Magro</h4></a></li>
      </ul>	
     </div>
     <div class="col-sm-2 cajachoco">
@@ -31,11 +31,11 @@ session_start();
     <div class="col-sm-4  cajachoco">
       <h3><font color="#61380B">Pescados</font></h3>
       <ul>
-       	<li><a class="ex5" href="http://www.mis-recetas.org/recetas/search?text=arroz+de+marisco" onclick="abrir(this.href);return false"><h4>Marisco</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Marisco.pdf');return false"><h4>Marisco</h4></a></li>
        	<!--<li><a class="ex5" href="http://www.arroznegro.net/" onclick="abrir(this.href);return false"><h4>Negro</h4></a></li>-->
-        <li><a class="ex5"  href="#" onclick="abredoc('Menestra.pdf')"><h4>Negro</h4></a></li>
+        <li><a class="ex5"  href="#" onclick="abredoc('Recetas/Arroces/Negro.pdf');return false"><h4>Negro</h4></a></li>
       
-       	<li><a class="ex5" href="http://www.sabormediterraneo.com/cocina/receta_arrozabanda.html" onclick="abrir(this.href);return false"><h4>A banda</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Abanda.pdf');return false"><h4>A banda</h4></a></li>
      </ul>	
     </div>
      <div class="col-sm-2 cajachoco">
@@ -52,9 +52,9 @@ session_start();
     <div class="col-sm-4  cajachoco">
      <h3><font color="#61380B">Calderos</font></h3>
      <ul>
-       	<li><a class="ex5" href="http://www.recetaarrozcaldoso.com/" onclick="abrir(this.href);return false"><h4>Caldoso</h4></a></li>
-       	<li><a class="ex5" href="http://www.lapaella.net/" onclick="abrir(this.href);return false"><h4>Paella</h4></a></li>
-       	<li><a class="ex5" href="http://www.mis-recetas.org/recetas/search?text=arroz+con+bogavante" onclick="abrir(this.href);return false"><h4>Bogavante</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Caldoso.pdf');return false"><h4>Caldoso</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Paella.pdf');return false"><h4>Paella</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Marisco.pdf');return false"><h4>Bogavante</h4></a></li>
      </ul>	
     </div>
     <div class="col-sm-2 cajachoco">
@@ -67,9 +67,9 @@ session_start();
     <div class="col-sm-4  cajachoco">
       <h3><font color="#61380B">Verduras</font></h3>
       <ul>
-       	<li><a class="ex5" href="http://www.arrozalhorno.net/" onclick="abrir(this.href);return false"><h4>Al horno</h4></a></li>
-       	<li><a class="ex5" href="http://quecocinar.info/arroz-mixto/" onclick="abrir(this.href);return false"><h4>Mixto</h4></a></li>
-       	<li><a class="ex5" href="http://www.mis-recetas.org/recetas/search?text=arroz+con+garbanzos" onclick="abrir(this.href);return false"><h4>Con garbanzos</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Horno-Vege.pdf');return false"><h4>Al horno</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Verduras-Setas.pdf');return false"><h4>Verduras y setas</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Garbanzos-Bacalao.pdf');return false"><h4>Con garbanzos</h4></a></li>
      </ul>	
     </div>
     <div class="col-sm-2 cajachoco">
