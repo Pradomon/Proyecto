@@ -18,7 +18,7 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
   	
 
 </head>
-	<BODY id="foto-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
+	<BODY id="foto1-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
 		<div class="container grande mediano mini"> 
 		<div class="row" >			
 			<div id="cabecera" class="col-sm-6 grande mediano mini">
@@ -54,7 +54,8 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 				    			$foto=$_SESSION['foto'];
 					?>	
 								<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;"
-						 		onclick="paginicio('<?php echo $usu; ?>', '<?php echo $nomusu; ?>',  '<?php echo $foto; ?>' )" />
+						 		onclick="paginicio()" />
+						 		<!--onclick="paginicio('<?php echo $usu; ?>', '<?php echo $nomusu; ?>',  '<?php echo $foto; ?>' )" />-->
 						
 
 					<?php

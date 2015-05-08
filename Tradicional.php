@@ -25,9 +25,9 @@
     <div class="col-sm-4  cajachoco">
      <?php require_once("Abuela.inc");?>
      <ul>
-       	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/2014/01/lentejas-caseras-con-chorizo.html" onclick="abrir(this.href);return false">Lentejas</a></li>
-       	<li><a class="ex5" href="http://www.comidinasdelaabuela.com/2014/01/merluza-la-cazuela.html" onclick="abrir(this.href);return false">Cazuela de Merluza</a></li>
-       	<li><a class="ex5" href="http://www.recetascomidas.com/recetas-de/la-cocina-de-mi-abuela" onclick="abrir(this.href);return false">Varios</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Lentejas.pdf');return false">Lentejas</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Cazuela-Merluza.pdf');return false">Cazuela de Merluza</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Pollo-Salsa.pdf');return false">Pollo en salsa</a></li>
         
      </ul>	
     </div>
@@ -41,9 +41,9 @@
     <div class="col-sm-4  cajachoco">
       <?php require_once("Regional.inc");?>
       <ul>
-       	<li><a class="ex5" href="http://www.mis-recetas.org/recetas/show/39152-migas-manchegas-tradicionales" onclick="abrir(this.href);return false">Migas</a></li>
-       	<li><a class="ex5" href="http://recetasderechupete.hola.com/receta-de-fabada-o-fabes-asturianas/982//" onclick="abrir(this.href);return false">Fabada Asturiana</a></li>
-       	<li><a class="ex5" href="http://xn--recetacocidomadrileo-m7b.com/" onclick="abrir(this.href);return false">Cocido Madrileño</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Migas.pdf');return false">Migas</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Fabada.pdf');return false">Fabada Asturiana</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Cocido.pdf');return false">Cocido Madrileño</a></li>
      </ul>	
     </div>
      <div class="col-sm-2 cajachoco">
@@ -60,9 +60,9 @@
     <div class="col-sm-4  cajachoco">
      <h3><font color="#61380B">De cuchara</font></h3>
      <ul>
-       	<li><a class="ex5" href="http://www.petitchef.es/recetas/plato/sopa-de-esparragos-y-ajo-fid-774970" onclick="abrir(this.href);return false">Sopa de Esparragos y ajo</a></li>
-       	<li><a class="ex5" href="http://recetasderechupete.hola.com/receta-tradicional-de-sopas-de-ajo-o-sopa-castellana/2431/" onclick="abrir(this.href);return false">Sopa Castellana</a></li>
-        <li><a class="ex5" href="http://www.recetasdemama.es/categoria/cremas-y-sopas/" onclick="abrir(this.href);return false">Cremas y Sopas</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Sopa.pdf');return false">Sopa de Esparragos y ajo</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Sopa-Ajo.pdf');return false">Sopa Castellana</a></li>
+        <li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Crema-Calabaza.pdf');return false">Crema de Calabaza</a></li>
      </ul>	
     </div>
     <div class="col-sm-2 cajachoco">

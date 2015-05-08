@@ -31,10 +31,9 @@ session_start();
     <div class="col-sm-4  cajachoco">
       <h3><font color="#61380B">Pescados</font></h3>
       <ul>
+        <!--<li><a class="ex5" href="http://www.arroznegro.net/" onclick="abrir(this.href);return false"><h4>Negro</h4></a></li>-->
        	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Marisco.pdf');return false"><h4>Marisco</h4></a></li>
-       	<!--<li><a class="ex5" href="http://www.arroznegro.net/" onclick="abrir(this.href);return false"><h4>Negro</h4></a></li>-->
-        <li><a class="ex5"  href="#" onclick="abredoc('Recetas/Arroces/Negro.pdf');return false"><h4>Negro</h4></a></li>
-      
+       	<li><a class="ex5"  href="#" onclick="abredoc('Recetas/Arroces/Negro.pdf');return false"><h4>Negro</h4></a></li>
        	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Abanda.pdf');return false"><h4>A banda</h4></a></li>
      </ul>	
     </div>
@@ -54,7 +53,7 @@ session_start();
      <ul>
        	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Caldoso.pdf');return false"><h4>Caldoso</h4></a></li>
        	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Paella.pdf');return false"><h4>Paella</h4></a></li>
-       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Marisco.pdf');return false"><h4>Bogavante</h4></a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Arroces/Caldoso-Bogavante.pdf');return false"><h4>Bogavante</h4></a></li>
      </ul>	
     </div>
     <div class="col-sm-2 cajachoco">

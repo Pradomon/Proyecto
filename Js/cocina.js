@@ -28,21 +28,20 @@ function cargarprimeros()
 	//arrp[0]='<a href="http://www.gallinablanca.es/receta/crema-de-calabacin/" > Crema de calabacin </a>';
 
 	
-	arrp[0]='<a href="http://www.gallinablanca.es/receta/crema-de-calabacin/" onclick="abrir(this.href);return false"> Crema de Calabacin </a>';
-	arrp[1]='<a href="http://www.recetasdiarias.com/recetas/arroz/arroz-a-la-cubana/" onclick="abrir(this.href);return false"> Arroz a la Cubana </a>';
-	arrp[2]='<a href="http://www.recetasdemama.es/2011/01/crema-de-puerros/" onclick="abrir(this.href);return false"> Sopa de Puerros </a>';
-	arrp[3]='<a href="http://www.lentejas.net/" onclick="abrir(this.href);return false"> Lentejas </a>';
-	arrp[4]='<a href="http://www.vegetarianismo.net/recetas/habichuelas.html" onclick="abrir(this.href);return false"> Judias con Arroz </a>';
-	arrp[5]='<a href="http://www.recetamacarrones.com/" onclick="abrir(this.href);return false"> Macarrones </a>';
+	arrp[0]='<a href="Recetas/Semanales/Calabacin.pdf" onclick="abrir(this.href);return false"> Crema de Calabacin </a>';
+	arrp[1]='<a href="Recetas/Semanales/Cubana.pdf" onclick="abrir(this.href);return false"> Arroz a la Cubana </a>';
+	arrp[2]='<a href="Recetas/Semanales/Sopa-Puerros.pdf" onclick="abrir(this.href);return false"> Sopa de Puerros </a>';
+	arrp[3]='<a href="Recetas/Semanales/Lentejas.pdf" onclick="abrir(this.href);return false"> Lentejas </a>';
+	arrp[4]='<a href="Recetas/Semanales/Judias-Arroz.pdf" onclick="abrir(this.href);return false"> Judias con Arroz </a>';
+	arrp[5]='<a href="Recetas/Semanales/Macarrones.pdf" onclick="abrir(this.href);return false"> Macarrones </a>';
 	//arrp[6]='<a href="http://cocina.facilisimo.com/ensalada-murciana" onclick="abrir(this.href);return false"> Ensalada Murciana   </a>';
-	arrp[6]='<a href="http://cocina.facilisimo.com/ensalada-murciana" onclick="abrir(this.href);return false"> <img	src="Fotos/EM.jpg"  alt="Ensalada Murciana" title="Ensalada Murciana" class="imgrecetas">   </a>';
-	arrp[7]='<a href="http://www.recetasdiarias.com/recetas/ensalada/ensalada-de-pasta/" onclick="abrir(this.href);return false"> Ensalada de Pasta </a>';
-	arrp[8]='<a href="http://placeralplato.com/sopas/sopa-fideos-casera" onclick="abrir(this.href);return false"> Sopa de Fideos </a>';
+	arrp[6]='<a href="Recetas/Semanales/Murciana.pdf" onclick="abrir(this.href);return false"> <img	src="Fotos/EM.jpg"  alt="Ensalada Murciana" title="Ensalada Murciana" class="imgrecetas">   </a>';
+	arrp[7]='<a href="Recetas/Semanales/Ensalada-Pasta.pdf" onclick="abrir(this.href);return false"> Ensalada de Pasta </a>';
+	arrp[8]='<a href="Recetas/Semanales/Sopa.pdf" onclick="abrir(this.href);return false"> Sopa de Fideos </a>';
+	arrp[9]='<a href="Recetas/Semanales/Menestra.pdf" onclick="abredoc(this.href);return false"> Menestra </a>';
 	//arrp[9]='<a href="http://www.hogarutil.com/cocina/recetas/ensaladas-verduras/listado-1321.html" onclick="abrir(this.href);return false"> Menestra </a>';
-	//arrp[9]='<a href="#" onclick="abredoc(Menestra.pdf);return false"> Menestra </a>';
-	//file="Menestra.pdf";
-	arrp[9]='<a href="Menestra.pdf" onclick="abredoc(this.href);return false"> Menestra </a>';
 	
+		
 		
 }
 
@@ -164,28 +163,18 @@ function abrir (URL)
 
 function abredoc(file)
 {	
-//window.location='Receta.docx';	
-//var url="Receta.doc"; 
-//window.open(url); 
-x = (screen.width / 2) - (1000/2);
-y = (screen.height / 2) - (750/2);
-window.open(file, "resizable,scrollbars", "width=1000,height=750,scrollbars=NO,,left= "+ x + ",top=" + y +""); 
-} 
-function abredoc1(file)
-{	
-//window.location='Receta.docx';	
-//var file1=file + ".pdf" ; 
-//window.open(url); 
+
 x = (screen.width / 2) - (1000/2);
 y = (screen.height / 2) - (750/2);
 window.open(file, "resizable,scrollbars", "width=1000,height=750,scrollbars=NO,,left= "+ x + ",top=" + y +""); 
 } 
 
+
 function refrescar()
 {
 		location.reload(true);
 }
-function paginicio(usu,nomusu,foto)
+function paginicio()
 {
 	//window.location.href=("Cocina.php");
 
@@ -215,7 +204,17 @@ function paginicio(usu,nomusu,foto)
     //nomusu=$_SESSION['nombreusu'];
     //foto=$_SESSION['foto'];
 
-	window.location.href="Cocina.php?usu='+usu+'&nomusu='+nomusu+'&foto='+foto";
+    //$_SESSION['iduser']=usu;
+    //$_SESSION['nombreusu']=nomusu;
+    //$_SESSION['foto']=foto;
+
+    alert("........................................a ver si pasamos........................................." );
+    //alert(usu);
+    window.location.href=("Cocina.php");
+
+    									
+	//window.location.href="Cocina.php?usu='+usu+'&nomusu='+nomusu+'&foto='+foto";
+
 	/*usu=$_SESSION['iduser'];
     nomusu=$_SESSION['nombreusu'];
     foto=$_SESSION['foto'];

@@ -27,7 +27,7 @@ $query = "SELECT * FROM usuarios"
 
 $resultado = leerusuarios2($link, $query);
 
-	//session_start();
+	session_start();
    
    // header("refresh: 10; url = Cocina.php"); 
     //header("refresh: 10; url = Cocina.php/?usu=$usu&nomusu=$nomusu"); 
@@ -37,9 +37,10 @@ $resultado = leerusuarios2($link, $query);
    
    	 echo "<p></p>";
     echo "...LOGIN";
+    echo "<p></p>";
 	$pag2=basename($_SERVER['HTTP_REFERER']);	
 	$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
- 
+ 	echo "<p>$usu</p>";
  	header("refresh: 7; url=$url");
  
  //  header('refresh:7; url=Cocina.php?usu=$usu&nomusu=$nomusu&foto=$foto');
