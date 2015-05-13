@@ -63,7 +63,7 @@
 			<p>Falta campo Nombre	</p>";
 			echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='Alta.php'");
+			header("refresh: 7; url='alta.php'");
 			return false;
 	}
 	//                                          PASSWORD1 LONGITUD
@@ -82,7 +82,7 @@
 			<p>Falta campo Password1	</p>";
 			echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='Alta.php'");
+			header("refresh: 7; url='alta.php'");
 			return false;
 	}
 //                                            PASSWORD2 LONGITUD
@@ -101,7 +101,7 @@
 			<p>Falta campo Password2	</p>";
 			echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='Alta.php'");
+			header("refresh: 7; url='alta.php'");
 			return false;
 	}
 
@@ -112,7 +112,7 @@
 			<p>Password's distintas </p>";
 			echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='Alta.php'");
+			header("refresh: 7; url='alta.php'");
 			return false;
 	}	
 	//                                            	CORREOS IGUALES
@@ -122,7 +122,7 @@
 			<p>Correos distinta </p>";
 			echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='Alta.php'");
+			header("refresh: 7; url='alta.php'");
 			return false;
 	}	
 
@@ -142,7 +142,7 @@
 			<p>Falta campo Nombre	</p>";
 			echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='Alta.php'");
+			header("refresh: 7; url='alta.php'");
 			return false;
 	}
 
@@ -162,7 +162,7 @@
 				<p>Falta campo apellidos</p>";
 				echo $pantalla;
 				echo "<p></p>";
-				header("refresh: 7; url='Alta.php'");
+				header("refresh: 7; url='alta.php'");
 				return false;
 		}
 	
@@ -183,7 +183,7 @@
 				<p>DNI erroneo</p>";
 				echo $pantalla;
 				echo "<p></p>";
-				header("refresh: 7; url='Alta.php'");
+				header("refresh: 7; url='alta.php'");
 				return false;
 		}
 	}
@@ -193,7 +193,7 @@
 			<p>Falta campo dni</p>";
 			echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='Alta.php'");
+			header("refresh: 7; url='alta.php'");
 			return false;
 	}
 //                                                         FICHERO
@@ -258,8 +258,8 @@
 			
 	  		echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='Alta.php'");
-			return false;
+			header("refresh: 7; url='alta.php'");
+			//return false;
 
 				
 		}
@@ -279,8 +279,8 @@
 			echo "<p></p>";
 
 	        echo FileUploadErrorMsg($_FILES["foto"]["error"]);
-	        header("refresh: 7; url='Alta.php'");
-	        return false;
+	        header("refresh: 7; url='alta.php'");
+	        //return false;
 	}
 //                                                               COGEMOS FECHA SISTEMA PARA CAMPO DE ULTIMA VISITA
 $hoy = date("Y-m-d");
@@ -294,13 +294,6 @@ if ($notas=='Recibir')
 	$notas=1;
 }
 else $notas=0;
-
-$a=1;
-	++$a;
-	$a*=$a;
-	echo "...................RESULTADOOOOO.................";
-	echo "<p></p>";
-	echo $a;
 
 
 
@@ -320,21 +313,15 @@ $link = @mysqli_connect(
 		return false;
 	}
 
-$a=1;
-	++$a;
-	$a*=$a;
-	echo "...................RESULTADOOOOO.................";
-	echo "<p></p>";
-	echo $a;
-
 
 $ok = insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link);
 	if($ok)
-		echo "<p>Datos insertado correctamente</p>";
+		echo "<p>Datos insertados correctamente</p>";
 	else
 	{
 		echo "<p>Error en la inserción de datos</p>";
-		return false;
+		header("refresh: 7; url=alta.php");
+		//return false;
 	}
 //                       LEEMOS PARA COGER EL IDUSER DE LA BD		
 
@@ -353,7 +340,7 @@ if (!$resultado)
     echo 'No se pudo ejecutar la consulta: ' . mysqli_error($link);
     echo "<p></p>";
     echo 'error : ' . $resultado;
-    exit;
+    header("refresh: 7; url=index.php");
 }
 
 
@@ -386,11 +373,8 @@ echo $fultvisita;		// fecha ultima visita
     $nomusu=$_SESSION['nombreusu'];
     $foto=$_SESSION['foto'];
    
-	$pag2="Cocina.php";
-	$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
- 
- 	header("refresh: 7; url=$url");
-
+	 	
+ 	header("refresh: 17; url=index.php");
 
 //                       INSERTAMOS EN LA BD
 
@@ -405,13 +389,7 @@ function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $s
 	
 	echo "<p>$query</p>";
 
-	$a=1;
-	++$a;
-	$a*=$a;
-	echo "...................RESULTADOOOOO.................";
-	echo "<p></p>";
-	echo $a;
-
+	
 
 	$resultado = @mysqli_query($link, $query);
 	echo "<p> Link--Insert :  </p>";
@@ -420,7 +398,9 @@ function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $s
 		echo "<p>Error al ejecutar la sentencia <b>$query</b>: " 
 		. mysqli_error($link)
 		. "</p>";
-		echo mysqli_errno($link) . ": " . mysqli_error($link) . "\n";
+		//echo mysqli_errno($link) . ": " . mysqli_error($link) . "\n";
+		//header("refresh: 7; url=alta.php");
+		//header("location:alta.php");
 		return false;
 	}
 
@@ -533,8 +513,8 @@ function FileUploadErrorMsg($error_code)
 		{
 			$pantalla = "<h1>Datos recibidos</h1>
 			<P>$descampo: $campo </P> "; 
-	  		echo $pantalla;
-			echo "<p></p>";
+	  		//echo $pantalla;
+			//echo "<p></p>";
 			return true;
 		}
 		else

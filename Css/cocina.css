@@ -2,7 +2,7 @@
 /* Aqu? establecemos los elementos generales que influyen en toda la p?gina, excepto en aquellos lugares donde se especifican otros valores	*/
 /* Propiedades establecidas para todo lo contenido dentro de las etiquetas body */
 #foto-pral {
-	background-image: url(../Fotos/fondo3.jpg);
+	background-image: url(../fotos/fondo3.jpg);
 	background-size: cover;
 }
 input::-webkit-input-placeholder { background-color:#F5ECCE; }

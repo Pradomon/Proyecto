@@ -9,7 +9,7 @@
       <div class="modal-dialog imgtam3">
         <div class="modal-content imgtam2 colorpop" >
           <div class="modal-header"><h3>Cerrar Sesion</h3>  </div>
-          <a href="Cocina.php" data-dismiss="modal" class="btn">Cancelar</a>
+          <a href="#" data-dismiss="modal" class="btn">Cancelar</a>
           <div class="modal-body">
 
               <section id="miSlidecerr" class="carousel slide">
@@ -18,13 +18,9 @@
                       <div class="item active">
                        
                         <p> </p>
-                        <form  action="Cocina.php" method="post" enctype="multipart/form-data" > 
+                        <form  action="borrar.php" method="post" enctype="multipart/form-data" > 
                           
-                            <?php 
-                          //                QUITAR
-                                require_once("borrar.inc");
-                            
-                            ?>
+                           
                         <br>
                         <br>
                        

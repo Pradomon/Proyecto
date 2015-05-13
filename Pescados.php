@@ -1,12 +1,12 @@
 <?php
   require_once("define.php");
   require_once("cab.inc");
-  require_once("Listas.inc");
+  require_once("listas.inc");
 ?>
 
   <div class="row">
     <div class="col-sm-12 jumbotronmio"></div>
-     <h1><font color="#61380B">PESCADOS  <img src="Fotos/pescadito.jpg" alt="Pescadito" height="50" width="50"> </font></h1> 
+     <h1><font color="#61380B">PESCADOS  <img src="fotos/pescadito.jpg" alt="Pescadito" height="50" width="50"> </font></h1> 
   
     <p>La clasificación de pescados en azules y bancos obedece su contenido en grasas, ya que los pescados azules tales como el atún, el salmón, el bonito u otros tienen un gran contenido graso que frecuentemente supera el 10%, mientras que los pescados blancos, como la merluza, el bacalao, el lenguado y otros, apenas tienen grasa en su composición, no alcanzando el 5%.
     <a href="http://www.vitonica.com/alimentos/diferencias-entre-el-pescado-azul-y-el-pescado-blanco"  role="button" onclick="abrir(this.href);return false">Leer más....</a></p>

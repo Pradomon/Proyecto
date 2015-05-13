@@ -1,8 +1,8 @@
 <?php
-session_start();
+
 	require_once("define.php");
 	require_once("cab.inc");
-	require_once("Listas.inc");
+	require_once("listas.inc");
 ?>
 
 																						<!-- CUERPO  -->

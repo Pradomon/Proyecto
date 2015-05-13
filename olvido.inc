@@ -10,7 +10,7 @@
       <div class="modal-dialog imgtam3">
         <div class="modal-content imgtam2 colorpop" >
           <div class="modal-header"><h3>Recordatorio contraseña</h3>  </div>
-          <a href="Cocina.php" data-dismiss="modal" class="btn">Cerrar</a>
+          <a href="#" data-dismiss="modal" class="btn">Cerrar</a>
           <div class="modal-body">
 
               <section id="miSlideolv" class="carousel slide">

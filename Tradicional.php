@@ -1,9 +1,9 @@
 
 <?php
-  session_start();
+  
   require_once("define.php");
   require_once("cab.inc");
-  require_once("Listas.inc");
+  require_once("listas.inc");
 ?>
 
 
@@ -23,11 +23,11 @@
 
   <div class="row">
     <div class="col-sm-4  cajachoco">
-     <?php require_once("Abuela.inc");?>
+     <?php require_once("abuela.inc");?>
      <ul>
-       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Lentejas.pdf');return false">Lentejas</a></li>
-       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Cazuela-Merluza.pdf');return false">Cazuela de Merluza</a></li>
-       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Pollo-Salsa.pdf');return false">Pollo en salsa</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('recetas/regional/Lentejas.pdf');return false">Lentejas</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('recetas/regional/Cazuela-Merluza.pdf');return false">Cazuela de Merluza</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('recetas/regional/Pollo-Salsa.pdf');return false">Pollo en salsa</a></li>
         
      </ul>	
     </div>
@@ -39,11 +39,11 @@
     </div>
    
     <div class="col-sm-4  cajachoco">
-      <?php require_once("Regional.inc");?>
+      <?php require_once("regional.inc");?>
       <ul>
-       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Migas.pdf');return false">Migas</a></li>
-       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Fabada.pdf');return false">Fabada Asturiana</a></li>
-       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Cocido.pdf');return false">Cocido Madrileño</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('recetas/regional/Migas.pdf');return false">Migas</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('recetas/regional/Fabada.pdf');return false">Fabada Asturiana</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('recetas/regional/Cocido.pdf');return false">Cocido Madrileño</a></li>
      </ul>	
     </div>
      <div class="col-sm-2 cajachoco">
@@ -60,9 +60,9 @@
     <div class="col-sm-4  cajachoco">
      <h3><font color="#61380B">De cuchara</font></h3>
      <ul>
-       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Sopa.pdf');return false">Sopa de Esparragos y ajo</a></li>
-       	<li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Sopa-Ajo.pdf');return false">Sopa Castellana</a></li>
-        <li><a class="ex5" href="#" onclick="abredoc('Recetas/Regional/Crema-Calabaza.pdf');return false">Crema de Calabaza</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('recetas/regional/Sopa.pdf');return false">Sopa de Esparragos y ajo</a></li>
+       	<li><a class="ex5" href="#" onclick="abredoc('recetas/regional/Sopa-Ajo.pdf');return false">Sopa Castellana</a></li>
+        <li><a class="ex5" href="#" onclick="abredoc('recetas/regional/Crema-Calabaza.pdf');return false">Crema de Calabaza</a></li>
      </ul>	
     </div>
     <div class="col-sm-2 cajachoco">

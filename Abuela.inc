@@ -13,7 +13,7 @@
                     <div class="carousel-inner pop">
                       <div class="item active">
                         <h2> Lentejas caseras con chorizo</h2>
-                        <img src="Fotos/lentejas-verdura-chorizo.jpg" alt="Lentejas" class="imgtam">
+                        <img src="fotos/lentejas-verdura-chorizo.jpg" alt="Lentejas" class="imgtam">
                         <ul><h3>Ingredientes:</h3>
                             <li>400 gr de lentejas Pardinas.</li>
                             <li>2 zanahorias grandes.</li>
@@ -51,7 +51,7 @@
                       </div>
                       <div class="item">
                         <h2>Cazuela de Merluza Tradicional</h2>
-                        <img src="Fotos/cazuela-merluza.jpg" alt="Merluza a la Cazuela" class="imgtam">
+                        <img src="fotos/cazuela-merluza.jpg" alt="Merluza a la Cazuela" class="imgtam">
                         
                         <ul><h3>Ingredientes:</h3>
                           <li>5 medallones de merluza.</li>
@@ -78,7 +78,7 @@
                       </div>
                       <div class="item">
                         <h2>Pollo en salsa</h2>
-                        <img src="Fotos/pollo en salsa.jpg" alt="Merluza a la Cazuela" class="imgtam">
+                        <img src="fotos/pollo en salsa.jpg" alt="Merluza a la Cazuela" class="imgtam">
                         <ul><h3>Ingredientes:</h3>
                           <li>1 pollo troceado.</li>
                           <li>1 cabeza de ajos.</li>

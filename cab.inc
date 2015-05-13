@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -18,100 +19,31 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
   	
 
 </head>
-	<BODY id="foto1-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
+	<BODY id="foto-pral" onload="cargarprimeros();cargarsegundos();cargarterceros();cargarceldas()">
 		<div class="container grande mediano mini"> 
 		<div class="row" >			
 			<div id="cabecera" class="col-sm-6 grande mediano mini">
 				 <!-- <img	src="Fotos/cuchara.jpg" alt="Logotipo" class="imglogo">  -->
 				<div id = "caja1B" class="col-sm-6 grande mediano mini" >    																	
 					<input type="search" value="Buscador">													<!-- BUSCADOR  -->
-					<img	src="Fotos/logo3.gif"  alt="Logo" class="imglogo">
-						
+					<img	src="fotos/logo3.gif"  alt="Logo" class="imglogo">
+									
+					<?php
 					
-					<?php
-									
-								/*	<?=$algo;?>
-
-									es lo mismo 
-
-									<?php
-									echo $algo;
-									?>*/
-					session_start();				
-					if ((basename($_SERVER['PHP_SELF']) != "Cocina.php"))
+					if ((basename($_SERVER['PHP_SELF']) != "index.php"))
 					{
-
-						//if(isset($_GET['usu'])) 
-							if(isset($_SESSION['iduser']))
-							{
-								echo "del inicio con datos";
-								echo "<p></p>";
-								//$usu=$_GET["usu"];
-								//$nomusu=$_GET["nomusu"];
-								//$foto=$_GET["foto"]; 
-								$usu=$_SESSION['iduser'];
-				    			$nomusu=$_SESSION['nombreusu'];
-				    			$foto=$_SESSION['foto'];
-					?>	
-								<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;"
-						 		onclick="paginicio()" />
-						 		<!--onclick="paginicio('<?php echo $usu; ?>', '<?php echo $nomusu; ?>',  '<?php echo $foto; ?>' )" />-->
-						
-
-					<?php
-							}
-							else
-							{
-									
 					?>
-								<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" 
-								 onclick="paginicio()"/>
-					<?php
-							}
+					<input class="grande mediano mini botonL" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;"  onclick="paginicio()"/>
+
+					<?php	
 					}		
 					?>
-						
-							    	
-			    </div> 
+				</div> 
 			    <?php
 			    
-				session_start();
-			    $pag=basename($_SERVER['PHP_SELF']);
-		        $pag1=basename($_SERVER['REQUEST_URI']);
-		        $pag2=basename($_SERVER['SERVER_NAME']);
-		        $pag3=basename($_SERVER['HTTP_REFERER']);
-		       
-                   
-
-        echo "<p> PHP-CAB : $pag </p>";
-        echo "<p> REQ-CAB : $pag1 </p>";
-        echo "<p> SER-CAB : $pag2 </p>";
-        echo "<p> HTT-CAB : $pag3 </p>";
-        
-
-        
-
-
-				if(isset($_SESSION['iduser']))
-
-				{	
-					echo "con valor................CAB";
-					
-			    	//$_SESSION['iduser'] = $_POST["usu"];
-			    	//$_SESSION['nombreusu'] = $_POST["nomusu"];
-			    	//$_SESSION['foto'] = $_POST["foto"];
-			    	$_GET["usu"]=$_SESSION['iduser'];
-			    	$_GET["nomusu"]=$_SESSION['nombreusu'];
-			    	$_GET["foto"]=$_SESSION['foto'];
- 				}
- 				else
- 				{
- 					echo "sin valor................CAB";
- 				}
-			   				    
 			    if(!isset($_SESSION['iduser']))
-   			    {	
-			    ?>	
+			    {	
+   			    ?>	
 			    <div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGIN  -->   
 			    	<!--<form action="http://192.168.1.190/Formularios/Ejercicio1/recibir.php" method ="get"> -->
 			    	<!--<form action="login.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> -->
@@ -124,22 +56,23 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 						<!--onClick="location.href='login.php'"/>-->
 
 						<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Nuevo Usuario&nbsp;&nbsp;&nbsp;" 
-						onClick="location.href='Alta.php'"  />
+						onClick="location.href='alta.php'"  />
 						
 						<p></p>
 						
-						<!--<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Cerrar Sesion&nbsp;&nbsp;&nbsp;" -->
-						<!--onClick="location.href='cerrar.php'"  />-->
+						
 						
 					</form>
 					<?php require_once("olvido.inc");?>
-					<!--<a href="olvido.php" class="grande mediano mini botonL" >&nbsp;&nbsp;&nbsp;¿Has olvidado usuario/contraseña?&nbsp;&nbsp;&nbsp;</a>-->
+					
 				</div>  
+				
 				<?php
 				}
 				else
 				{
-				?>
+				
+ 				?>
 					<div id = "caja2B" class="col-sm-6 grande mediano mini" > 								<!-- LOGADO  -->   
 			    	Hola <?php echo $_SESSION['nombreusu']; ?>
 			    	<?php  
@@ -149,18 +82,17 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 						 $foto=$_SESSION['foto'];
 						 //echo "<img  src='".images_user."/$foto'>";
 						 echo "<img class='navbar-brand1' src='".USER_FOLDER."/$foto'>";
+						 require_once("cerrar.inc");
 
 					}
-					 require_once("cerrar.inc");
+					 
 					?>
-					<!--<input class="grande mediano mini botonR" type="button" value="&nbsp;&nbsp;&nbsp;Cerrar Sesion&nbsp;&nbsp;&nbsp;" -->
-					<!--	onClick="location.href='cerrar.inc'"  />-->
+					
 			    	 
 					</div>  
 					
 				<?php	
 				
-
 				}
 				?>
 			    

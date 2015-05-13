@@ -1,9 +1,10 @@
 <?php
 	error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-	session_start();
+	
+	
 	require_once("define.php");
 	require_once("cab.inc");
-	require_once("Listas.inc");
+	require_once("listas.inc");
 
  
 
@@ -26,28 +27,28 @@
 										</ol>
 										<div class="carousel-inner">
 											<div class="item active">
-												<img src="Fotos/plato0.jpg" alt="Arte Visual" class="imgtam1">
+												<img src="fotos/plato0.jpg" alt="fotos comidas" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/cocina1.jpg" alt="Arte Visual" class="imgtam1">
+												<img src="fotos/cocina1.jpg" alt="fotos comidas" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/plato1.jpg" alt="Arte Visual" class="imgtam1">
+												<img src="fotos/plato1.jpg" alt="fotos comidas" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/cocina2.jpg" alt="Arte Visual" class="imgtam1">
+												<img src="fotos/cocina2.jpg" alt="fotos comidas" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/plato2.jpg" alt="Arte Visual" class="imgtam1">
+												<img src="fotos/plato2.jpg" alt="fotos comidas" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/cocina3.jpg" alt="Arte Visual" class="imgtam1">
+												<img src="fotos/cocina3.jpg" alt="fotos comidas" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/plato3.jpg" alt="Arte Visual" class="imgtam1">
+												<img src="fotos/plato3.jpg" alt="fotos comidas" class="imgtam1">
 											</div>
 											<div class="item">
-												<img src="Fotos/plato4.jpg" alt="Arte Visual" class="imgtam1">
+												<img src="fotos/plato4.jpg" alt="fotos comidas" class="imgtam1">
 											</div>
 										</div>
 										<a href="#miSlide" class="left carousel-control" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -56,7 +57,7 @@
 				</div>				
         		<div  id="cajautilidades" class="col-sm-4 grande mediano mini">			
 		          		<ul><h3><FONT COLOR="#585858">
-									<li><a href="Menus.php"> Menus Semanales</a> </li><br>
+									<li><a href="menus.php"> Menus Semanales</a> </li><br>
 									<li>Foro Chat</li><br>
 									<li>Consejos utiles</li><br>
 									<li>Consejos de familia</li><br>

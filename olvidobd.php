@@ -28,16 +28,21 @@ $usu=$_SESSION['iduser'];
 $nomusu=$_SESSION['nombreusu'];
 $foto=$_SESSION['foto'];
    
-$pag2=basename($_SERVER['HTTP_REFERER']);	
-$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
- 
-header("refresh: 7; url=$url");
 
-
+	echo "<p></p>";
+    echo "...OLVIDO";
+    echo "<p></p>";
+	$url=basename($_SERVER['HTTP_REFERER']);	
+	//$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
+	//$url="$pag2"."?usu=$usu&nomusu=$nomusu&foto=$foto";
+ 	echo "<p>$usu</p>";
+ 	echo "<p>$nomusu</p>";
+ 	echo "<p>$foto</p>";
+ 	echo "<p>$url</p>";
+ 	header("refresh: 7; url=$url");
 
 
 ?>
 
 
-</body>
-</html>
+
