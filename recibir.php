@@ -82,7 +82,7 @@
 			<p>Falta campo Password1	</p>";
 			echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='alta.php'");
+			//header("refresh: 7; url='alta.php'");
 			return false;
 	}
 //                                            PASSWORD2 LONGITUD
@@ -119,10 +119,10 @@
 	if ($correo1!=$correo2)
 	{	
 		$pantalla = "<h1>Error en el envio</h1>
-			<p>Correos distinta </p>";
+			<p>Correos distintos </p>";
 			echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='alta.php'");
+			//header("refresh: 7; url='alta.php'");
 			return false;
 	}	
 
@@ -196,7 +196,7 @@
 			header("refresh: 7; url='alta.php'");
 			return false;
 	}
-//                                                         FICHERO
+//                                                         FOTO-FICHERO
 	$foto    = $_FILES['foto']['name'];
 	$tamaño  = $_FILES['foto']['size'];
 	$error   = $_FILES['foto']['error'];
@@ -205,9 +205,7 @@
 
 	
 
-	echo "...................RESULTADOOOOO.................";
-	echo "<p></p>";
-	echo $a;
+	
 
 
 
@@ -314,14 +312,18 @@ $link = @mysqli_connect(
 	}
 
 
-$ok = insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link);
-	if($ok)
+	$ok = insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link);
+	
+	if ($ok)
+	{	
 		echo "<p>Datos insertados correctamente</p>";
+	}
 	else
 	{
 		echo "<p>Error en la inserción de datos</p>";
-		header("refresh: 7; url=alta.php");
-		//return false;
+		echo "<p>Vuelva a intentarlo</p>";
+		
+		return false;
 	}
 //                       LEEMOS PARA COGER EL IDUSER DE LA BD		
 
@@ -340,7 +342,7 @@ if (!$resultado)
     echo 'No se pudo ejecutar la consulta: ' . mysqli_error($link);
     echo "<p></p>";
     echo 'error : ' . $resultado;
-    header("refresh: 7; url=index.php");
+    header("refresh: 27; url=index.php");
 }
 
 
@@ -374,7 +376,7 @@ echo $fultvisita;		// fecha ultima visita
     $foto=$_SESSION['foto'];
    
 	 	
- 	header("refresh: 17; url=index.php");
+ 	header("refresh: 7; url=index.php");
 
 //                       INSERTAMOS EN LA BD
 
@@ -394,13 +396,28 @@ function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $s
 	$resultado = @mysqli_query($link, $query);
 	echo "<p> Link--Insert :  </p>";
 	if(!$resultado) 
-	{
-		echo "<p>Error al ejecutar la sentencia <b>$query</b>: " 
+	{	
+		//echo "<p>Error al ejecutar la sentencia <b>$query</b>: " 
+		//. mysqli_error($link)
+		//. "</p>";
+		echo "<p>Error al ejecutar la sentencia : " 
 		. mysqli_error($link)
 		. "</p>";
+		echo "<p>Error : ". mysqli_error($link)."</p>";
+		//echo "<script>alert('CAMPO E-MAIL DUPLICADO');</script>";
+		$errorsql=mysqli_error($link);
+		echo "<script languaje=\"javascript\">";
+      		
+      		echo "alert(\"Error en alta usuario : " .  $errorsql ."\");";
+      	echo "</script>";
+
+		//echo "<script>alert('CAMPO : ' .$errorsql);</script>";
+		//alert("El 5 esta en la posiocion: " + y );
+		//mysqli_errno----> nº error
+		
+		
 		//echo mysqli_errno($link) . ": " . mysqli_error($link) . "\n";
-		//header("refresh: 7; url=alta.php");
-		//header("location:alta.php");
+		
 		return false;
 	}
 

@@ -83,6 +83,7 @@ session_start();
 						 //echo "<img  src='".images_user."/$foto'>";
 						 echo "<img class='navbar-brand1' src='".USER_FOLDER."/$foto'>";
 						 require_once("cerrar.inc");
+						 require_once("modperfil.inc");
 
 					}
 					 
