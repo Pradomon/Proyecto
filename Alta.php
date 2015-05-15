@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION['mod'] = 0;
+?>
 <!DOCTYPE html>
 <html lang="es"> 
 <head><!-- Index -->

@@ -5,7 +5,10 @@
 <body>
 
 <?php
+	
 
+	
+	require_once("phpDB/conex.php");
 	session_start();
 
 	$nomusu = $_POST["nomusu"];
@@ -206,6 +209,8 @@
 	
 
 	
+	if ($_SESSION['mod'] = 1)
+		$_FILES['foto']['name']=$foto;
 
 
 
@@ -286,6 +291,14 @@ $hoy = date("Y-m-d");
 echo "<p></p>";
 echo $hoy;
 
+switch ($sexo) 
+{
+	case "m":	$sexo="M";
+    			break;
+       							
+    case "h":	$sexo="H";
+    			break;
+}
 
 if ($notas=='Recibir')
 {
@@ -293,23 +306,38 @@ if ($notas=='Recibir')
 }
 else $notas=0;
 
+	echo "<p>.............alta antes ................. $nomusu</p>";
+	echo "<p>.............alta antes ................. $nomusu</p>";
+	echo "<p>.............alta antes ................. $nomusu</p>";
+	echo "<p>.............alta antes ................. $nomusu</p>";
+	echo "<p>.............alta antes ................. $notas</p>";
 
-
-//                       INSERTAMOS EN LA BD
-$link = @mysqli_connect(
-		'localhost', // El servidor
-		'usuweb', // El usuario
-		'webcocina', // La contraseña
-		'foro-cocina'); // La base de datos
-	echo "<p> Link--Conexion :  </p>";
-	if(!$link) 
-	{
-		echo "<p>Error al conectar con la base de datos: " 
-			. mysqli_connect_error()
-			. "</p>";
-
-		return false;
+ if(isset($_SESSION['mod']))
+ {	
+	if ($_SESSION['mod'] == 1)
+	{	
+		$ok=modif($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias);
+		$ok=leerbd($nomusu, $password1);
+			header("refresh: 7; url=modificar.php");
 	}
+	else
+	{
+		$ok=alta($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias);
+		$ok=leerbd($nomusu, $password1);
+		header("refresh: 7; url=recibir.php");
+	}
+		
+}
+else echo "no tiene valor switch - mod ";
+
+function alta($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias)
+{
+//                       INSERTAMOS EN LA BD
+	$link=abrirconexion();
+	echo "<p>.............alta dentro ................. $nomusu</p>";
+	echo "<p>.............alta dentro ................. $nomusu</p>";
+	echo "<p>.............alta dentro ................. $nomusu</p>";
+	echo "<p>.............alta dentro ................. $nomusu</p>";
 
 
 	$ok = insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link);
@@ -376,8 +404,33 @@ echo $fultvisita;		// fecha ultima visita
     $foto=$_SESSION['foto'];
    
 	 	
- 	header("refresh: 7; url=index.php");
+ 	//header("refresh: 7; url=index.php");
+}
 
+function modif($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias)
+{
+//                       INSERTAMOS EN LA BD
+	$link=abrirconexion();
+	echo "<p>.............modif dentro ................. $nomusu</p>";
+	echo "<p>.............modif dentro ................. $nomusu</p>";
+	echo "<p>.............modif dentro ................. $nomusu</p>";
+	echo "<p>.............modif dentro ................. $nomusu</p>";
+
+	$ok = updateBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link);
+	
+	if ($ok)
+	{	
+		echo "<p>Datos insertados correctamente</p>";
+	}
+	else
+	{
+		echo "<p>Error en la inserción de datos</p>";
+		echo "<p>Vuelva a intentarlo</p>";
+		
+		return false;
+	}
+
+}
 //                       INSERTAMOS EN LA BD
 
 function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link)
@@ -422,6 +475,136 @@ function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $s
 	}
 
 	return true;
+}
+
+function updateBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias,$link)
+{
+//guardar los datos en la BD
+	
+
+	
+	
+	$query = "UPDATE usuarios SET" 
+		. " nomusu ='$nomusu'" 
+		. ", email = '$correo1'" 
+		. ", nombre ='$nombre'" 
+		. ", apellidos = '$apellidos'"
+		. ", fnacimiento = '$fecha'" 
+		. ", fultvisita = '$hoy'"
+		. ", dni = '$dni'"
+		. ", sexo = '$sexo'"
+		. ", notificaciones = '$notas'"
+		. ", password = '$password1'"
+		. ", foto = '$foto'"
+		. ", alias = '$alias'"
+		. " where password = '$password1'"
+		. " and nomusu = '$nomusu'";
+	//	. " WHERE nomusu = $nomusu"; 	
+
+	echo "<p>$query</p>";
+
+	
+
+	$resultado = @mysqli_query($link, $query);
+	echo "<p> Link--Insert :  </p>";
+	if(!$resultado) 
+	{	
+		//echo "<p>Error al ejecutar la sentencia <b>$query</b>: " 
+		//. mysqli_error($link)
+		//. "</p>";
+		echo "<p>Error al ejecutar la sentencia : " 
+		. mysqli_error($link)
+		. "</p>";
+		echo "<p>Error : ". mysqli_error($link)."</p>";
+		//echo "<script>alert('CAMPO E-MAIL DUPLICADO');</script>";
+		$errorsql=mysqli_error($link);
+		echo "<script languaje=\"javascript\">";
+      		
+      		echo "alert(\"Error en alta usuario : " .  $errorsql ."\");";
+      	echo "</script>";
+
+		//echo "<script>alert('CAMPO : ' .$errorsql);</script>";
+		//alert("El 5 esta en la posiocion: " + y );
+		//mysqli_errno----> nº error
+		
+		
+		//echo mysqli_errno($link) . ": " . mysqli_error($link) . "\n";
+		
+		return false;
+	}
+
+	return true;
+}
+
+//                       LEEMOS PARA COGER EL IDUSER DE LA BD		
+function leerbd($nomusu,$password1)
+{
+	$link=abrirconexion();
+$query = "SELECT * FROM usuarios"
+		. " where password = '$password1'"
+		. " and nomusu = '$nomusu'";
+
+echo "<p> Query : $query </p>";
+
+echo "<p> Link--Select-Antes :  </p>";
+$resultado = @mysqli_query($link, $query);
+echo "<p> Link--Select-Despues :  </p>";
+
+if (!$resultado) 
+{
+    echo 'No se pudo ejecutar la consulta: ' . mysqli_error($link);
+    echo "<p></p>";
+    echo 'error : ' . $resultado;
+    header("refresh: 27; url=index.php");
+}
+
+
+
+
+if($fila = mysqli_fetch_assoc($resultado))
+{
+	
+
+	$codusu=$fila['codusu'];
+      $nomusu=$fila['nomusu'];
+      $email=$fila['email'];
+      $nombre=$fila['nombre'];
+      $apellidos=$fila['apellidos'];
+      $fnacimiento=$fila['fnacimiento'];
+      $fultvisita=$fila['fultvisita'];
+      $dni=$fila['dni'];
+      $sexo=$fila['sexo'];
+      $notificaciones=$fila['notificaciones'];
+      $password1=$fila['password'];
+      $password2=$fila['password'];
+      $foto=$fila['foto'];
+      $alias=$fila['alias'];
+   
+		$_SESSION['nombreusu'] = $nomusu;
+    $_SESSION['iduser'] = $codusu;
+    $_SESSION['foto'] = $foto;
+}
+	
+
+echo $codusu; 					// codusu
+ echo "<p></p>";
+ echo $nomusu; 					// nomusu
+ echo "<p></p>";
+echo $email;			 	// email
+ echo "<p></p>";
+echo $fultvisita;		// fecha ultima visita
+ echo "<p></p>";		
+
+	$_SESSION['iduser'] = $codusu;
+	$_SESSION['nombreusu']=$nomusu;
+	$_SESSION['foto']=$foto;
+	echo "Todo correcto, saltar a la página con usuario logado";
+
+	$usu=$_SESSION['iduser'];
+    $nomusu=$_SESSION['nombreusu'];
+    $foto=$_SESSION['foto'];
+	
+ 
 }
 
 function FileUploadErrorMsg($error_code)

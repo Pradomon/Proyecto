@@ -28,7 +28,7 @@ function leerusuarios1($link,$query)
             echo "<p> HTT : $pag3 </p>";
         echo "<p></p>";
         echo "Todo correcto, Espere un momento y será redireccionado...OLVIDO";
-        session_start();
+        //session_start();
         $_SESSION['nombreusu'] = $nomusu;
         $_SESSION['iduser'] = $codusu;
         $_SESSION['foto'] = $foto;
@@ -117,5 +117,59 @@ else
     
 
  }
+}
+
+function leerusuariosmod($link, $query)
+{
+  
+
+  $resultado = @mysqli_query($link, $query);
+
+  //echo "<P>Valor de resultado: $resultado</P>";
+
+  if($resultado)
+  {
+    if($fila = mysqli_fetch_assoc($resultado))
+    {
+      $codusu=$fila['codusu'];
+      $nomusu=$fila['nomusu'];
+      $email=$fila['email'];
+      $nombre=$fila['nombre'];
+      $apellidos=$fila['apellidos'];
+      $fnacimiento=$fila['fnacimiento'];
+      $fultvisita=$fila['fultvisita'];
+      $dni=$fila['dni'];
+      $sexo=$fila['sexo'];
+      $notificaciones=$fila['notificaciones'];
+      $password=$fila['password'];
+      $password1=$fila['password'];
+      $foto=$fila['foto'];
+      $alias=$fila['alias'];
+     
+
+
+      $_SESSION['nombreusu'] = $nomusu;
+      $_SESSION['iduser'] = $codusu;
+      $_SESSION['foto'] = $foto;
+      return $fila;
+    }
+    else
+     { 
+      echo "No existe usuario ";
+      echo "<p></p>";
+      echo 'Espere un momento y será redireccionado...';
+      header("refresh: 3; url = index.php"); 
+    }
+  }
+
+  //echo "foto: $foto";
+echo "No existe usuario ";
+      echo "<p></p>";
+      echo 'Espere un momento y será redireccionado...';
+      header("refresh: 3; url = index.php"); 
+  //liberar memoria del resultado
+  mysqli_free_result($resultado);
+
+  return false;
 }
 ?>

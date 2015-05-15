@@ -1,3 +1,53 @@
+<?php
+	require_once("define.php");
+	require_once("phpDB/conex.php");
+	require_once("phpDB/selectusuarios.php");
+
+	session_start();
+	$codusu=$_SESSION['iduser'];
+	$_SESSION['mod'] = 1;
+	
+	
+	
+$link=abrirconexion();
+
+
+$query = "SELECT * FROM usuarios"
+		. " where codusu = '$codusu'";
+		
+
+$fila = leerusuariosmod($link, $query);
+
+	if ($fila)
+	{	
+	  $codusu=$fila['codusu'];
+      $nomusu=$fila['nomusu'];
+      $email=$fila['email'];
+      $nombre=$fila['nombre'];
+      $apellidos=$fila['apellidos'];
+      $fnacimiento=$fila['fnacimiento'];
+      $fultvisita=$fila['fultvisita'];
+      $dni=$fila['dni'];
+      $sexo=$fila['sexo'];
+      $notificaciones=$fila['notificaciones'];
+      $password1=$fila['password'];
+      $password2=$fila['password'];
+      $foto=$fila['foto'];
+      $alias=$fila['alias'];
+   
+		$_SESSION['nombreusu'] = $nomusu;
+    $_SESSION['iduser'] = $codusu;
+    $_SESSION['foto'] = $foto;
+   }
+   	else
+   	{
+   		echo "No existe usuario ";
+      echo "<p></p>";
+      echo 'Espere un momento y será redireccionado...';
+      header("refresh: 3; url = index.php"); 
+   	}
+ ?>
+
 <!DOCTYPE html>
 <html lang="es"> 
 <head><!-- Index -->
@@ -205,7 +255,9 @@ function isALetter(charVal)
 			 <!-- <img	src="Fotos/cuchara.jpg" alt="Logotipo" class="imglogo">  -->
 			<!--                                                                                 AVATAR      -->
 			<div id = "cajaavatar" >    
-				<img	src="Fotos/cocina3.jpg"  alt="Avatar" 	class="imgavatar">  
+				<!--<img	src="Fotos/cocina3.jpg"  alt="Avatar" 	class="imgavatar"> -->
+				<?php  echo "<img class='imgavatar' src='".USER_FOLDER."/$foto'>"; ?>
+
 			</div>    
 		<!--                                                                                 FORMULARIO -->
 			<div id="cajaformulario" >
@@ -215,36 +267,56 @@ function isALetter(charVal)
 				<!--<form action="http://192.168.1.195/validar/recibir.php" method ="get" onsubmit="return validar()"> -->
 				<form action="recibir.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> 
 														  	
-					<input type="text" 	   id="nomusu" placeholder="Nombre Usuario" name="nomusu"	value="" maxlength = "10" required>					<p><p>
+					<input type="text" 	   id="nomusu" placeholder="Nombre Usuario" name="nomusu"	value="<?php echo $nomusu?>" maxlength = "10" required>					<p><p>
 					
-					<input type="password" id="password1" placeholder="Contraseña  aaa123"	name="password1"	value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
+					<input type="password" id="password1" placeholder="Contraseña  aaa123"	name="password1"	value="<?php echo $password1?>" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
 					
-					<input type="password" id="password2" placeholder="Confirmación Contraseña" name="password2" value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
+					<input type="password" id="password2" placeholder="Confirmación Contraseña" name="password2" value="<?php echo $password2?>" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
 					
-					<input type="text" 	   id="correo1" placeholder="Correo"	name="correo1"	size="50" maxlength="30"	value="" required	
+					<input type="text" 	   id="correo1" placeholder="Correo"	name="correo1"	size="50" maxlength="30"	value="<?php echo $email?>" required	
 						pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" ><p></p>
 					
-					<input type="text" 	   id="correo2" placeholder="Confirmacion Correo"	name="correo2"	size="50" maxlength="30"	value="" required	
+					<input type="text" 	   id="correo2" placeholder="Confirmacion Correo"	name="correo2"	size="50" maxlength="30"	value="<?php echo $email?>" required	
 						pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" ><p></p>	
 					
-					<input type="text" 	   placeholder="Nombre"		name="nombre"		value="" required>	<p></p>
+					<input type="text" 	   placeholder="Nombre"		name="nombre"		value="<?php echo $nombre?>" required>	<p></p>
 					
-					<input type="text" 	   placeholder="Apellidos"	name="apellidos"	value="" required>	<p></p>
+					<input type="text" 	   placeholder="Apellidos"	name="apellidos"	value="<?php echo $apellidos?>" required>	<p></p>
 					
-					<input type="text" 	   id="alias" placeholder="Alias" name="alias"	value="" >	<p><p>
+					<input type="text" 	   id="alias" placeholder="Alias" name="alias"	value="<?php echo $alias?>" >	<p><p>
 					
-					Fecha de Nacimiento <input type="Date" 	id="fecha" name="fecha" 	value"" required> <p></p>
+					Fecha de Nacimiento <input type="Date" 	id="fecha" name="fecha" 	value="<?php echo $fnacimiento?>" required> <p></p>
 					
-					<input type="text"     id="dni" placeholder="DNI" name="dni" size="9" maxlength="9"> <p></p>
+					<input type="text"     id="dni" placeholder="DNI" name="dni" size="9" maxlength="9" value="<?php echo $dni?>"> <p></p>
 						<div id="datosf" >
 						Sexo <br/>
-							<input type="radio" name="sexo" value="Mujer"  checked="checked" /> Mujer
-							<input type="radio" name="sexo" value="Hombre" /> Hombre 
+						<?php
+
+							switch ($sexo) 
+							{
+    							case "m":	$sexo="M";
+       										break;
+       							
+       							case "h":	$sexo="H";
+       										break;
+       						}
+								
+							$active_radiof='disabled'; 
+							$active_radiom='disabled';
+							$active_notas='disabled';
+							
+							if ($sexo=='M') $active_radiof='checked';
+							else  
+							                $active_radiom='checked'; 
+							if ($notificaciones=="1") $active_notas='checked';
+						?>
+							<input type="radio" id="sexo" name="sexo" value="Mujer"  <?php echo $active_radiof ?> /> Mujer
+							<input type="radio" id="sexo" name="sexo" value="Hombre" <?php echo $active_radiom ?> /> Hombre 
 						<p></p>
-						<input name="notas" type="checkbox" value="Recibir" checked="checked"/> Recibir nuevas publicaciones	
+						<input name="notas" type="checkbox" value="Recibir" <?php echo $active_notas ?>/> Recibir nuevas publicaciones	
 						<p></p>
 						
-							Incluir mi foto <input  accept="image/jpeg, image/png" class="grande mediano mini botonG" type="file" name="foto" id="foto">
+							Incluir mi foto <input  accept="image/jpeg, image/png" class="grande mediano mini botonG"  type="file" name="foto" id="foto">
 						
 					</div>
 					<p></p>
