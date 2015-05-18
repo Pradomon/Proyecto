@@ -36,8 +36,8 @@ $fila = leerusuariosmod($link, $query);
       $alias=$fila['alias'];
    
 		$_SESSION['nombreusu'] = $nomusu;
-    $_SESSION['iduser'] = $codusu;
-    $_SESSION['foto'] = $foto;
+    	$_SESSION['iduser'] = $codusu;
+    	$_SESSION['foto'] = $foto;
    }
    	else
    	{
@@ -315,8 +315,8 @@ function isALetter(charVal)
 						<p></p>
 						<input name="notas" type="checkbox" value="Recibir" <?php echo $active_notas ?>/> Recibir nuevas publicaciones	
 						<p></p>
-						
-							Incluir mi foto <input  accept="image/jpeg, image/png" class="grande mediano mini botonG"  type="file" name="foto" id="foto">
+							
+							Cambiar mi foto <input  accept="image/jpeg, image/png" class="grande mediano mini botonG" type="file" name="foto" id="foto">
 						
 					</div>
 					<p></p>

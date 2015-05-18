@@ -200,6 +200,9 @@
 			return false;
 	}
 //                                                         FOTO-FICHERO
+	if ($_SESSION['mod'] = 1) 
+		$_FILES['foto']['name']=$_SESSION['foto'];
+
 	$foto    = $_FILES['foto']['name'];
 	$tamaño  = $_FILES['foto']['size'];
 	$error   = $_FILES['foto']['error'];
@@ -207,13 +210,6 @@
 	$carpeta = $_FILES['foto']['tmp_name'];
 
 	
-
-	
-	if ($_SESSION['mod'] = 1)
-		$_FILES['foto']['name']=$foto;
-
-
-
 	if($_FILES['foto']['error'] == 0)
 	{
 		if($_FILES['foto']['type'] == "image/jpeg"
