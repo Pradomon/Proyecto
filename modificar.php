@@ -29,7 +29,7 @@ $fila = leerusuariosmod($link, $query);
       $fultvisita=$fila['fultvisita'];
       $dni=$fila['dni'];
       $sexo=$fila['sexo'];
-      $notificaciones=$fila['notificaciones'];
+      $notas=$fila['notificaciones'];
       $password1=$fila['password'];
       $password2=$fila['password'];
       $foto=$fila['foto'];
@@ -299,21 +299,33 @@ function isALetter(charVal)
        							
        							case "h":	$sexo="H";
        										break;
+       							case "M":	$sexo="M";
+       										break;
+       							
+       							case "H":	$sexo="H";
+       										break;			
+       							default: 	$sexo="M";
+       										break;		
        						}
 								
-							$active_radiof='disabled'; 
-							$active_radiom='disabled';
-							$active_notas='disabled';
-							
-							if ($sexo=='M') $active_radiof='checked';
-							else  
-							                $active_radiom='checked'; 
-							if ($notificaciones=="1") $active_notas='checked';
 						?>
-							<input type="radio" id="sexo" name="sexo" value="Mujer"  <?php echo $active_radiof ?> /> Mujer
-							<input type="radio" id="sexo" name="sexo" value="Hombre" <?php echo $active_radiom ?> /> Hombre 
+						<?php if($sexo == 'M') {?> 
+							<input name="sexo" type="radio" value="Mujer" checked="checked"> Mujer 
+							<input name="sexo" type="radio" value="Hombre"> Hombre 
+							<?php } else {?> 
+							<input name="sexo" type="radio" value="Mujer"> Mujer 
+							<input name="sexo" type="radio" value="Hombre" checked="checked"> Hombre 
+						<?php }?>
 						<p></p>
-						<input name="notas" type="checkbox" value="Recibir" <?php echo $active_notas ?>/> Recibir nuevas publicaciones	
+
+						<?php if($notas == '1') {?> 
+							<input name="notas" type="checkbox" value="Recibir" checked="checked"> Recibir nuevas publicaciones 
+						<?php } else {?> 
+							<input name="notas" type="checkbox" value="Recibir" > Recibir nuevas publicaciones 
+						<?php }?>
+							
+						<p></p>
+						
 						<p></p>
 							
 							Cambiar mi foto <input  accept="image/jpeg, image/png" class="grande mediano mini botonG" type="file" name="foto" id="foto">

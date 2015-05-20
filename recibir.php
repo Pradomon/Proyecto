@@ -23,7 +23,9 @@
 	$fecha = $_POST["fecha"];
 	$sexo = $_POST["sexo"];
 	if(isset($_POST['notas']))	$notas = $_POST["notas"];
+	else $notas='no';
 	if(isset($_POST['foto']))   $foto = $_POST["foto"];
+	else $foto=$_SESSION['foto'];
 
 	echo $nomusu;
 	echo "<p></p>";
@@ -200,8 +202,12 @@
 			return false;
 	}
 //                                                         FOTO-FICHERO
-	if ($_SESSION['mod'] = 1) 
-		$_FILES['foto']['name']=$_SESSION['foto'];
+	//if ($_SESSION['mod'] = 1) 
+
+	//	$_FILES['foto']['name']=$_SESSION['foto'];
+
+	//$fotos=$_SESSION['foto'];
+	
 
 	$foto    = $_FILES['foto']['name'];
 	$tamaño  = $_FILES['foto']['size'];
@@ -209,6 +215,8 @@
 	$tipo    = $_FILES['foto']['type'];
 	$carpeta = $_FILES['foto']['tmp_name'];
 
+	echo "<p>.........FOTOS...................... $fotos</p>";
+	echo "<p>.........FOTOS...................... $foto</p>";
 	
 	if($_FILES['foto']['error'] == 0)
 	{
@@ -291,15 +299,19 @@ switch ($sexo)
 {
 	case "m":	$sexo="M";
     			break;
-       							
     case "h":	$sexo="H";
     			break;
+    case "M":	$sexo="M";
+    			break;
+    case "H":	$sexo="H";
+    			break;			
+    default: 	$sexo="M";
+    			break;		
 }
 
-if ($notas=='Recibir')
-{
-	$notas=1;
-}
+if(isset($_POST['notas'])) echo $notas;
+
+if ($notas=='Recibir') $notas=1;
 else $notas=0;
 
 	echo "<p>.............alta antes ................. $nomusu</p>";
@@ -308,8 +320,18 @@ else $notas=0;
 	echo "<p>.............alta antes ................. $nomusu</p>";
 	echo "<p>.............alta antes ................. $notas</p>";
 
+
+
  if(isset($_SESSION['mod']))
  {	
+ 	$mod=$_SESSION['mod'];
+ 	echo "<p>.............valor mod................. $mod</p>";
+ 	echo "<p>.............valor mod................. $mod</p>";
+ 	echo "<p>.............valor mod................. $mod</p>";
+ 	echo "<p>.............valor mod................. $mod</p>";
+
+ 	echo $mod;
+
 	if ($_SESSION['mod'] == 1)
 	{	
 		$ok=modif($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias);
@@ -425,7 +447,9 @@ function modif($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo
 		
 		return false;
 	}
-
+$_SESSION['iduser'] = $codusu;
+	$_SESSION['nombreusu']=$nomusu;
+	$_SESSION['foto']=$foto;
 }
 //                       INSERTAMOS EN LA BD
 

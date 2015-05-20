@@ -83,13 +83,18 @@ session_start();
 						 //echo "<img  src='".images_user."/$foto'>";
 						 echo "<img class='navbar-brand1' src='".USER_FOLDER."/$foto'>";
 						 require_once("cerrar.inc");
-						 require_once("modperfil.inc");
+						 //require_once("modperfil.inc");
 
 					}
 					 
 					?>
 					
-			    	 
+			    	 <form  action="modificar.php" method="post" enctype="multipart/form-data" > 
+                                             
+                      
+                        <input class="grande mediano mini botonL" type="submit" name="Aceptar" value="&nbsp;&nbsp;&nbsp;Modificar Perfil&nbsp;&nbsp;&nbsp;" />
+                        <!--onClick="location.href='olvido.php'" -->
+                       </form> 
 					</div>  
 					
 				<?php	
