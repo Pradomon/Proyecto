@@ -25,7 +25,7 @@
 	if(isset($_POST['notas']))	$notas = $_POST["notas"];
 	else $notas='no';
 	if(isset($_POST['foto']))   $foto = $_POST["foto"];
-	else $foto=$_SESSION['foto'];
+	
 
 	echo $nomusu;
 	echo "<p></p>";
@@ -49,7 +49,7 @@
 	echo "<p></p>";
 	echo $sexo;
 	echo "<p></p>";
-	if(isset($_POST['notas'])) echo $notas;
+	echo $notas;
 	echo "<p></p>";
 
 //                                            NOMUSU   NOMBRE USUARIO
@@ -202,22 +202,21 @@
 			return false;
 	}
 //                                                         FOTO-FICHERO
-	//if ($_SESSION['mod'] = 1) 
-
-	//	$_FILES['foto']['name']=$_SESSION['foto'];
-
-	//$fotos=$_SESSION['foto'];
+	if ($_SESSION['mod'] == 1) 
 	
-
+		
+			$foto=$_SESSION['foto'];
+		
+	
 	$foto    = $_FILES['foto']['name'];
 	$tamaño  = $_FILES['foto']['size'];
 	$error   = $_FILES['foto']['error'];
 	$tipo    = $_FILES['foto']['type'];
 	$carpeta = $_FILES['foto']['tmp_name'];
 
-	echo "<p>.........FOTOS...................... $fotos</p>";
-	echo "<p>.........FOTOS...................... $foto</p>";
 	
+
+
 	if($_FILES['foto']['error'] == 0)
 	{
 		if($_FILES['foto']['type'] == "image/jpeg"
@@ -265,7 +264,11 @@
 			
 	  		echo $pantalla;
 			echo "<p></p>";
-			header("refresh: 7; url='alta.php'");
+			 if ($_SESSION['mod'] == 0) 
+	               header("refresh: 7; url='alta.php'");
+	         else
+	         	  header("refresh: 7; url='modificar.php'");
+			
 			//return false;
 
 				
@@ -273,8 +276,20 @@
 	}
 	else
 	{
-		//echo var_dump($_FILES);
-		$pantalla = "<h1>Error en la recepcion del archivo</h1>
+		if($_FILES['foto']['error'] == 4)
+		{
+			if ($_SESSION['mod'] == 1) 
+			{
+				
+					$foto=$_SESSION['foto'];
+				
+			}	
+		}
+		else
+		{
+
+
+			$pantalla = "<h1>Error en la recepcion del archivo</h1>
 			<P>Nombre : $foto </p>
 			<p>Tamaño : $tamaño</p>
 			<p>Error  :  $error</p>
@@ -286,8 +301,12 @@
 			echo "<p></p>";
 
 	        echo FileUploadErrorMsg($_FILES["foto"]["error"]);
-	        header("refresh: 7; url='alta.php'");
+	        if ($_SESSION['mod'] == 0) 
+	               header("refresh: 7; url='alta.php'");
+	         else
+	         	  header("refresh: 7; url='modificar.php'");
 	        //return false;
+	     }
 	}
 //                                                               COGEMOS FECHA SISTEMA PARA CAMPO DE ULTIMA VISITA
 $hoy = date("Y-m-d");
@@ -342,7 +361,7 @@ else $notas=0;
 	{
 		$ok=alta($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo, $notas, $password1, $foto, $alias);
 		$ok=leerbd($nomusu, $password1);
-		header("refresh: 7; url=recibir.php");
+		header("refresh: 7; url=index.php");
 	}
 		
 }
@@ -447,7 +466,7 @@ function modif($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $sexo
 		
 		return false;
 	}
-$_SESSION['iduser'] = $codusu;
+	$_SESSION['iduser'] = $codusu;
 	$_SESSION['nombreusu']=$nomusu;
 	$_SESSION['foto']=$foto;
 }
@@ -483,7 +502,7 @@ function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $s
       		
       		echo "alert(\"Error en alta usuario : " .  $errorsql ."\");";
       	echo "</script>";
-
+      	header("refresh: 7; url=alta.php");
 		//echo "<script>alert('CAMPO : ' .$errorsql);</script>";
 		//alert("El 5 esta en la posiocion: " + y );
 		//mysqli_errno----> nº error

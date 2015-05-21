@@ -9,6 +9,7 @@
 	
 	
 	
+	
 $link=abrirconexion();
 
 
@@ -38,6 +39,8 @@ $fila = leerusuariosmod($link, $query);
 		$_SESSION['nombreusu'] = $nomusu;
     	$_SESSION['iduser'] = $codusu;
     	$_SESSION['foto'] = $foto;
+    	
+
    }
    	else
    	{
