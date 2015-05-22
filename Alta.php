@@ -219,7 +219,7 @@ function isALetter(charVal)
 				<!--<form action="http://192.168.1.195/validar/recibir.php" method ="get" onsubmit="return validar()"> -->
 				<form action="recibir.php" method ="post" enctype="multipart/form-data" onsubmit="return validar()"> 
 														  	
-					<input type="text" 	   id="nomusu" placeholder="Nombre Usuario" name="nomusu"	value="" maxlength = "10" required>					<p><p>
+					<input type="text" autofocus=""  id="nomusu" placeholder="Nombre Usuario" name="nomusu"	value="" maxlength = "10" required>					<p><p>
 					
 					<input type="password" id="password1" placeholder="Contraseña  aaa123"	name="password1"	value="" maxlength = "6" pattern="[a-z]{3}[0-9]{3}" required>	<p></p>
 					

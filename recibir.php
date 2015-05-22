@@ -492,9 +492,7 @@ function insertBD($nomusu, $correo1, $nombre, $apellidos, $fecha, $hoy, $dni, $s
 		//echo "<p>Error al ejecutar la sentencia <b>$query</b>: " 
 		//. mysqli_error($link)
 		//. "</p>";
-		echo "<p>Error al ejecutar la sentencia : " 
-		. mysqli_error($link)
-		. "</p>";
+		echo "<p>Error al ejecutar la sentencia : " . mysqli_error($link). "</p>";
 		echo "<p>Error : ". mysqli_error($link)."</p>";
 		//echo "<script>alert('CAMPO E-MAIL DUPLICADO');</script>";
 		$errorsql=mysqli_error($link);

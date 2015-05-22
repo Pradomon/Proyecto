@@ -87,18 +87,21 @@
 					</li>
 					<li class="pestañas">
 						<?php
-						
-							if (basename($_SERVER['PHP_SELF']) != "menus.php" && 
-							   basename($_SERVER['PHP_SELF']) != "index.php")
-							{
+							
+							 if(isset($_SESSION['iduser']))
+							 	{	
+								 if (basename($_SERVER['PHP_SELF']) != "menus.php" && 
+							   		 basename($_SERVER['PHP_SELF']) != "index.php")
+									 {
 						?>
-								<a href="menus.php">Menus Semanales</a>
-								<ul>
-									<li><a href="menus.php">Comidas y Cenas</a></li>
-									
-								</ul>
+									 <a href="menus.php">Menus Semanales</a>
+									 <ul>
+									 	<li><a href="menus.php">Comidas y Cenas</a></li>
+										
+									 </ul>
 						<?php
-							}
+									}
+								}	
 						?>	
 					</li>
 				</ul>

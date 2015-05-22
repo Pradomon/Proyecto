@@ -18,17 +18,7 @@ function leerusuarios1($link,$query)
         $email=$fila['email'];
         $foto=$fila['foto'];
       
-              $pag=basename($_SERVER['PHP_SELF']);
-                $pag1=basename($_SERVER['REQUEST_URI']);
-                $pag2=basename($_SERVER['SERVER_NAME']);
-                $pag3=basename($_SERVER['HTTP_REFERER']);
-            echo "<p> PHP : $pag </p>";
-            echo "<p> REQ : $pag1 </p>";
-            echo "<p> SER : $pag2 </p>";
-            echo "<p> HTT : $pag3 </p>";
-        echo "<p></p>";
-        echo "Todo correcto, Espere un momento y será redireccionado...OLVIDO";
-        //session_start();
+           
         $_SESSION['nombreusu'] = $nomusu;
         $_SESSION['iduser'] = $codusu;
         $_SESSION['foto'] = $foto;
@@ -76,20 +66,7 @@ if (mysqli_num_rows($resultado)>0)
     $email=$fila['email'];
     $foto=$fila['foto'];
     
-            $pag=basename($_SERVER['PHP_SELF']);
-            $pag1=basename($_SERVER['REQUEST_URI']);
-            $pag2=basename($_SERVER['SERVER_NAME']);
-            $pag3=basename($_SERVER['HTTP_REFERER']);
-                   
-                   
-
-        echo "<p> PHP-LOG : $pag </p>";
-        echo "<p> REQ-LOG : $pag1 </p>";
-        echo "<p> SER-LOG : $pag2 </p>";
-        echo "<p> HTT-LOG : $pag3 </p>";
-   
-    echo "<p></p>";
-    echo "Todo correcto, Espere un momento y será redireccionado... LOGIN";
+           
     session_start();
     
     $_SESSION['nombreusu'] = $nomusu;

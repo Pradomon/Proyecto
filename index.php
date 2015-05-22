@@ -54,7 +54,12 @@
 										<a href="#miSlide" class="left carousel-control" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
 										<a href="#miSlide" class="right carousel-control" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 					</section><br>		
-				</div>				
+				</div>		
+				<?php
+							
+							 if(isset($_SESSION['iduser']))
+							 	{			
+        		?>
         		<div  id="cajautilidades" class="col-sm-4 grande mediano mini">			
 		          		<ul><h3><FONT COLOR="#585858">
 									<li><a href="menus.php"> Menus Semanales</a> </li><br>
@@ -63,6 +68,9 @@
 									<li>Consejos de familia</li><br>
 						</h3></ul>																	
         		</div>								<!-- CIERRE CAJA UTILIDADES  -->
+        		<?php
+        		}
+        		?>
         	</div>									<!-- CIERRE ROW  -->
        		<div class="clear"></div>
         </div>	                                                <!--	CIERRE CAJA CUERPO  -->
