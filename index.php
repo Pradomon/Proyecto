@@ -57,19 +57,42 @@
 				</div>		
 				<?php
 							
-							 if(isset($_SESSION['iduser']))
-							 	{			
+					 if(isset($_SESSION['iduser']))
+					 	{			
         		?>
-        		<div  id="cajautilidades" class="col-sm-4 grande mediano mini">			
-		          		<ul><h3><FONT COLOR="#585858">
-									<li><a href="menus.php"> Menus Semanales</a> </li><br>
-									<li>Foro Chat</li><br>
-									<li>Consejos utiles</li><br>
-									<li>Consejos de familia</li><br>
-						</h3></ul>																	
-        		</div>								<!-- CIERRE CAJA UTILIDADES  -->
+				        		<!--<span class="fusion-tooltip tooltip-shortcode" data-animation="" data-delay="0" data-placement="top"
+				        		 data-title="hacemos que tus ideas se conviertan en realidad" data-toggle="tooltip" data-trigger="hover" data-original-title="">
+				        		  <span style="color: #f79600;">tu imagina, nosotros lo creamos.</span></span>-->
+
+				        		<div  id="cajautilidades" class="col-sm-4 grande mediano mini">			
+						          		<ul><h3><FONT COLOR="#585858">
+													<li><a href="menus.php"> Menus Semanales</a> </li><br>
+													<li>Foro Chat</li><br>
+													<li>Consejos utiles</li><br>
+													<li>Consejos de familia</li><br>
+										</h3></ul>																	
+				        		</div>								<!-- CIERRE CAJA UTILIDADES  -->
         		<?php
-        		}
+        				}
+        			else
+        			 {
+        				?>
+        					
+        					<div  id="cajautilidades" class="col-sm-4 grande mediano mini">	
+        					<acronym   style="color:red; font-style:italic" title="Debes estar registrado para ver esta sección">	
+        					<!--<acronym title="el cartelito que aparece"> lo que queres resaltar</acronym>-->
+						          		<ul><h3><FONT COLOR="#585858">
+													<li>Menus Semanales </li><br>
+													<li>Foro Chat</li><br>
+													<li>Consejos utiles</li><br>
+													<li>Consejos de familia</li><br>
+										</h3></ul>	
+							</acronym>																			
+				        	</div>	
+				        									<!-- CIERRE CAJA UTILIDADES  -->
+        			<?php
+        			}	
+
         		?>
         	</div>									<!-- CIERRE ROW  -->
        		<div class="clear"></div>

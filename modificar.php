@@ -344,6 +344,11 @@ function isALetter(charVal)
 					<input class="grande mediano mini botonL puntero" type="submit" name="Aceptar" value="&nbsp;&nbsp;&nbsp;Aceptar&nbsp;&nbsp;&nbsp;" />
 					<p></p>	
 					<input class="grande mediano mini botonL puntero" type="button" value="&nbsp;&nbsp;&nbsp;Inicio&nbsp;&nbsp;&nbsp;" onclick="paginicio()"/> 
+					<br>
+					<br>
+					<br>
+					<br>
+					Fecha Ultima Visita  <input type="Date" 	id="fecha" name="fecha" value="<?php echo $fultvisita?>" disabled> <p></p>
 				</form>
 			</div>	
 		</div>
